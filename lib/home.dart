@@ -3,7 +3,22 @@ import 'package:flutter/material.dart';
 class HomeOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<String> imageName = ['canteen.jpg'];
+    List<String> imageName = [
+      'canteen.jpg',
+      'canteen2.jpg',
+      'canteen3.jpg',
+      'canteen4.jpg',
+      'canteen5.jpg',
+      'canteen6.jpg'
+      ];
+    List<String> locationCanteen = [
+      'Lawrence Bunzel Building',
+      'Lawrence Bunzel Building',
+      'Science and Mathematics Education Complex',
+      'Robert Hoeppenher Building',
+      'School of Fine Arts and Design Building',
+      'Various Locations'
+    ];
     List<String> canteenName = [
       'Bunzel Basement', 
       'Bunzel Canteen', 
@@ -19,7 +34,8 @@ class HomeOverview extends StatelessWidget {
       
       while(newCanteenCount <= numberOfCanteens-1) {
         listOfCanteens.add(new HomePage(
-          nameOfImage: imageName[0], 
+          nameOfImage: imageName[newCanteenCount], 
+          canteenLocation: locationCanteen[newCanteenCount],
           nameOfCanteen: canteenName[newCanteenCount]));
         newCanteenCount++;
       }
@@ -37,20 +53,9 @@ class HomePage extends StatefulWidget {
 
   final String nameOfImage;
   final String nameOfCanteen;
+  final String canteenLocation;
 
-  HomePage({this.nameOfImage, this.nameOfCanteen});
-
-  /*
-  This function returns the padding of 20.0 if the canteen is the last canteen
-  */
-  double lastWidgetBotPadding(nameOfCanteen) {
-    if(nameOfCanteen == 'Cafe+') {
-      return 20.0;
-    }
-    else {
-      return 0.0;
-    }
-  }
+  HomePage({this.nameOfImage, this.canteenLocation, this.nameOfCanteen});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -62,15 +67,43 @@ class _HomePageState extends State<HomePage> {
     return Container(
       child: new Stack(
         children: <Widget>[
-          new InkWell(
-            splashColor: Colors.yellow,
-            onLongPress: () => print("Long press option"), // optional feature!
-            onTap: () => print("Open ${widget.nameOfCanteen}"),
-            child: new Padding(
-              padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, widget.lastWidgetBotPadding(widget.nameOfCanteen)),
-              child: new ClipRRect(
-                borderRadius: new BorderRadius.circular(15.0),
-                  child: Image.asset('assets/images/${widget.nameOfImage}',
+          new Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 20.0, 15.0,widget.nameOfCanteen == 'Cafe+' ? 20.0 : 0.0),
+            child: new ClipRRect(
+              borderRadius: new BorderRadius.circular(15.0),
+              child: new InkWell(
+                enableFeedback: true,
+                onLongPress: () => print("Long press option"), // optional feature!
+                onTap: () => print("Open ${widget.nameOfCanteen}"),
+                child: new Stack(
+                  children: <Widget> [
+                    new Image.asset('assets/images/${widget.nameOfImage}',),
+                    new Container(
+                      alignment: Alignment(0,1),
+                      constraints: new BoxConstraints(
+                        maxWidth: 500.0,
+                        maxHeight: 255.0
+                      ),
+                      child: new Container(
+                        constraints: new BoxConstraints(
+                          maxHeight: 52.0,
+                          minHeight: 52.0,
+                          maxWidth: 381.0,
+                          minWidth: 381.0,
+                        ),
+                        color: Colors.black,
+                        child: new Text(
+                          " " + widget.nameOfCanteen,
+                          style: new TextStyle(
+                            fontFamily: "ABeeZee",
+                            fontSize: 35.0,
+                            height: 1.5,
+                            color: Colors.white
+                          ),
+                        )
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -78,33 +111,37 @@ class _HomePageState extends State<HomePage> {
           new Column(
             children: <Widget>[
               new Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: new EdgeInsets.all(15.0),
               ),
               new Container(
                 width: 500.0,
                 child: new Container(
-                  alignment: Alignment(-0.66,0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
+                  alignment: Alignment(widget.nameOfCanteen == 'SMED Canteen' ? -0.35: 
+                                       widget.nameOfCanteen == 'SAFAD Canteen' ? -0.50: 
+                                       widget.nameOfCanteen == 'RH Canteen' ? -0.70: 
+                                       widget.nameOfCanteen == 'Cafe+' ? -0.77 : -0.75, 0),
+                  child: new ClipRRect(
+                    borderRadius: new BorderRadius.circular(15.0),
                     child: new Container(
-                      constraints: BoxConstraints(
-                        maxWidth: 200.0,
+                      constraints: new BoxConstraints(
+                        maxWidth: 400.0,
                         minWidth: 10.0,
                       ),
-                      padding: EdgeInsets.symmetric(horizontal:5.0),
+                      padding: new EdgeInsets.symmetric(horizontal:5.0),
                       color: Colors.white,
                       child: new Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget> [
-                          Icon(
+                          new Icon(
                             Icons.location_on,
                             color: Colors.black,
+                            size: 20.0
                           ),
-                          Text(
-                            "${widget.nameOfCanteen}",
+                          new Text(
+                            "${widget.canteenLocation}",
                             style: TextStyle(
                               fontFamily: "ABeeZee",
-                              fontSize: 15.0,
+                              fontSize: 12.0,
                               color: Colors.black
                             ),
                           ),

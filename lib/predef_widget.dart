@@ -10,7 +10,9 @@ class _MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true, // comment if you want transparent appBar!
       appBar: new AppBar(
+        elevation: 0.0,
         title: Text(
           "Sa'nCaon",
           style: TextStyle(
@@ -20,7 +22,7 @@ class _MainWidgetState extends State<MainWidget> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         leading: Row(
           children: <Widget>[
             InkWell(
