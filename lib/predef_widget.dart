@@ -37,7 +37,7 @@ class _MainWidgetState extends State<MainWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
       ),
     ),
-    body: new HomeOverview()
+    body: HomeOverview()
     );      
   }
 }
