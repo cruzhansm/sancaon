@@ -9,6 +9,7 @@ class _CanteenLandBuilderState extends State<CanteenLandBuilder> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 360.0,
       color: Colors.black,
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
