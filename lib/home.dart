@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_landing_page.dart';
+import 'predef_widget.dart';
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MainWidget(
+      generatePage: HomeOverview(),
+    );
+  }
+}
 
 class HomeOverview extends StatelessWidget {
   @override
@@ -78,7 +88,8 @@ class _HomePageState extends State<HomePage> {
                 onTap: () => {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CanteenLandBuilder())
+                    MaterialPageRoute(builder: (context) => new MainWidget(generatePage: CanteenLandBuilder())
+                    ),
                   ),
                   print("Open ${widget.nameOfCanteen}")
                 },
