@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sancaon/canteen_landing_page.dart';
 
 class HomeOverview extends StatelessWidget {
   @override
@@ -74,7 +75,13 @@ class _HomePageState extends State<HomePage> {
               child: new InkWell(
                 enableFeedback: true,
                 onLongPress: () => print("Long press option"), // optional feature!
-                onTap: () => print("Open ${widget.nameOfCanteen}"),
+                onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CanteenLandBuilder())
+                  ),
+                  print("Open ${widget.nameOfCanteen}")
+                },
                 child: new Stack(
                   children: <Widget> [
                     new Image.asset('assets/images/${widget.nameOfImage}',),
