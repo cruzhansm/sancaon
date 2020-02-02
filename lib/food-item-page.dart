@@ -58,7 +58,7 @@ void main() {
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20.0,
-                              fontFamily: 'Noto Sans',
+                              fontFamily: 'NotoSans',
                               fontWeight: FontWeight.w300), //double
                         )
                       ]))))));
