@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'test.dart';
 
 class MainWidget extends StatefulWidget {
   final Widget generatePage;
@@ -44,7 +45,12 @@ class _MainWidgetState extends State<MainWidget> {
                     Icons.help,
                     color: Colors.lightGreen,
                   ),
-                  onPressed: () => print("go to help"),
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => new Test())),
+                    print("go to help")
+                  },
                 ),new IconButton(
                   icon: Icon(
                     Icons.feedback,

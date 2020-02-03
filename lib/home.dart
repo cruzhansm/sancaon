@@ -88,7 +88,8 @@ class _HomePageState extends State<HomePage> {
                 onTap: () => {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => new MainWidget(generatePage: CanteenLandBuilder())
+                    MaterialPageRoute(builder: (context) => new MainWidget(
+                      generatePage: CanteenMenu(nameOfCanteen: widget.nameOfCanteen,))
                     ),
                   ),
                   print("Open ${widget.nameOfCanteen}")
