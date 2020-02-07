@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sancaon/canteen_landing_page.dart';
+import 'canteen_landing_page.dart';
 import 'predef_widget.dart';
 
 class Home extends StatelessWidget {
@@ -42,6 +42,19 @@ class HomeOverview extends StatelessWidget {
 
     List<Widget> listMyWidgets() {
       List<Widget> listOfCanteens = new List();
+
+      listOfCanteens.add(new Center(
+        child: new Container(
+          padding: EdgeInsets.only(top: 10.0),
+          child: new Text(
+            'Choose your canteen',
+            style: TextStyle(
+              fontFamily: "Dosis",
+              fontSize: 35.0,
+            )
+          )
+        )
+      ));
       
       while(newCanteenCount <= numberOfCanteens-1) {
         listOfCanteens.add(new HomePage(
@@ -61,7 +74,6 @@ class HomeOverview extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-
   final String nameOfImage;
   final String nameOfCanteen;
   final String canteenLocation;
@@ -76,87 +88,83 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new Stack(
-        children: <Widget>[
-          new Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 20.0, 15.0,widget.nameOfCanteen == 'Cafe+' ? 20.0 : 0.0),
-            child: new ClipRRect(
-              borderRadius: new BorderRadius.circular(15.0),
-              child: new InkWell(
-                enableFeedback: true,
-                onLongPress: () => print("Long press option"), // optional feature!
-                onTap: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => new MainWidget(
-                      generatePage: CanteenMenu(nameOfCanteen: widget.nameOfCanteen,))
-                    ),
-                  ),
-                  print("Open ${widget.nameOfCanteen}")
-                },
-                child: new Stack(
-                  children: <Widget> [
-                    new Image.asset('assets/images/${widget.nameOfImage}',),
-                    new Container(
-                      constraints: new BoxConstraints(
-                        maxHeight: double.infinity,
-                        maxWidth: double.infinity,
-                        minHeight: 250.0
-                      ),
-                      child: new Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          new Expanded(
-                            child: new Container(
-                              color: Colors.lightGreen,
-                              child: new Text(
-                                "  " + widget.nameOfCanteen,
-                                style: new TextStyle(
-                                  fontFamily: "Dosis",
-                                  fontSize: 35.0,
-                                  height: 1.25,
-                                  color: Colors.white
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  new Container(
-                    padding: EdgeInsets.all(10.0),
-                    child: new ClipRRect(
-                      borderRadius: new BorderRadius.circular(15.0),
-                      child: new Container(
-                        padding: new EdgeInsets.fromLTRB(5.0, 0.0, 10.0, 0.0),
-                        color: Colors.black54,
-                        child: new Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget> [
-                            new Icon(
-                              Icons.location_on,
-                              color: Colors.lightBlue[300],
-                              size: 20.0
-                            ),
-                            new Text(
-                              "${widget.canteenLocation}",
-                              style: TextStyle(
-                                fontFamily: "Quicksand",
-                                fontSize: 12.0,
-                                color: Colors.white
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  ],
+      child: new Padding(
+        padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, widget.nameOfCanteen == 'Cafe+' ? 15.0 : 0.0),
+        child: new ClipRRect(
+          borderRadius: new BorderRadius.circular(15.0),
+          child: new InkWell(
+            enableFeedback: true,
+            onLongPress: () => print("Long press option"), // optional feature!
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => new MainWidget(
+                  generatePage: CanteenMenu(nameOfCanteen: widget.nameOfCanteen,))
                 ),
               ),
+              print("Open ${widget.nameOfCanteen}")
+            },
+            child: new Stack(
+              children: <Widget> [
+                new Image.asset('assets/images/home/${widget.nameOfImage}',),
+                new Container(
+                  constraints: new BoxConstraints(
+                    maxHeight: double.infinity,
+                    maxWidth: double.infinity,
+                    minHeight: 250.0
+                  ),
+                  child: new Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      new Expanded(
+                        child: new Container(
+                          color: Colors.lightGreen,
+                          child: new Text(
+                            "  " + widget.nameOfCanteen,
+                            style: new TextStyle(
+                              fontFamily: "Dosis",
+                              fontSize: 35.0,
+                              height: 1.25,
+                              color: Colors.white
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              new Container(
+                padding: EdgeInsets.all(10.0),
+                child: new ClipRRect(
+                  borderRadius: new BorderRadius.circular(15.0),
+                  child: new Container(
+                    padding: new EdgeInsets.fromLTRB(5.0, 0.0, 10.0, 0.0),
+                    color: Colors.black54,
+                    child: new Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget> [
+                        new Icon(
+                          Icons.location_on,
+                          color: Colors.lightBlue[300],
+                          size: 20.0
+                        ),
+                        new Text(
+                          "${widget.canteenLocation}",
+                          style: TextStyle(
+                            fontFamily: "Quicksand",
+                            fontSize: 12.0,
+                            color: Colors.white
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

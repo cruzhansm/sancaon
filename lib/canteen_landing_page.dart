@@ -1,23 +1,42 @@
 import 'package:flutter/material.dart';
 import 'data.dart';
 
-class CanteenMenu extends StatelessWidget {
+class CanteenMenu extends StatefulWidget {
   final String nameOfCanteen;
-  Data newData = new Data();
 
   CanteenMenu({this.nameOfCanteen});
 
-  int foodItemCount = 0;
-  final int numberOfFoodItems = 10; // temp
+  @override
+  _CanteenMenuState createState() => _CanteenMenuState();
+}
 
+class _CanteenMenuState extends State<CanteenMenu> {
+  Data newData = new Data();
+
+  int foodItemCount = 0;
+
+  final int numberOfFoodItems = 10; 
   @override
   Widget build(BuildContext context) {
     List<Widget> listOfFood() {
       List<Widget> foodItem = new List();
 
+      foodItem.add(new Center(
+        child: new Container(
+          padding: EdgeInsets.only(top: 10.0),
+          child: new Text(
+            widget.nameOfCanteen,
+            style: TextStyle(
+              fontFamily: "Dosis",
+              fontSize: 35.0,
+            )
+          )
+        )
+      ));
+
       while(foodItemCount <= numberOfFoodItems-1) {
         foodItem.add(new FoodItem(
-          canteenName: nameOfCanteen,
+          canteenName: widget.nameOfCanteen,
           foodName : newData.nameOfFood[foodItemCount],
           foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
         ));
@@ -56,7 +75,7 @@ class _FoodItemState extends State<FoodItem> {
             child: new Row(
               children: <Widget> [
                 new Image.asset(
-                  'assets/images/test.png',
+                  'assets/images/home/test.png',
                   height: 60.0,
                 ),
                 new Container(
