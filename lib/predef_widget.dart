@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
 
 class MainWidget extends StatefulWidget {
+  final Widget generatePage;
+
+  MainWidget({this.generatePage});
+
   @override
   _MainWidgetState createState() => _MainWidgetState();
 }
@@ -11,6 +14,7 @@ class _MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       extendBodyBehindAppBar: true, // comment if you want transparent appBar!
       key: _scaffoldKey,            //(U): the new key
@@ -55,19 +59,38 @@ class _MainWidgetState extends State<MainWidget> {
             fontFamily: "ABeeZee",
             fontSize: 25.0,
             color: Colors.black
+=======
+    return MaterialApp(
+      home: Scaffold(
+        extendBodyBehindAppBar: true, // comment if you want transparent appBar!
+        appBar: new AppBar(
+          elevation: 0.0,
+          title: new Text(
+            "Sa'nCaon",
+            style: TextStyle(
+              fontFamily: "Dosis",
+              height: 1,
+              fontSize: 50.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),
+>>>>>>> canteen-landing-page
           ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        leading: Row(
-          children: <Widget>[
-            InkWell(
-              enableFeedback: true,
-              child: IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Colors.black,
+          //centerTitle: true,
+          backgroundColor: Colors.black,
+          leading: Row(
+            children: <Widget>[
+              InkWell(
+                enableFeedback: true,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.restaurant_menu,
+                    color: Colors.lightGreen,
+                    size: 40.0
+                  ),
+                  onPressed: () => print("Menu was pressed"),
                 ),
+<<<<<<< HEAD
                 onPressed: () {
                   _scaffoldKey.currentState.openDrawer(); //(U) made the 3 line icon open a drawer. Uses the global key
                 },
@@ -75,9 +98,16 @@ class _MainWidgetState extends State<MainWidget> {
             )
           ],
         mainAxisAlignment: MainAxisAlignment.start,
+=======
+              )
+            ],
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+        ),
+        body: widget.generatePage
+>>>>>>> canteen-landing-page
       ),
-    ),
-    body: HomeOverview()
-    );      
+    );     
   }
 }
