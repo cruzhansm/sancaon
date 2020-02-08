@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sancaon/predef_appbar_other.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'credits.dart';
 
 class MainWidget extends StatefulWidget {
   final Widget generatePage;
@@ -27,7 +29,7 @@ class _MainWidgetState extends State<MainWidget> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          extendBodyBehindAppBar: true,
+          //extendBodyBehindAppBar: true,
           appBar: new AppBar(
             elevation: 0.0,
             title: new Text(
@@ -132,7 +134,7 @@ class _MainWidgetState extends State<MainWidget> {
                         color: Colors.white
                       )),
                     subtitle: new Text(
-                      "Change app settings",
+                      "Change application settings",
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: "Quicksand"
@@ -183,14 +185,23 @@ class _MainWidgetState extends State<MainWidget> {
                       )),
                   ),
                   new ListTile(
-                    onTap: () => print("Open Credits"),
+                    onTap: () => {
+                      print("Open About"),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                          generatePage: AboutPage(),
+                          nameOfPage: "About")
+                        )
+                      )
+                    },
                     leading: new Icon(
                       Icons.person,
                       color: Colors.white,
                       size: 40.0
                     ),
                     title: new Text(
-                      "Credits",
+                      "About",
                       style: TextStyle(
                         fontSize: 20.0,
                         color: Colors.white,
@@ -198,7 +209,7 @@ class _MainWidgetState extends State<MainWidget> {
                         fontWeight: FontWeight.bold,
                       )),
                     subtitle: new Text(
-                      "Get to know the developers",
+                      "All the things you need to know",
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: "Quicksand"
