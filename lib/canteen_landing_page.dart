@@ -33,6 +33,10 @@ class _CanteenMenuState extends State<CanteenMenu> {
 
       foodItem.add(new Center(
         child: new Container(
+          //color: Colors.black,
+          constraints: BoxConstraints(
+            minWidth: double.infinity
+          ),
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -42,7 +46,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
                 fontSize: 85.0,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 5.0,
-                //height: 0.2
+                //color: Colors.green[400]
                 )
               ),
               new Container(
@@ -51,7 +55,8 @@ class _CanteenMenuState extends State<CanteenMenu> {
                   style: TextStyle(
                   fontFamily: "Quicksand",
                   fontSize: 25.0,
-                  height: 0.2
+                  height: 0.2,
+                  //color: Colors.yellow[800]
                   )
                 ),
               )
@@ -88,44 +93,47 @@ class _FoodItemState extends State<FoodItem> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-      color: Colors.green[400],
-      child: new Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          new Image.asset(
-            'assets/images/home/test.png',
-            height: 55.0,
-          ),
-          new InkWell(
-            enableFeedback: true,
-            onTap: () => print("Open " + widget.foodName),
-            child: new Container(
-              padding: EdgeInsets.all(10.0),
-              child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  new Text(
-                    widget.foodName,
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      fontFamily: "Comfortaa",
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-                    )),
-                  new Text(
-                    "Food Stall Name",
-                    style: TextStyle(
-                      fontFamily: "Comfortaa",
-                      color: Colors.white
-                    )
-                  )
-                ],
-              ),
+      //color: Colors.black,
+      child: new Container(
+        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+        color: Colors.green[400],
+        child: new Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new Image.asset(
+              'assets/images/home/test.png',
+              height: 55.0,
             ),
-          )
-        ],
-      )
+            new InkWell(
+              enableFeedback: true,
+              onTap: () => print("Open " + widget.foodName),
+              child: new Container(
+                padding: EdgeInsets.all(10.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Text(
+                      widget.foodName,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: "Comfortaa",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                      )),
+                    new Text(
+                      "Food Stall Name",
+                      style: TextStyle(
+                        fontFamily: "Comfortaa",
+                        color: Colors.white
+                      )
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
+      ),
     );
   }
 }

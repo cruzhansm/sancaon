@@ -45,6 +45,10 @@ class HomeOverview extends StatelessWidget {
 
       listOfCanteens.add(new Center(
         child: new Container(
+          constraints: BoxConstraints(
+            minWidth: double.infinity
+          ),
+          color: Colors.black,
           padding: EdgeInsets.only(top: 10.0),
           child: new Column(
             children: <Widget>[
@@ -102,13 +106,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.black,
       child: new Padding(
         padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, widget.nameOfCanteen == 'Cafe+' ? 15.0 : 0.0),
         child: new ClipRRect(
           borderRadius: new BorderRadius.circular(15.0),
           child: new InkWell(
             enableFeedback: true,
-            onLongPress: () => print("Long press option"), // optional feature!
             onTap: () => {
               Navigator.push(
                 context,
