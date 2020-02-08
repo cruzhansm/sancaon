@@ -46,12 +46,26 @@ class HomeOverview extends StatelessWidget {
       listOfCanteens.add(new Center(
         child: new Container(
           padding: EdgeInsets.only(top: 10.0),
-          child: new Text(
-            'Choose your canteen',
-            style: TextStyle(
-              fontFamily: "Dosis",
-              fontSize: 35.0,
-            )
+          child: new Column(
+            children: <Widget>[
+              new Text(
+                "Asa ta kaon?",
+                style: TextStyle(
+                  fontFamily: "Dosis",
+                  fontSize: 55.0,
+                  color: Colors.green[400]
+                )
+              ),
+              new Text(
+                'SELECT A CANTEEN',
+                style: TextStyle(
+                  fontFamily: "Quicksand",
+                  fontSize: 20.0,
+                  height: 0.5,
+                  color: Colors.yellow[800]
+                )
+              ),
+            ],
           )
         )
       ));
@@ -118,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       new Expanded(
                         child: new Container(
-                          color: Colors.lightGreen,
+                          color: Colors.green[400],
                           child: new Text(
                             "  " + widget.nameOfCanteen,
                             style: new TextStyle(
