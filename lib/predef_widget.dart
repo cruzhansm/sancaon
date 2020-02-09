@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sancaon/predef_appbar_other.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'credits.dart';
+import 'feedback.dart';
 
 class MainWidget extends StatefulWidget {
   final Widget generatePage;
@@ -141,7 +142,16 @@ class _MainWidgetState extends State<MainWidget> {
                       )),
                   ),
                   new ListTile(
-                    onTap: () => print("Open Feedback"),
+                    onTap: () => {
+                      print("Open Feedback"),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                          generatePage: FeedbackPage(),
+                          nameOfPage: "Feedback")
+                        )
+                      )
+                    },
                     leading: new Icon(
                       Icons.feedback,
                       color: Colors.white,
