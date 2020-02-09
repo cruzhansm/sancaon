@@ -94,20 +94,19 @@ class _FoodItemState extends State<FoodItem> {
   Widget build(BuildContext context) {
     return new Container(
       //color: Colors.black,
-      child: new Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        color: Colors.green[400],
-        child: new Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            new Image.asset(
-              'assets/images/home/test.png',
-              height: 55.0,
-            ),
-            new InkWell(
-              enableFeedback: true,
-              onTap: () => print("Open " + widget.foodName),
-              child: new Container(
+      child: new InkWell(
+        onTap: () => print("Open " + widget.foodName),
+        child: new Container(
+          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+          color: Colors.green[400],
+          child: new Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Image.asset(
+                'assets/images/home/test.png',
+                height: 55.0,
+              ),
+              new Container(
                 padding: EdgeInsets.all(10.0),
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,10 +128,10 @@ class _FoodItemState extends State<FoodItem> {
                     )
                   ],
                 ),
-              ),
-            )
-          ],
-        )
+              )
+            ],
+          )
+        ),
       ),
     );
   }
