@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sancaon/predef_appbar_other.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'credits.dart';
 import 'feedback.dart';
+import 'help.dart';
+import 'credits.dart';
 
 class MainWidget extends StatefulWidget {
   final Widget generatePage;
@@ -173,7 +174,16 @@ class _MainWidgetState extends State<MainWidget> {
                       )),
                   ),
                   new ListTile(
-                    onTap: () => print("Open help"),
+                    onTap: () => {
+                      print("Open Help"),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                          generatePage: HelpPage(),
+                          nameOfPage: "Help")
+                        )
+                      )
+                    },
                     leading: new Icon(
                       Icons.help,
                       size: 40.0,
