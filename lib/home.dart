@@ -106,10 +106,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return new Container(
       color: Colors.black,
-      child: new Padding(
-        padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, widget.nameOfCanteen == 'Cafe+' ? 15.0 : 0.0),
+      child: Container(
+        margin: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, widget.nameOfCanteen == 'Cafe+' ? 15.0 : 0.0),
         child: new ClipRRect(
           borderRadius: new BorderRadius.circular(15.0),
           child: new InkWell(
@@ -124,63 +124,60 @@ class _HomePageState extends State<HomePage> {
               ),
               print("Open ${widget.nameOfCanteen}")
             },
-            child: new Stack(
-              children: <Widget> [
-                new Image.asset('assets/images/home/${widget.nameOfImage}',),
-                new Container(
-                  constraints: new BoxConstraints(
-                    maxHeight: double.infinity,
-                    maxWidth: double.infinity,
-                    minHeight: 250.0
-                  ),
-                  child: new Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      new Expanded(
-                        child: new Container(
-                          color: Colors.green[400],
-                          child: new Text(
-                            "  " + widget.nameOfCanteen,
-                            style: new TextStyle(
-                              fontFamily: "Dosis",
-                              fontSize: 35.0,
-                              height: 1.25,
-                              color: Colors.white
+            child: new Column(
+              children: <Widget>[
+                new Stack(
+                  children: <Widget> [
+                  new Image.asset('assets/images/home/${widget.nameOfImage}',),
+                  new Container(
+                    padding: EdgeInsets.all(10.0),
+                    child: new ClipRRect(
+                      borderRadius: new BorderRadius.circular(15.0),
+                      child: new Container(
+                        padding: new EdgeInsets.fromLTRB(5.0, 0.0, 10.0, 0.0),
+                        color: Colors.black54,
+                        child: new Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget> [
+                            new Icon(
+                              Icons.location_on,
+                              color: Colors.lightBlue[300],
+                              size: 20.0
                             ),
-                          ),
+                            new Text(
+                              "${widget.canteenLocation}",
+                              style: TextStyle(
+                                fontFamily: "Quicksand",
+                                fontSize: 12.0,
+                                color: Colors.white
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
+                    ),
                   ),
+                  ],
                 ),
-              new Container(
-                padding: EdgeInsets.all(10.0),
-                child: new ClipRRect(
-                  borderRadius: new BorderRadius.circular(15.0),
-                  child: new Container(
-                    padding: new EdgeInsets.fromLTRB(5.0, 0.0, 10.0, 0.0),
-                    color: Colors.black54,
-                    child: new Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget> [
-                        new Icon(
-                          Icons.location_on,
-                          color: Colors.lightBlue[300],
-                          size: 20.0
-                        ),
-                        new Text(
-                          "${widget.canteenLocation}",
-                          style: TextStyle(
-                            fontFamily: "Quicksand",
-                            fontSize: 12.0,
+                new Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    new Expanded(
+                      child: new Container(
+                        color: Colors.green[400],
+                        child: new Text(
+                          "  " + widget.nameOfCanteen,
+                          style: new TextStyle(
+                            fontFamily: "Dosis",
+                            fontSize: 35.0,
+                            height: 1.25,
                             color: Colors.white
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ),
               ],
             ),
           ),
