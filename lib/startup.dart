@@ -35,9 +35,8 @@ class _StartUp extends State<StartUp> {
 
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 10,
+      seconds: 6,
       onClick: () => {
-        print(tapCount),
         tapCount++,
         changeColor(tapCount > 2? tapCount = 0: tapCount)
       },
