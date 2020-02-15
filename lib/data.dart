@@ -24,4 +24,17 @@
     "Siomai with Rice" : 30.0,
     "Tempura with Rice" : 40.0
   };
+
+  Map<String, String> imageOfFood = {
+    "Adobo with Rice" : 'assets/images/canteen-menu/food1.jpg',
+    "Arrozcaldo" : 'assets/images/canteen-menu/food2.jpg',
+    "Barbeque with Rice" : 'assets/images/canteen-menu/food3.jpg',
+    "'Burp' Burger" : 'assets/images/canteen-menu/food4.jpg',
+    "Chopsuey" : 'assets/images/canteen-menu/food5.jpg',
+    "Chicken with Rice" : 'assets/images/canteen-menu/food6.jpg',
+    "Giniling with Rice" : 'assets/images/canteen-menu/food7.jpg',
+    "Pancit with Rice" : 'assets/images/canteen-menu/food8.jpg',
+    "Siomai with Rice" : 'assets/images/canteen-menu/food9.jpg',
+    "Tempura with Rice" : 'assets/images/canteen-menu/food10.jpg'
+  };
 }
