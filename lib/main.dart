@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'predef_widget.dart';
+import 'startup.dart';
 
 void main() => runApp(MaterialApp(
-  home: MainWidget(),
+  home: StartUp()
 ));

@@ -8,7 +8,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="sancaon"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/sancaon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
