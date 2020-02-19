@@ -3,12 +3,12 @@ import 'package:splashscreen/splashscreen.dart';
 import 'home.dart';
 
 class StartUp extends StatefulWidget {
+
   @override
-  _StartUp createState() => new _StartUp();
+  _StartUpState createState() => _StartUpState();
 }
 
-class _StartUp extends State<StartUp> {
-
+class _StartUpState extends State<StartUp> {
   int tapCount = 0;
 
   void changeColor(int tapCount) {
@@ -31,11 +31,12 @@ class _StartUp extends State<StartUp> {
   }
 
   Color newColor = Colors.green[400];
+
   String loadText = "Loading assets";
 
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 6,
+      seconds: 1,
       onClick: () => {
         tapCount++,
         changeColor(tapCount > 2? tapCount = 0: tapCount)

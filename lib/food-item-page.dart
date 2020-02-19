@@ -1,66 +1,53 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(new MaterialApp(
-      title: "Sa'nCaon",
-      home: new Scaffold(
-          appBar: AppBar(
-              backgroundColor: Colors.yellow,
-              title: Center(
-                  child: Text("SMED",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25.0,
-                          fontFamily: 'Noto Sans',
-                          fontWeight: FontWeight.w900)))),
-          body: Material(
-              // whole screen
-              // child: Center(
-                  child: Container(
-                      alignment: Alignment.topCenter,
-                      child: Column(children: <Widget>[
-                        Image.asset('assets/images/burger.jpg'),
-                        Row(children: <Widget>[
-                          Expanded(
-                            child: Text(
-                            "'BURP' BURGER",
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 40.0,
-                                fontFamily: 'NotoSans',
-                                fontWeight: FontWeight.w900),
-                          )),
-                          Image.asset('assets/images/leaf.png')
-                        ]),
-                        Container(
-                            child: Text(
-                          "Stall: Angel's",
-                          textDirection: TextDirection.ltr,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontFamily: 'NotoSans',
-                              fontWeight: FontWeight.w300), //double
-                        )),
-                        Text(
-                          "Price: P30.00",
-                          textDirection: TextDirection.ltr,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontFamily: 'NotoSans',
-                              fontWeight: FontWeight.w300), //double
-                        ),
-                        Text(
-                          "Traffic Light Rating: Green",
-                          textDirection: TextDirection.ltr,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontFamily: 'NotoSans',
-                              fontWeight: FontWeight.w300), //double
-                        )
-                      ]))))));
-  // runApp
+
+class FoodItemPage extends StatelessWidget {
+
+  createDialog(BuildContext context) {
+    return showDialog(context: context, builder: (context) {
+      return new SizedBox(
+        width: 450.0,
+        height: 100.0,
+        child: new Dialog(
+          backgroundColor: Colors.red,
+          child: new Container(
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+            ),
+            child: new ListView(
+              children: <Widget>[
+                new SizedBox(
+                  height: 250.0,
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: new Image.asset(
+                      'assets/images/home/test.png',
+                    ),
+                  ),
+                ),
+                new Center(
+                  child: new Text("CONTEXT OF THE MEDIA")
+                )
+                ],
+              ),
+            )
+        )
+      );
+    }
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: Center(
+        child: Container(
+          color: Colors.red,
+          child: new GestureDetector(
+            onTap: () {createDialog(context);},
+          ),
+        ),
+      ),
+    );
+  }
 }

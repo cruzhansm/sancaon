@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'data.dart';
 
-class CanteenMenu extends StatefulWidget {
+class CanteenMenu extends StatelessWidget {
   final String nameOfCanteen;
 
   CanteenMenu({this.nameOfCanteen});
 
-  @override
-  _CanteenMenuState createState() => _CanteenMenuState();
-}
-
-class _CanteenMenuState extends State<CanteenMenu> {
-  Data newData = new Data();
+  static Data newData = new Data();
 
   Map <String, String> canteenNames = {
     'Bunzel Basement': 'BUNZEL',
@@ -24,7 +19,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
 
   int foodItemCount = 0;
 
-  final int numberOfFoodItems = 10;
+  final int numberOfFoodItems = newData.nameOfFood.length;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +35,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              new Text(canteenNames[widget.nameOfCanteen],
+              new Text(canteenNames[nameOfCanteen],
                 style: TextStyle(
                 fontFamily: "Bebas-Neue",
                 fontSize: 85.0,
@@ -65,13 +60,14 @@ class _CanteenMenuState extends State<CanteenMenu> {
         )
       ));
 
-      while (foodItemCount <= numberOfFoodItems - 1) {
+      while(foodItemCount <= numberOfFoodItems - 1) {
         foodItem.add(new FoodItem(
           foodName: newData.nameOfFood[foodItemCount],
           foodName2: newData.nameOfFood[foodItemCount+1],
           foodImage: newData.imageOfFood[newData.nameOfFood[foodItemCount]],
           foodImage2: newData.imageOfFood[newData.nameOfFood[foodItemCount+1]],
           foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
+          foodPrice2: newData.priceOfFood[newData.nameOfFood[foodItemCount+1]],
         ));
         foodItemCount+=2;
       }
@@ -88,14 +84,178 @@ class FoodItem extends StatefulWidget {
   final String foodImage;
   final String foodImage2;
   final double foodPrice;
+  final double foodPrice2;
 
-  FoodItem({this.foodName, this.foodPrice, this.foodName2, this.foodImage, this.foodImage2});
+  FoodItem({this.foodName, this.foodPrice, this.foodName2, this.foodImage, this.foodImage2, this.foodPrice2});
 
   @override
   _FoodItemState createState() => _FoodItemState();
 }
 
 class _FoodItemState extends State<FoodItem> {
+  String _finalFoodImage;
+  String _finalFoodName;
+  String _finalStallName = "Placeholder sa";
+  String _finalFoodPrice;
+  String _finalTrafficRating = 'Placeholder napud';
+
+  createDialog(BuildContext context) {
+    return showDialog(context: context, builder: (context) {
+      return new SizedBox(
+        width: 450.0,
+        height: 100.0,
+        child: new Dialog(
+          //backgroundColor: Colors.red,
+          child: new Container(
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+            ),
+            child: new ListView(
+              children: <Widget>[
+                new SizedBox(
+                  height: 250.0,
+                  child: new FittedBox(
+                    fit: BoxFit.fill,
+                    child: new Image.asset(
+                      _finalFoodImage,
+                    ),
+                  ),
+                ),
+                new Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: new Row(
+                    children: <Widget>[
+                      new Expanded(
+                        flex: 3,
+                          child: new Text(
+                          _finalFoodName,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 35.0,
+                            fontFamily: "Dosis",
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      new Icon(
+                        Icons.brightness_1,
+                        color: Colors.green[400]
+                      ),
+                      new Icon(
+                        Icons.brightness_1,
+                        color: Colors.green[400]
+                      ),
+                      new Icon(
+                        Icons.brightness_1,
+                        color: Colors.green[400]
+                      ),
+                    ],
+                  ),
+                ),
+                new Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: new Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      new Text(
+                        "Stall: " + _finalStallName,
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontFamily: "Quicksand"
+                        )
+                      ),
+                      new Text(
+                        "Price: " + _finalFoodPrice,
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontFamily: "Quicksand"
+                        )
+                      ),
+                      new Text(
+                        "Rating: " + _finalTrafficRating,
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontFamily: "Quicksand"
+                        )
+                      ),
+                    ],
+                  ),
+                ),
+                new Container(
+                  margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
+                  child: new Row(
+                    children: <Widget>[
+                      new Icon(
+                        Icons.fastfood
+                      ),
+                      new Container(
+                        margin: EdgeInsets.only(left: 10.0),
+                        child: new Text(
+                          'Ingredients'
+                        )
+                      )
+                    ],
+                  ),
+                ),
+                new Divider(
+                  color: Colors.black,
+                  thickness: 2.0 
+                ),
+                new Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: new Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget> [
+                      new Text("Ingredient 1"),
+                      new Text("Ingredient 2"),
+                      new Text("Ingredient 3"),
+                      new Text("Ingredient 4"),
+                      new Text("Ingredient 5"),
+                    ],
+                  )
+                ),
+                new Container(
+                  margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
+                  child: new Row(
+                    children: <Widget>[
+                      new Icon(
+                        Icons.local_convenience_store
+                      ),
+                      new Container(
+                        margin: EdgeInsets.only(left: 10.0),
+                        child: new Text(
+                          'Allergens'
+                        )
+                      )
+                    ],
+                  ),
+                ),
+                new Divider(
+                  color: Colors.black,
+                  thickness: 2.0 
+                ),
+                new Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: new Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget> [
+                      new Text("Ingredient 1"),
+                      new Text("Ingredient 2"),
+                      new Text("Ingredient 3"),
+                      new Text("Ingredient 4"),
+                      new Text("Ingredient 5"),
+                    ],
+                  )
+                ),
+              ],
+            ),
+          )
+        )
+      );
+    }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -114,8 +274,16 @@ class _FoodItemState extends State<FoodItem> {
                 children: <Widget>[
                   new Expanded(
                     flex: 13,
+                    child: new InkWell(
+                      onTap: () {
+                        _finalFoodImage = widget.foodImage;
+                        _finalFoodName = widget.foodName;
+                        _finalFoodPrice = widget.foodPrice.toString();
+                        createDialog(context);
+                      },
                       child: new Image.asset(
-                      widget.foodImage,
+                        widget.foodImage,
+                      ),
                     ),
                   ),
                   new Expanded(
@@ -153,8 +321,16 @@ class _FoodItemState extends State<FoodItem> {
                 children: <Widget>[
                   new Expanded(
                     flex: 13,
+                      child: new InkWell(
+                      onTap: () {
+                        _finalFoodImage = widget.foodImage2;
+                        _finalFoodName = widget.foodName2;
+                        _finalFoodPrice = widget.foodPrice2.toString();
+                        createDialog(context);
+                      },
                       child: new Image.asset(
-                      widget.foodImage2,
+                        widget.foodImage2,
+                      ),
                     ),
                   ),
                   new Expanded(
@@ -188,48 +364,5 @@ class _FoodItemState extends State<FoodItem> {
         ],
       ),
     );
-    
-    /*return new Container(
-      //color: Colors.black,
-      child: new InkWell(
-        onTap: () => print("Open " + widget.foodName),
-        child: new Container(
-          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-          color: Colors.green[400],
-          child: new Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              new Image.asset(
-                'assets/images/home/test.png',
-                height: 55.0,
-              ),
-              new Container(
-                padding: EdgeInsets.all(10.0),
-                child: new Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    new Text(
-                      widget.foodName,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontFamily: "Comfortaa",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                      )),
-                    new Text(
-                      "Food Stall Name",
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        color: Colors.white
-                      )
-                    )
-                  ],
-                ),
-              )
-            ],
-          )
-        ),
-      ),
-    );*/
   }
 }

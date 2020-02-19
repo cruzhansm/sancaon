@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'predef_appbar_other.dart';
+import 'canteen_landing_page.dart';
 import 'predef_widget.dart';
 
 
@@ -81,22 +82,10 @@ class NewCanteen extends StatefulWidget {
 class _NewCanteenState extends State<NewCanteen> {
   int indexCanteen = 0;
 
-  List<String> foodImages = [
-    'assets/images/canteen-menu/food1.jpg',
-    'assets/images/canteen-menu/food2.jpg',
-    'assets/images/canteen-menu/food3.jpg',
-    'assets/images/canteen-menu/food4.jpg',
-    'assets/images/canteen-menu/food5.jpg',
-    'assets/images/canteen-menu/food6.jpg',
-    'assets/images/canteen-menu/food7.jpg',
-    'assets/images/canteen-menu/food8.jpg',
-    'assets/images/canteen-menu/food9.jpg'
-  ];
-
   List<Widget> listNewShopeeStyle() {
   List<Widget> newCanteenObj = new List();
     while(indexCanteen <= 7){
-      indexCanteen == 7 ? newCanteenObj.add(new SeeMoreShopee()) : newCanteenObj.add(new ShopeeStyle(foodImage: foodImages[indexCanteen]));
+      indexCanteen == 7? newCanteenObj.add(new SeeMoreShopee()) : newCanteenObj.add(new ShopeeStyle());
       indexCanteen++;
     }
     return newCanteenObj;
@@ -105,9 +94,8 @@ class _NewCanteenState extends State<NewCanteen> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),//indexCanteen == 7? EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 20.0): 
-      child: new Container(  
-     
+      margin: EdgeInsets.all(10.0),
+      child: new Container(        
         child: new ClipRRect(
           borderRadius: BorderRadius.circular(15.0),
           child: new Column(
@@ -143,38 +131,21 @@ class _NewCanteenState extends State<NewCanteen> {
   }
 }
 
-class ShopeeStyle extends StatefulWidget {
-  final String foodImage;
-
-  ShopeeStyle({this.foodImage});
-
-  @override
-  _ShopeeStyleState createState() => _ShopeeStyleState();
-}
-
-class _ShopeeStyleState extends State<ShopeeStyle> {
+class ShopeeStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new SizedBox(
-      width: 100.0,
-          child: new FittedBox(
-        fit: BoxFit.fill,
-        child: new Container(
-          child: new Image.asset(
-            widget.foodImage
-          ),
-        )
-      ),
+    return new FittedBox(
+      fit: BoxFit.fill,
+      child: new Container(
+        child: new Image.asset(
+          'assets/images/home/test.png'
+        ),
+      )
     );
   }
 }
 
-class SeeMoreShopee extends StatefulWidget {
-  @override
-  _SeeMoreShopeeState createState() => _SeeMoreShopeeState();
-}
-
-class _SeeMoreShopeeState extends State<SeeMoreShopee> {
+class SeeMoreShopee extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new FittedBox(
