@@ -84,8 +84,10 @@ class HomeOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView(
-      children: canteenTemplate());
+    return new SafeArea(
+      child: new ListView(
+        children: canteenTemplate()),
+    );
   }
 }
 
