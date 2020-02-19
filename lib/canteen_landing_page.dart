@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'data.dart';
 
-class CanteenMenu extends StatelessWidget {
-  final String nameOfCanteen;
+dynamic foodItemContent(String nameOfCanteen) {
+  Data newData = new Data();
+  int foodItemCount = 0;
 
-  CanteenMenu({this.nameOfCanteen});
-
-  static Data newData = new Data();
+  final int numberOfFoodItems = newData.nameOfFood.length;
 
   Map <String, String> canteenNames = {
     'Bunzel Basement': 'BUNZEL',
@@ -16,68 +15,68 @@ class CanteenMenu extends StatelessWidget {
     'SAFAD Canteen': 'SAFAD',
     'Cafe+': 'CAFE+'
   };
+  
+  List<Widget> listOfFood() {
+    List<Widget> foodItem = new List();
+    foodItem.add(new Center(
+      child: new Container(
+        constraints: BoxConstraints(
+          minWidth: double.infinity
+        ),
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            new Text(canteenNames[nameOfCanteen],
+              style: TextStyle(
+              fontFamily: "Bebas-Neue",
+              fontSize: 85.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 5.0,
+              //color: Colors.green[400]
+              )
+            ),
+            new Container(
+              padding: EdgeInsets.only(bottom: 20.0),
+              child: new Text("FOOD MENU",//widget.nameOfCanteen.toUpperCase(),
+                style: TextStyle(
+                fontFamily: "Quicksand",
+                fontSize: 25.0,
+                height: 0.2,
+                //color: Colors.yellow[800]
+                )
+              ),
+            )
+          ],
+        )
+      )
+    ));
 
-  int foodItemCount = 0;
+    while(foodItemCount <= numberOfFoodItems - 1) {
+      foodItem.add(new FoodItem(
+        foodName: newData.nameOfFood[foodItemCount],
+        foodName2: newData.nameOfFood[foodItemCount+1],
+        foodImage: newData.imageOfFood[newData.nameOfFood[foodItemCount]],
+        foodImage2: newData.imageOfFood[newData.nameOfFood[foodItemCount+1]],
+        foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
+        foodPrice2: newData.priceOfFood[newData.nameOfFood[foodItemCount+1]],
+      ));
+      foodItemCount+=2;
+    }
+      return foodItem;
+    }
+  return listOfFood();
+}
 
-  final int numberOfFoodItems = newData.nameOfFood.length;
+class CanteenMenu extends StatelessWidget {
+  final String nameOfCanteen;
+
+  CanteenMenu({this.nameOfCanteen});
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> listOfFood() {
-      List<Widget> foodItem = new List();
-
-      foodItem.add(new Center(
-        child: new Container(
-          //color: Colors.black,
-          constraints: BoxConstraints(
-            minWidth: double.infinity
-          ),
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              new Text(canteenNames[nameOfCanteen],
-                style: TextStyle(
-                fontFamily: "Bebas-Neue",
-                fontSize: 85.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 5.0,
-                //color: Colors.green[400]
-                )
-              ),
-              new Container(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: new Text("FOOD MENU",//widget.nameOfCanteen.toUpperCase(),
-                  style: TextStyle(
-                  fontFamily: "Quicksand",
-                  fontSize: 25.0,
-                  height: 0.2,
-                  //color: Colors.yellow[800]
-                  )
-                ),
-              )
-            ],
-          )
-        )
-      ));
-
-      while(foodItemCount <= numberOfFoodItems - 1) {
-        foodItem.add(new FoodItem(
-          foodName: newData.nameOfFood[foodItemCount],
-          foodName2: newData.nameOfFood[foodItemCount+1],
-          foodImage: newData.imageOfFood[newData.nameOfFood[foodItemCount]],
-          foodImage2: newData.imageOfFood[newData.nameOfFood[foodItemCount+1]],
-          foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
-          foodPrice2: newData.priceOfFood[newData.nameOfFood[foodItemCount+1]],
-        ));
-        foodItemCount+=2;
-      }
-      return foodItem;
-    }
-
-    return ListView(children: listOfFood());
+    return ListView(children: foodItemContent(nameOfCanteen));
   }
 }
-
 class FoodItem extends StatefulWidget {
   final String foodName;
   final String foodName2;

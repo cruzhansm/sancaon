@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:sancaon/predef_appbar_other.dart';
+import 'canteen_landing_page.dart';
 import 'predef_widget.dart';
 
-
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainWidget(
@@ -17,8 +12,8 @@ class _HomeState extends State<Home> {
   }
 }
 
-class HomeOverview extends StatefulWidget {
-  static List<String> imageName = [
+dynamic canteenTemplate() {
+  List<String> imageName = [
       'assets/images/home/canteen.jpg',
       'assets/images/home/canteen2.jpg',
       'assets/images/home/canteen3.jpg',
@@ -26,7 +21,7 @@ class HomeOverview extends StatefulWidget {
       'assets/images/home/canteen5.jpg',
       'assets/images/home/canteen6.jpg'
       ];
-  static List<String> locationCanteen = [
+  List<String> locationCanteen = [
     'Lawrence Bunzel Building',
     'Lawrence Bunzel Building',
     'Science and Mathematics Education Complex',
@@ -34,7 +29,8 @@ class HomeOverview extends StatefulWidget {
     'School of Fine Arts and Design Building',
     'LB Building | SAFAD Building'
   ];
-  static List<String> canteenName = [
+
+  List<String> canteenName = [
     'Bunzel Basement', 
     'Bunzel Canteen', 
     'SMED Canteen',
@@ -42,43 +38,58 @@ class HomeOverview extends StatefulWidget {
     'SAFAD Canteen',
     'Cafe+'];
 
-  @override
-  _HomeOverviewState createState() => _HomeOverviewState();
-}
-
-class _HomeOverviewState extends State<HomeOverview> {
   int indexCanteen = 0;
 
   List<Widget> listOfNewCanteens() {
     List<Widget> addCanteen = new List();
+    addCanteen.add(new Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      child: new Column(
+        children: <Widget>[
+          new Text(
+            "Asa ta kaon?",
+            style: TextStyle(
+              fontSize: 60.0,
+              fontFamily: "Dosis",
+              color: Colors.green[400]
+            )
+          ),
+          new Text(
+            "SELECT A CANTEEN",
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: "Quicksand",
+              color: Colors.yellow[800],
+              height: 0.5
+            )
+          )
+        ],
+      ),
+    ));
+
     while(indexCanteen <= 5) {
       addCanteen.add(new NewCanteen(
-        canteenName: HomeOverview.canteenName[indexCanteen],
-        canteenImage: HomeOverview.imageName[indexCanteen],
+        canteenName: canteenName[indexCanteen],
+        canteenImage: imageName[indexCanteen],
+        canteenLocation: locationCanteen[indexCanteen],
       ));
       indexCanteen++;
     }
     return addCanteen;
   }
+  return listOfNewCanteens();
+}
+
+class HomeOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return new ListView(
-      children: listOfNewCanteens());
+      children: canteenTemplate());
   }
 }
 
-class NewCanteen extends StatefulWidget {
-  final String canteenName;
-  final String canteenImage;
-
-  NewCanteen({this.canteenName, this.canteenImage});
-
-  @override
-  _NewCanteenState createState() => _NewCanteenState();
-}
-
-class _NewCanteenState extends State<NewCanteen> {
+dynamic shopeeContent() {
   int indexCanteen = 0;
 
   List<String> foodImages = [
@@ -94,45 +105,94 @@ class _NewCanteenState extends State<NewCanteen> {
   ];
 
   List<Widget> listNewShopeeStyle() {
-  List<Widget> newCanteenObj = new List();
-    while(indexCanteen <= 7){
-      indexCanteen == 7 ? newCanteenObj.add(new SeeMoreShopee()) : newCanteenObj.add(new ShopeeStyle(foodImage: foodImages[indexCanteen]));
-      indexCanteen++;
-    }
-    return newCanteenObj;
+    List<Widget> newCanteenObj = new List();
+      while(indexCanteen <= 7){
+        indexCanteen == 7 ? newCanteenObj.add(new SeeMoreShopee()) : newCanteenObj.add(new ShopeeStyle(foodImage: foodImages[indexCanteen]));
+        indexCanteen++;
+      }
+      return newCanteenObj;
   }
+  return listNewShopeeStyle();
+}
+
+class NewCanteen extends StatelessWidget {
+  final String canteenName;
+  final String canteenImage;
+  final String canteenLocation;
+
+  NewCanteen({this.canteenName, this.canteenImage, this.canteenLocation});
 
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),//indexCanteen == 7? EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 20.0): 
+      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
       child: new Container(  
-     
         child: new ClipRRect(
           borderRadius: BorderRadius.circular(15.0),
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              new Image.asset(widget.canteenImage),
-              new Text(
-                " " + widget.canteenName,
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: "Dosis",
-                  fontWeight: FontWeight.bold
+              new SizedBox(
+                height: 150.0,
+                width: double.infinity,
+                child: new FittedBox(
+                  fit: BoxFit.fill,
+                  child: new Image.asset(canteenImage)
                 )
               ),
-              new Text(""),
-              /*new Divider(
+              new Container(
+                padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
                 color: Colors.black,
-                thickness: 2.0,
-              ),*/
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        new Text(
+                          canteenName,
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: "Dosis",
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                          )
+                        ),
+                        new Text(
+                          "Swipe for more samples",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white
+                          ))
+                      ],
+                    ),
+                    new RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)
+                      ),
+                      onPressed: () => {
+                        print("Open " + canteenName),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                            generatePage: new CanteenMenu(
+                              nameOfCanteen: canteenName
+                            ),
+                          ))
+                        )
+                      },
+                      color: Colors.lightBlue[300],
+                      child: new Text("Open Canteen")
+                      )
+                  ],
+                ),
+              ),
               new SizedBox(
                 height: 100.0,
                 width: double.infinity,
                 child: new ListView(
                   scrollDirection: Axis.horizontal,
-                  children: listNewShopeeStyle()
+                  children: shopeeContent()
                 )
               )
             ],
@@ -157,13 +217,17 @@ class _ShopeeStyleState extends State<ShopeeStyle> {
   Widget build(BuildContext context) {
     return new SizedBox(
       width: 100.0,
-          child: new FittedBox(
-        fit: BoxFit.fill,
-        child: new Container(
-          child: new Image.asset(
-            widget.foodImage
+      child: Column(
+        children: <Widget>[
+          new FittedBox(
+            fit: BoxFit.fill,
+            child: new Container(
+              child: new Image.asset(
+                widget.foodImage
+              ),
+            )
           ),
-        )
+        ],
       ),
     );
   }
