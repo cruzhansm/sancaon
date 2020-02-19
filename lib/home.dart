@@ -219,17 +219,13 @@ class _ShopeeStyleState extends State<ShopeeStyle> {
   Widget build(BuildContext context) {
     return new SizedBox(
       width: 100.0,
-      child: Column(
-        children: <Widget>[
-          new FittedBox(
-            fit: BoxFit.fill,
-            child: new Container(
-              child: new Image.asset(
-                widget.foodImage
-              ),
-            )
+      child: new FittedBox(
+        fit: BoxFit.fill,
+        child: new Container(
+          child: new Image.asset(
+            widget.foodImage
           ),
-        ],
+        )
       ),
     );
   }
