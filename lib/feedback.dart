@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 class FeedbackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      margin: EdgeInsets.only(top: 150.0),
-      constraints: BoxConstraints(
-        minWidth: double.infinity
-      ),
-      //color: Colors.red,
-      child: new Column(
+    return new Scaffold(
+      body: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Container(
@@ -88,7 +84,7 @@ class FeedbackPage extends StatelessWidget {
             )
           )
         ],
-      )
+      ),
     );
   }
 }

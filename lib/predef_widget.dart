@@ -27,6 +27,14 @@ class _MainWidgetState extends State<MainWidget> {
     }
   }
 
+  createDialog(BuildContext context) {
+    showDialog(context: context, builder: (context) {
+      return new Dialog(
+        child: FeedbackPage()
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -72,7 +80,7 @@ class _MainWidgetState extends State<MainWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           new Text(
-                            "Sa'nCaon",
+                            "Sa'nCao",
                             style: TextStyle(
                               fontSize: 60.0,
                               fontFamily: "Dosis",
@@ -145,13 +153,14 @@ class _MainWidgetState extends State<MainWidget> {
                   new ListTile(
                     onTap: () => {
                       print("Open Feedback"),
-                      Navigator.push(
+                      createDialog(context)
+                      /*Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => new AppbarOtherPage(
                           generatePage: FeedbackPage(),
                           nameOfPage: "Feedback")
                         )
-                      )
+                      )*/
                     },
                     leading: new Icon(
                       Icons.feedback,

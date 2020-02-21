@@ -100,155 +100,151 @@ class _FoodItemState extends State<FoodItem> {
 
   createDialog(BuildContext context) {
     return showDialog(context: context, builder: (context) {
-      return new SizedBox(
-        width: 450.0,
-        height: 100.0,
-        child: new Dialog(
-          //backgroundColor: Colors.red,
-          child: new Container(
-            constraints: BoxConstraints(
-              minWidth: double.infinity,
-            ),
-            child: new ListView(
-              children: <Widget>[
-                new SizedBox(
-                  height: 250.0,
-                  child: new FittedBox(
-                    fit: BoxFit.fill,
-                    child: new Image.asset(
-                      _finalFoodImage,
-                    ),
+      return new Dialog(
+        //backgroundColor: Colors.red,
+        child: new Container(
+          constraints: BoxConstraints(
+            minWidth: double.infinity,
+          ),
+          child: new ListView(
+            children: <Widget>[
+              new SizedBox(
+                height: 250.0,
+                child: new FittedBox(
+                  fit: BoxFit.fill,
+                  child: new Image.asset(
+                    _finalFoodImage,
                   ),
                 ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new Row(
-                    children: <Widget>[
-                      new Expanded(
-                        flex: 3,
-                          child: new Text(
-                          _finalFoodName,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 35.0,
-                            fontFamily: "Dosis",
-                            fontWeight: FontWeight.bold
-                          ),
+              ),
+              new Container(
+                margin: EdgeInsets.all(10.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Expanded(
+                      flex: 3,
+                        child: new Text(
+                        _finalFoodName,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 35.0,
+                          fontFamily: "Dosis",
+                          fontWeight: FontWeight.bold
                         ),
                       ),
-                      new Icon(
-                        Icons.brightness_1,
-                        color: Colors.green[400]
-                      ),
-                      new Icon(
-                        Icons.brightness_1,
-                        color: Colors.green[400]
-                      ),
-                      new Icon(
-                        Icons.brightness_1,
-                        color: Colors.green[400]
-                      ),
-                    ],
-                  ),
+                    ),
+                    new Icon(
+                      Icons.brightness_1,
+                      color: Colors.green[400]
+                    ),
+                    new Icon(
+                      Icons.brightness_1,
+                      color: Colors.green[400]
+                    ),
+                    new Icon(
+                      Icons.brightness_1,
+                      color: Colors.green[400]
+                    ),
+                  ],
                 ),
-                new Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      new Text(
-                        "Stall: " + _finalStallName,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontFamily: "Quicksand"
-                        )
-                      ),
-                      new Text(
-                        "Price: " + _finalFoodPrice,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontFamily: "Quicksand"
-                        )
-                      ),
-                      new Text(
-                        "Rating: " + _finalTrafficRating,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontFamily: "Quicksand"
-                        )
-                      ),
-                    ],
-                  ),
-                ),
-                new Container(
-                  margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
-                  child: new Row(
-                    children: <Widget>[
-                      new Icon(
-                        Icons.fastfood
-                      ),
-                      new Container(
-                        margin: EdgeInsets.only(left: 10.0),
-                        child: new Text(
-                          'Ingredients'
-                        )
+              ),
+              new Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Text(
+                      "Stall: " + _finalStallName,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: "Quicksand"
                       )
-                    ],
-                  ),
-                ),
-                new Divider(
-                  color: Colors.black,
-                  thickness: 2.0 
-                ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget> [
-                      new Text("Ingredient 1"),
-                      new Text("Ingredient 2"),
-                      new Text("Ingredient 3"),
-                      new Text("Ingredient 4"),
-                      new Text("Ingredient 5"),
-                    ],
-                  )
-                ),
-                new Container(
-                  margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
-                  child: new Row(
-                    children: <Widget>[
-                      new Icon(
-                        Icons.local_convenience_store
-                      ),
-                      new Container(
-                        margin: EdgeInsets.only(left: 10.0),
-                        child: new Text(
-                          'Allergens'
-                        )
+                    ),
+                    new Text(
+                      "Price: " + _finalFoodPrice,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: "Quicksand"
                       )
-                    ],
-                  ),
+                    ),
+                    new Text(
+                      "Rating: " + _finalTrafficRating,
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: "Quicksand"
+                      )
+                    ),
+                  ],
                 ),
-                new Divider(
-                  color: Colors.black,
-                  thickness: 2.0 
+              ),
+              new Container(
+                margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Icon(
+                      Icons.fastfood
+                    ),
+                    new Container(
+                      margin: EdgeInsets.only(left: 10.0),
+                      child: new Text(
+                        'Ingredients'
+                      )
+                    )
+                  ],
                 ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget> [
-                      new Text("Ingredient 1"),
-                      new Text("Ingredient 2"),
-                      new Text("Ingredient 3"),
-                      new Text("Ingredient 4"),
-                      new Text("Ingredient 5"),
-                    ],
-                  )
+              ),
+              new Divider(
+                color: Colors.black,
+                thickness: 2.0 
+              ),
+              new Container(
+                margin: EdgeInsets.all(10.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget> [
+                    new Text("Ingredient 1"),
+                    new Text("Ingredient 2"),
+                    new Text("Ingredient 3"),
+                    new Text("Ingredient 4"),
+                    new Text("Ingredient 5"),
+                  ],
+                )
+              ),
+              new Container(
+                margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Icon(
+                      Icons.local_convenience_store
+                    ),
+                    new Container(
+                      margin: EdgeInsets.only(left: 10.0),
+                      child: new Text(
+                        'Allergens'
+                      )
+                    )
+                  ],
                 ),
-              ],
-            ),
-          )
+              ),
+              new Divider(
+                color: Colors.black,
+                thickness: 2.0 
+              ),
+              new Container(
+                margin: EdgeInsets.all(10.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget> [
+                    new Text("Ingredient 1"),
+                    new Text("Ingredient 2"),
+                    new Text("Ingredient 3"),
+                    new Text("Ingredient 4"),
+                    new Text("Ingredient 5"),
+                  ],
+                )
+              ),
+            ],
+          ),
         )
       );
     }

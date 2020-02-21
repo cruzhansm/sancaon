@@ -39,6 +39,7 @@ dynamic canteenTemplate() {
     'Cafe+'];
 
   int indexCanteen = 0;
+  final numberOfCanteens = 5;
 
   List<Widget> listOfNewCanteens() {
     List<Widget> addCanteen = new List();
@@ -67,7 +68,7 @@ dynamic canteenTemplate() {
       ),
     ));
 
-    while(indexCanteen <= 5) {
+    while(indexCanteen <= numberOfCanteens) {
       addCanteen.add(new NewCanteen(
         canteenName: canteenName[indexCanteen],
         canteenImage: imageName[indexCanteen],
@@ -85,31 +86,38 @@ class HomeOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new SafeArea(
-      child: new ListView(
-        children: canteenTemplate()),
+      child: new Container(
+        color: Colors.black,
+        child: new ListView(
+          children: canteenTemplate()),
+      ),
     );
   }
 }
 
-dynamic shopeeContent() {
+dynamic shopeeContent(String canteenName) {
   int indexCanteen = 0;
 
   List<String> foodImages = [
     'assets/images/canteen-menu/food1.jpg',
     'assets/images/canteen-menu/food2.jpg',
-    'assets/images/canteen-menu/food3.jpg',
+    'assets/images/canteen-menu/food2.jpg',
     'assets/images/canteen-menu/food4.jpg',
     'assets/images/canteen-menu/food5.jpg',
     'assets/images/canteen-menu/food6.jpg',
     'assets/images/canteen-menu/food7.jpg',
     'assets/images/canteen-menu/food8.jpg',
-    'assets/images/canteen-menu/food9.jpg'
+    'assets/images/canteen-menu/food9.jpg',
+    'assets/images/canteen-menu/food8.jpg',
   ];
+
+  final int previewItems = 10;
 
   List<Widget> listNewShopeeStyle() {
     List<Widget> newCanteenObj = new List();
-      while(indexCanteen <= 7){
-        indexCanteen == 7 ? newCanteenObj.add(new SeeMoreShopee()) : newCanteenObj.add(new ShopeeStyle(foodImage: foodImages[indexCanteen]));
+      while(indexCanteen <= previewItems){
+        indexCanteen == 10 ? newCanteenObj.add(new SeeMoreShopee(newCanteen: canteenName,)) : 
+                            newCanteenObj.add(new ShopeeStyle(foodImage: foodImages[indexCanteen]));
         indexCanteen++;
       }
       return newCanteenObj;
@@ -127,8 +135,16 @@ class NewCanteen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+      margin: canteenName == 'Cafe+' ? EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 20.0) : 
+                                       EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
       child: new Container(  
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 1.0,
+            color: Colors.white12
+          ),
+          borderRadius: BorderRadius.circular(15.0)
+        ),
         child: new ClipRRect(
           borderRadius: BorderRadius.circular(15.0),
           child: new Column(
@@ -170,7 +186,7 @@ class NewCanteen extends StatelessWidget {
                     ),
                     new RaisedButton(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)
+                        borderRadius: BorderRadius.circular(20.0)
                       ),
                       onPressed: () => {
                         print("Open " + canteenName),
@@ -185,16 +201,16 @@ class NewCanteen extends StatelessWidget {
                       },
                       color: Colors.lightBlue[300],
                       child: new Text("Open Canteen")
-                      )
+                    )
                   ],
                 ),
               ),
               new SizedBox(
-                height: 100.0,
+                height: 50.0,
                 width: double.infinity,
                 child: new ListView(
                   scrollDirection: Axis.horizontal,
-                  children: shopeeContent()
+                  children: shopeeContent(canteenName)
                 )
               )
             ],
@@ -218,7 +234,7 @@ class _ShopeeStyleState extends State<ShopeeStyle> {
   @override
   Widget build(BuildContext context) {
     return new SizedBox(
-      width: 100.0,
+      width: 50.0,
       child: new FittedBox(
         fit: BoxFit.fill,
         child: new Container(
@@ -232,6 +248,10 @@ class _ShopeeStyleState extends State<ShopeeStyle> {
 }
 
 class SeeMoreShopee extends StatefulWidget {
+  final String newCanteen;
+
+  SeeMoreShopee({this.newCanteen});
+
   @override
   _SeeMoreShopeeState createState() => _SeeMoreShopeeState();
 }
@@ -239,18 +259,43 @@ class SeeMoreShopee extends StatefulWidget {
 class _SeeMoreShopeeState extends State<SeeMoreShopee> {
   @override
   Widget build(BuildContext context) {
-    return new FittedBox(
-      fit: BoxFit.fill,
+    return new SizedBox(
+      width: 50.0,
       child: new Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 5.0
-          )
-        ),
-        child: new Image.asset(
-          'assets/images/home/test.png'
-        ),
-      )
+        color: Colors.black,
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new InkWell(
+              onTap: () => {
+                print("Open " + widget.newCanteen),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                    generatePage: new CanteenMenu(
+                      nameOfCanteen: widget.newCanteen,
+                    )
+                  )
+                  )
+                )
+              },
+              child: new Icon(
+                Icons.keyboard_arrow_right,
+                color: Colors.white,
+                size: 30.0
+              )
+            ),
+            new Text(
+              "See More",
+              style: TextStyle(
+                fontSize: 8.0,
+                fontFamily: "Quicksand",
+                color: Colors.white,
+                height: 0.5
+              ))
+          ],
+        )
+      ),
     );
   }
 }
