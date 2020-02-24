@@ -1,0 +1,62 @@
+[
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Cheese Sandwich",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱49.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chorizo",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱49.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chili Ground Pork",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱49.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Garlic Spam",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Cheezy Tuna",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Humba Rice",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Caldereta",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Spaghetti w/ Garlic Bread",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Lasagna w/ Garlic Bread",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱99.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tuna Melt Sandwich",
+    "stall_name" : "Cafe Plus Coffee Shop",
+    "price" : "₱99.00"
+  }
+]

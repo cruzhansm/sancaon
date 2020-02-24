@@ -37,5 +37,47 @@
     "food_name" : "Brownies",
     "stall_name" : "Jolly Bubbly Food Court",
     "price" : "₱20.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sisigsilog",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Siomai",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : [
+      "₱7.00",
+      "₱20.00"
+    ]
+  },
+  {
+    "hasOtherSizes": true,
+    "food_name" : "Sweet Corn",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : [
+      "₱20.00",
+      "₱30.00"
+    ]
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tosilog",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : "₱.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "",
+    "stall_name" : "Kiara Loraine FoodHaus",
+    "price" : "₱.00"
   }
 ]

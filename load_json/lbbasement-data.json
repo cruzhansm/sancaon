@@ -1,0 +1,62 @@
+[
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sigsilog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Corn Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Steam Rice w/ Siomai",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱40.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tapa Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Toci Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tuna Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Long Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Ham Silog",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Pork Chop",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱50.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chicken Fillet",
+    "stall_name" : "Rich Bros (Chicos)",
+    "price" : "₱45.00"
+  }
+]
