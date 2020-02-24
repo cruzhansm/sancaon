@@ -75,7 +75,8 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
         currentIndex: _page,
         items: [
           new BottomNavigationBarItem(
-            icon: new Icon(OMIcons.feedback),
+            icon: new Icon(
+              OMIcons.feedback,),
             title: new Text("Feedback")
           ),
           new BottomNavigationBarItem(

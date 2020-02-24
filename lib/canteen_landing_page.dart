@@ -18,49 +18,14 @@ dynamic foodItemContent(String nameOfCanteen) {
   
   List<Widget> listOfFood() {
     List<Widget> foodItem = new List();
-    foodItem.add(new Center(
-      child: new Container(
-        constraints: BoxConstraints(
-          minWidth: double.infinity
-        ),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            new Text(canteenNames[nameOfCanteen],
-              style: TextStyle(
-              fontFamily: "Bebas-Neue",
-              fontSize: 85.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 5.0,
-              //color: Colors.green[400]
-              )
-            ),
-            new Container(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: new Text("FOOD MENU",//widget.nameOfCanteen.toUpperCase(),
-                style: TextStyle(
-                fontFamily: "Quicksand",
-                fontSize: 25.0,
-                height: 0.2,
-                //color: Colors.yellow[800]
-                )
-              ),
-            )
-          ],
-        )
-      )
-    ));
-
     while(foodItemCount <= numberOfFoodItems - 1) {
       foodItem.add(new FoodItem(
         foodName: newData.nameOfFood[foodItemCount],
-        foodName2: newData.nameOfFood[foodItemCount+1],
         foodImage: newData.imageOfFood[newData.nameOfFood[foodItemCount]],
-        foodImage2: newData.imageOfFood[newData.nameOfFood[foodItemCount+1]],
         foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
-        foodPrice2: newData.priceOfFood[newData.nameOfFood[foodItemCount+1]],
+        stallName: "Jamille's Food Choice",        
       ));
-      foodItemCount+=2;
+      foodItemCount++;
     }
       return foodItem;
     }
@@ -68,6 +33,119 @@ dynamic foodItemContent(String nameOfCanteen) {
 }
 
 class CanteenMenu extends StatelessWidget {
+  final String nameOfCanteen;
+
+  CanteenMenu({this.nameOfCanteen});
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      child: Stack(
+        children: <Widget>[
+          new SizedBox(
+                width: double.infinity,
+                child: new Image.asset(
+                  'assets/images/home/canteen.jpg'
+                )
+          ),
+          new Container(
+            color: Colors.black12,
+            margin: EdgeInsets.fromLTRB(25.0, 175.0, 0.0, 0.0),
+            child: new Text(
+              nameOfCanteen,
+              style: TextStyle(
+                fontSize: 30.0,
+                fontFamily: "Dosis",
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+              ))
+          ),
+          new Container(
+            margin: EdgeInsets.only(top:220),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.white,
+            ),
+            child: new ListView(
+              padding: EdgeInsets.only(top: 10.0),
+              children: foodItemContent(nameOfCanteen)
+            )
+          )
+        ]
+      )
+    );
+  }
+}
+
+class FoodItem extends StatelessWidget {
+  final String foodName;
+  final double foodPrice;
+  final String foodImage;
+  final String stallName;
+  
+  FoodItem({this.foodName, this.foodPrice, this.foodImage, this.stallName});
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      margin: EdgeInsets.symmetric(vertical: 2.5, horizontal: 20.0),
+      child: new Card(
+        elevation: 8.0,
+        color: Colors.grey[100],
+        child: new Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new Container(
+              margin: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+              child: new SizedBox(
+                height: 75.0,
+                width: 75.0,
+                child: FittedBox(
+                  fit: BoxFit.fill,
+                  child: new Image.asset(
+                    foodImage
+                  )
+                )
+              ),
+            ),
+            new Expanded(
+              child: new Container(
+                margin: EdgeInsets.all(10.0),
+                child: new Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    new Text(
+                      foodName,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
+                      )
+                    ),
+                    new Text(
+                      stallName
+                    ),
+                    new Text(
+                      "Price: " + foodPrice.toString(),
+                      style: TextStyle(
+                        color: Colors.red
+                      )
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
+      ),
+    );
+  }
+}
+
+// T0DO: LOOPING OF FOODITEM
+
+
+/*class CanteenMenu extends StatelessWidget {
   final String nameOfCanteen;
 
   CanteenMenu({this.nameOfCanteen});
@@ -364,4 +442,4 @@ class _FoodItemState extends State<FoodItem> {
       ),
     );
   }
-}
+}*/
