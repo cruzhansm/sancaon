@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sancaon/predef_appbar_other.dart';
 import 'canteen_landing_page.dart';
-import 'predef_widget.dart';
+import 'predef_appbar_other.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MainWidget(
-      generatePage: HomeOverview(),
-    );
+    return new HomeOverview();
   }
 }
 
@@ -87,7 +84,7 @@ class HomeOverview extends StatelessWidget {
   Widget build(BuildContext context) {
     return new SafeArea(
       child: new Container(
-        color: Colors.black,
+        //color: Colors.black,
         child: new ListView(
           children: canteenTemplate()),
       ),
@@ -140,8 +137,8 @@ class NewCanteen extends StatelessWidget {
       child: new Container(  
         decoration: BoxDecoration(
           border: Border.all(
-            width: 1.0,
-            color: Colors.white12
+            width: 0.5,
+            color: Colors.grey
           ),
           borderRadius: BorderRadius.circular(15.0)
         ),
@@ -160,7 +157,7 @@ class NewCanteen extends StatelessWidget {
               ),
               new Container(
                 padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
-                color: Colors.black,
+                //color: Colors.black,
                 child: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -172,35 +169,44 @@ class NewCanteen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 25.0,
                             fontFamily: "Dosis",
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
+                            //fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           )
                         ),
                         new Text(
                           "Swipe for more samples",
                           style: TextStyle(
                             fontSize: 12.0,
-                            color: Colors.white
+                            //color: Colors.white
                           ))
                       ],
                     ),
-                    new RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0)
-                      ),
-                      onPressed: () => {
+                    new InkWell(
+                      onTap: () => {
                         print("Open " + canteenName),
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                            generatePage: new CanteenMenu(
-                              nameOfCanteen: canteenName
-                            ),
+                            generatePage: new CanteenMenu(nameOfCanteen: canteenName),
                           ))
-                        )
+                        ),
                       },
-                      color: Colors.lightBlue[300],
-                      child: new Text("Open Canteen")
+                      child: new Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1.0,
+                            color: Colors.lightGreen[300]
+                          ),
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white
+                        ),
+                        padding: EdgeInsets.all(10.0),
+                        child: new Text(
+                          "Open Canteen",
+                          style: TextStyle(
+                            color: Colors.black
+                          )),
+                      )
                     )
                   ],
                 ),

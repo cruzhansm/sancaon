@@ -80,7 +80,7 @@ class _MainWidgetState extends State<MainWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           new Text(
-                            "Sa'nCao",
+                            "Sa'nCaon",
                             style: TextStyle(
                               fontSize: 60.0,
                               fontFamily: "Dosis",
@@ -154,13 +154,6 @@ class _MainWidgetState extends State<MainWidget> {
                     onTap: () => {
                       print("Open Feedback"),
                       createDialog(context)
-                      /*Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: FeedbackPage(),
-                          nameOfPage: "Feedback")
-                        )
-                      )*/
                     },
                     leading: new Icon(
                       Icons.feedback,
@@ -188,8 +181,7 @@ class _MainWidgetState extends State<MainWidget> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: HelpPage(),
-                          nameOfPage: "Help")
+                          generatePage: HelpPage())
                         )
                       )
                     },
@@ -219,8 +211,7 @@ class _MainWidgetState extends State<MainWidget> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: AboutPage(),
-                          nameOfPage: "About")
+                          generatePage: AboutPage())
                         )
                       )
                     },

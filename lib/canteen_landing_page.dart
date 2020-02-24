@@ -74,7 +74,11 @@ class CanteenMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: foodItemContent(nameOfCanteen));
+    return new MaterialApp(
+      home: new Scaffold(
+        body: ListView(children: foodItemContent(nameOfCanteen))
+      )
+    );
   }
 }
 class FoodItem extends StatefulWidget {

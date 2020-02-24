@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'home.dart';
+import 'predef_appbar_other.dart';
 
 class StartUp extends StatefulWidget {
 
@@ -54,7 +55,9 @@ class _StartUpState extends State<StartUp> {
           color: newColor,
         ),
       ),
-      navigateAfterSeconds: Home(),
+      navigateAfterSeconds: new AppbarOtherPage(
+        generatePage: Home()
+      ),
       loadingText: new Text(
         loadText,
         style: TextStyle(
