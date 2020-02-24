@@ -1,32 +1,41 @@
 [
   {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
+    "hasOtherSizes": true,
+    "food_name" : "Ice Scramble",
+    "stall_name" : "Jolly Bubbly Food Court",
+    "price" : [
+      "₱10.00",
+      "₱15.00",
+      "₱20.00"
+      ]
   },
   {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
+    "hasOtherSizes": true,
+    "food_name" : "Ice Cream",
+    "stall_name" : "Jolly Bubbly Food Court",
+    "price" : [
+      "₱15.00",
+      "₱25.00",
+      "₱20.00",
+      "₱30.00"
+    ]
   },
   {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
+    "hasOtherSizes": false,
+    "food_name" : "Hotdog Sandwich",
+    "stall_name" : "Jolly Bubbly Food Court",
+    "price" : "₱20.00"
   },
   {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
+    "hasOtherSizes": false,
+    "food_name" : "Siomai",
+    "stall_name" : "Jolly Bubbly Food Court",
+    "price" : "₱7.00"
   },
   {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
-  },
-  {
-    "food_name" : "",
-    "stall_name" : "",
-    "price" : "₱"
+    "hasOtherSizes": false,
+    "food_name" : "Brownies",
+    "stall_name" : "Jolly Bubbly Food Court",
+    "price" : "₱20.00"
   }
 ]
