@@ -71,37 +71,49 @@ class _MemberInfoState extends State<MemberInfo> {
       controller: memberPageController,
       scrollDirection: Axis.vertical,
       children: <Widget>[
+        new Column(
+          children: <Widget>[
+            new Image.asset("assets/images/credits/Serious.jpg"),
+            new Image.asset("assets/images/credits/Candid.jpg")
+          ],
+        ),
         new Member(
+          memberImage: "assets/images/credits/Hans.jpg",
           memberCell: " +639473609391",
           memberName: "Hans Maco V. Cruz",
           memberEmail: " cruzhansm@gmail.com",
           memberPosition: "Lead Developer, Team Leader"
         ),
         new Member(
+            memberImage: "assets/images/credits/Danica.jpg",
           memberCell: " +639473609391",
           memberName: "Danica Marie A. Dumalagan",
           memberEmail: " ddumalagan91@gmail.com",
           memberPosition: "Assistant Team Leader"
         ),
         new Member(
+            memberImage: "assets/images/credits/Antoine.jpg",
           memberCell: " +639473609391",
           memberName: "Antoine Federico P. Godinez",
           memberEmail: " godinezantoine31@gmail.com",
           memberPosition: "Documentation"
         ),
         new Member(
+            memberImage: "assets/images/credits/Jamille.jpg",
           memberCell: " +639473609391",
           memberName: "Jamille Ashley Y. Malnegro",
           memberEmail: " jashbeautiful@gmail.com",
           memberPosition: "User Interface Design"
         ),
         new Member(
+            memberImage: "assets/images/credits/Mabby.jpg",
           memberCell: " +639473609391",
           memberName: "Rose Mabelle C. Seares",
           memberEmail: " rosemabelleseares@gmail.com",
           memberPosition: "User Interface Design"
         ),
         new Member(
+            memberImage: "assets/images/credits/Uayan.jpg",
           memberCell: " +639473609391",
           memberName: "Lorenzo Gabriel C. Uayan",
           memberEmail: " paradoxictime@gmail.com",
@@ -120,8 +132,9 @@ class Member extends StatefulWidget {
   final String memberEmail;
   final String memberPosition;
   final String memberDetail;
+  final String memberImage;
 
-  Member({this.memberCell, this.memberName, this.memberEmail, this.memberPosition, this.memberDetail});
+  Member({this.memberCell, this.memberName, this.memberEmail, this.memberPosition, this.memberDetail, this.memberImage});
 
   @override
   _MemberState createState() => _MemberState();
@@ -185,7 +198,7 @@ class _MemberState extends State<Member> {
         new Container(
           margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 20.0),
           child: new Image.asset(
-            'assets/images/home/test.png',
+            widget.memberImage,
             width: 200.0,
           ),
         ),
