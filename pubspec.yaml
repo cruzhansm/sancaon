@@ -17,6 +17,8 @@ environment:
   sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
+  outline_material_icons: ^0.1.1
+  curved_navigation_bar: ^0.3.2
   url_launcher: ^5.4.1 
   flutter:
     sdk: flutter
@@ -44,11 +46,15 @@ flutter:
   assets:
     - assets/images/home/
     - assets/images/credits/
+    - assets/images/canteen-menu/
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+#  assets:
+#   - images/a_dot_burr.jpeg
+#   - images/a_dot_ham.jpeg
+#   - images/burger.jpg
+#   - images/leaf.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -72,6 +78,10 @@ flutter:
   - family: ZhiMangXing
     fonts:
       - asset: fonts/ZhiMangXing-Regular.ttf
+  - family: NotoSans
+    fonts:
+      - asset: fonts/NotoSans-Bold.ttf
+      - asset: fonts/NotoSans-Regular.ttf
   - family: Comfortaa
     fonts:
       - asset: fonts/Comfortaa-Regular.ttf

@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FeedbackPage extends StatelessWidget {
+
+  _launchURL() async {
+    const url = 'https://forms.gle/CDtimqwa24JZqpUn9';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } 
+    else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      margin: EdgeInsets.only(top: 150.0),
-      constraints: BoxConstraints(
-        minWidth: double.infinity
-      ),
-      //color: Colors.red,
-      child: new Column(
+    return new Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Container(
@@ -31,7 +39,7 @@ class FeedbackPage extends StatelessWidget {
                       new Text(
                         'Send us some feedback!',
                         style: TextStyle(
-                          fontSize: 25.0,
+                          fontSize: 23.0,
                           fontFamily: "Quicksand",
                           fontWeight: FontWeight.bold
                         )
@@ -59,7 +67,10 @@ class FeedbackPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new InkWell(
-                        onTap: () => print("Redirect to google forms"),
+                        onTap: () => {
+                          print("Redirect to google forms"),
+                          _launchURL()
+                        },
                         child: new Container(
                           margin: EdgeInsets.only(bottom: 10.0),
                           padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 5.0),
@@ -88,7 +99,6 @@ class FeedbackPage extends StatelessWidget {
             )
           )
         ],
-      )
     );
   }
 }

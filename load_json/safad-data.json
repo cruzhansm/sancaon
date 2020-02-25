@@ -1,0 +1,332 @@
+[
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chicken Cordon Bleu",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱56.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Fish Fillet",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱53.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Crispy Kangkong",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱30.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Breaded Porkchop",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱53.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chicken Skin",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱53.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Breaded Chicken",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱53.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Dynamite",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱28.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chicken Strips",
+    "stall_name" : "Panlasang Pinoy",
+    "price" : "₱53.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Rice (Beef/Chicken)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱70.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Rice (Shrimp)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱85.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Wrap (Beef/Chicken)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱65.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Wrap (Shrimp)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱85.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Noodle (Beef/Chicken)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱70.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Shawarma Noodle (Shrimp)",
+    "stall_name" : "Leylam Shawarma",
+    "price" : "₱85.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Lumpia Shanghai",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱20.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Bola-Bola (Meatballs)",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱10.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Porkchop",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱50.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chicken Curry",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱45.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tortang Talong",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱25.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Pinakbet",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱25.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Monggos Soup",
+    "stall_name" : "Patrick's Kitchen / MK Burgeran",
+    "price" : "₱25.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chorizo Chow Fan",
+    "stall_name" : "My Own Recipe (MORE)",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Spam Chow Fan",
+    "stall_name" : "My Own Recipe (MORE)",
+    "price" : "₱65.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Mighty Meaty Sandwich",
+    "stall_name" : "My Own Recipe (MORE)",
+    "price" : "₱55.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tuna Sandwich",
+    "stall_name" : "My Own Recipe (MORE)",
+    "price" : "₱45.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sisig Chow Fan",
+    "stall_name" : "My Own Recipe (MORE)",
+    "price" : "₱69.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Fast Chix",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱100.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tiktilaok Sarap",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱100.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sarap My Liempo",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱100.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Fast Liempo",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱75.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Fast-OMG",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱100.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Rice to the Top",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱105.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Quarter Chicken",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱85.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Half Chicken",
+    "stall_name" : "Tiktilaok",
+    "price" : "₱140.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sisig",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱50.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "BBQ On Stick",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱23.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Baconbits",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱45.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Hotdog Meal",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱45.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Cheesedog with Buns",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱?.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "BBQ Meal",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱50.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Hotdog with Bun",
+    "stall_name" : "Hotdog On Stick",
+    "price" : "₱?.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Siomai",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱8.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Siopao",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱20.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chickenette",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱45.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Carbonara",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱30.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Pork Steak",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱35.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Mechado",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱35.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Paliya Guisado",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱20.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Chopsuey",
+    "stall_name" : "K&K Ice Kreeme",
+    "price" : "₱20.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Sisig Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Corn Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Long Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Ham Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Tuna Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  },
+  {
+    "hasOtherSizes": false,
+    "food_name" : "Hot Silog",
+    "stall_name" : "Kiara Loraine Food Haus ",
+    "price" : "₱60.00"
+  }
+]

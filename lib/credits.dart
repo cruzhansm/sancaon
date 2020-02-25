@@ -92,29 +92,25 @@ class _MemberInfoState extends State<MemberInfo> {
           memberPosition: "Assistant Team Leader"
         ),
         new Member(
-            memberImage: "assets/images/credits/Antoine.jpg",
-          memberCell: " +639473609391",
+          memberCell: " +639667080139",
           memberName: "Antoine Federico P. Godinez",
-          memberEmail: " godinezantoine31@gmail.com",
+          memberEmail: " godinezantoine13@gmail.com",
           memberPosition: "Documentation"
         ),
         new Member(
-            memberImage: "assets/images/credits/Jamille.jpg",
-          memberCell: " +639473609391",
+          memberCell: " +639266377699",
           memberName: "Jamille Ashley Y. Malnegro",
           memberEmail: " jashbeautiful@gmail.com",
           memberPosition: "User Interface Design"
         ),
         new Member(
-            memberImage: "assets/images/credits/Mabby.jpg",
-          memberCell: " +639473609391",
+          memberCell: " +639222111501",
           memberName: "Rose Mabelle C. Seares",
           memberEmail: " rosemabelleseares@gmail.com",
           memberPosition: "User Interface Design"
         ),
         new Member(
-            memberImage: "assets/images/credits/Uayan.jpg",
-          memberCell: " +639473609391",
+          memberCell: " +639185565745",
           memberName: "Lorenzo Gabriel C. Uayan",
           memberEmail: " paradoxictime@gmail.com",
           memberPosition: "Documentation"

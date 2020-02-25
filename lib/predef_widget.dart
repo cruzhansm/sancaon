@@ -27,6 +27,14 @@ class _MainWidgetState extends State<MainWidget> {
     }
   }
 
+  createDialog(BuildContext context) {
+    showDialog(context: context, builder: (context) {
+      return new Dialog(
+        child: FeedbackPage()
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -145,13 +153,7 @@ class _MainWidgetState extends State<MainWidget> {
                   new ListTile(
                     onTap: () => {
                       print("Open Feedback"),
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: FeedbackPage(),
-                          nameOfPage: "Feedback")
-                        )
-                      )
+                      createDialog(context)
                     },
                     leading: new Icon(
                       Icons.feedback,
@@ -179,8 +181,7 @@ class _MainWidgetState extends State<MainWidget> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: HelpPage(),
-                          nameOfPage: "Help")
+                          generatePage: HelpPage())
                         )
                       )
                     },
@@ -210,8 +211,7 @@ class _MainWidgetState extends State<MainWidget> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                          generatePage: AboutPage(),
-                          nameOfPage: "About")
+                          generatePage: AboutPage())
                         )
                       )
                     },

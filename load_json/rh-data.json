@@ -1,0 +1,52 @@
+[
+  {
+    "food_name" : "Pork Tocino",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Fried Pork (chopped)",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Chicken Strips",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Sinugba Baboy",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Chopsuey",
+    "stall_name" : "",
+    "price" : "₱15.00"
+  },
+  {
+    "food_name" : "Lomi",
+    "stall_name" : "",
+    "price" : "₱20.00"
+  },
+  {
+    "food_name" : "Pork Humba",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Bicol Express",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Pork Sisig",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  },
+  {
+    "food_name" : "Chicken Adobo",
+    "stall_name" : "",
+    "price" : "₱35.00"
+  }
+]
