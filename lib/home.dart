@@ -17,7 +17,8 @@ dynamic canteenTemplate() {
       'assets/images/home/canteen4.jpg',
       'assets/images/home/canteen5.jpg',
       'assets/images/home/canteen6.jpg'
-      ];
+  ];
+  
   List<String> locationCanteen = [
     'Lawrence Bunzel Building',
     'Lawrence Bunzel Building',
@@ -33,7 +34,8 @@ dynamic canteenTemplate() {
     'SMED Canteen',
     'RH Canteen',
     'SAFAD Canteen',
-    'Cafe+'];
+    'Cafe+'
+  ];
 
   int indexCanteen = 0;
   final numberOfCanteens = 5;
@@ -183,11 +185,13 @@ class NewCanteen extends StatelessWidget {
                     ),
                     new InkWell(
                       onTap: () => {
-                        print("Open " + canteenName),
+                        debugPrint("Open " + canteenName),
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                            generatePage: new CanteenMenu(nameOfCanteen: canteenName),
+                            generatePage: new CanteenMenu(
+                              nameOfCanteen: canteenName,
+                              locationOfCanteen: canteenLocation,),
                           ))
                         ),
                       },

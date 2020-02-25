@@ -7,7 +7,7 @@ import 'credits.dart';
 import 'home.dart';
 
 class AppbarOtherPage extends StatefulWidget {
-  Widget generatePage;
+  final Widget generatePage;
 
   AppbarOtherPage({this.generatePage});
 
@@ -16,6 +16,8 @@ class AppbarOtherPage extends StatefulWidget {
 }
 
 class _AppbarOtherPageState extends State<AppbarOtherPage> {
+
+  Widget generatePage;
   
   createDialog(BuildContext context){
     showDialog(context: context, builder: (context){
@@ -24,7 +26,6 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
       );
     });
   }
-
 
   List<Widget> newPage = [
     null,
@@ -106,7 +107,7 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
                AppbarOtherPage(generatePage: Home())), (Route<dynamic> route) => false);
             }
             else {
-              widget.generatePage = newPage[index];
+              generatePage = newPage[index];
               _selectedItemColor = newColor[index];
               _page = index;
             }
@@ -195,7 +196,7 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
           ]),
           shape: CircularNotchedRectangle(),
       ),*/*/,
-      body: widget.generatePage,
+      body: generatePage == null ? widget.generatePage : generatePage
     );
   }
 }
