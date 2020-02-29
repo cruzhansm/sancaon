@@ -21,7 +21,7 @@ class SMEDStalls {
         foodName: "Hotdog Sandwich",
         foodPrice: 20.0,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Jolly_Bubbly_Food_Court/jolly2.jpg",
         rating: "green",
         foodIngredients: [
           "Buns (Bread)",
@@ -163,7 +163,7 @@ class SMEDStalls {
         foodName: "Fast Chix",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok1.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -180,7 +180,7 @@ class SMEDStalls {
         foodName: "Fast Liempo",
         foodPrice: 75.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok3.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -197,7 +197,7 @@ class SMEDStalls {
         foodName: "Fast - OMG",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok6.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -233,7 +233,7 @@ class SMEDStalls {
         foodName: "Quarter Chicken",
         foodPrice: 85.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok4.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -267,7 +267,7 @@ class SMEDStalls {
         foodName: "Sarap my Liempo",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok5.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
