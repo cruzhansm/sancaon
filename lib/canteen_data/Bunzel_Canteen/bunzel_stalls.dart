@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelStalls {  
+  //Izza's Snack Haus
   FoodStall bunzelCS1 = new FoodStall(
     indexedFoodList: {
       1: new FoodItem(
@@ -40,7 +41,7 @@ class BunzelStalls {
         ]
       ),
       3: new FoodItem(
-        foodName: "Burger Egg & Cheese",
+        foodName: "Burger with Egg & Cheese",
         foodPrice: 38.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
@@ -98,10 +99,11 @@ class BunzelStalls {
     }
   );
 
-  FoodStall bunzelCS2 = new FoodStall( // TODO: special option = many sizes/portions of food
+//MK Burgeran Food Stand
+  FoodStall bunzelCS2 = new FoodStall( 
     indexedFoodList: {
       1: new FoodItem(
-        foodName: "Burger Egg & Cheese",
+        foodName: "Burger Egg & Cheese",  
         hasManyOptions: true,
         manyPrices: [
           20.0,
@@ -112,68 +114,75 @@ class BunzelStalls {
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Patty (Beef)",
+          "Bun (Bread)",
           "Cheese",
           "Egg",
-          "Bun (Bread)"
+          "Patty (Beef)"
         ],
         foodAllergens: [
-          "Eggs",
           "Cheese",
-          "Beef"
+          "Beef",
+          "Eggs"
         ]
       ),
       2: new FoodItem(
-        foodName: "Burger Steak",
-        foodPrice: 35.00,
-        hasManyOptions: false,
+        foodName: "Hotdog Cheesezy King",
+        hasManyOptions: true,
+        manyPrices: [
+          22.0,
+          28.0
+        ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Ground Pork",
-          "Flour",
-          "Breadcrumbs",
-          "Eggs"
+          "Cheese",
+          "Iodized Salt",
+          "Poultry Meat",
+          "Starch"
         ],
         foodAllergens: [
-          "Eggs"
+          "Cheese",
+          "Poultry Meat"
         ]
       ),
       3: new FoodItem(
-        foodName: "Burger Steak",
-        foodPrice: 35.00,
-        hasManyOptions: false,
+        foodName: "Jumbo Hotdog",
+        hasManyOptions: true,
+        manyPrices: [
+          15.0,
+          21.0
+        ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Ground Pork",
-          "Flour",
-          "Breadcrumbs",
-          "Eggs"
+          "Bread/bun",
+          "Hotdog",
+          "Ketchup",
+          "Mayonnaise"
         ],
-        foodAllergens: [
-          "Eggs"
-        ]
+        foodAllergens: null
       ),
       4: new FoodItem(
-        foodName: "Burger Steak",
-        foodPrice: 35.00,
-        hasManyOptions: false,
+        foodName: "Jumbo Long",
+        hasManyOptions: true,
+        manyPrices: [
+          17.0,
+          23.0
+        ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Ground Pork",
-          "Flour",
-          "Breadcrumbs",
-          "Eggs"
+          "Bread/bun",
+          "Hotdog",
+          "Ketchup",
+          "Mayonnaise"
         ],
-        foodAllergens: [
-          "Eggs"
-        ]
+        foodAllergens: null
       ),
     }
   );
 
+//Healthylicious
   FoodStall bunzelCS3 = new FoodStall(
       indexedFoodList: {
         1: new FoodItem(
@@ -320,9 +329,10 @@ class BunzelStalls {
           "Cheese"
         ]
       ),
-      }
-    );
+    }
+  );
 
+//Amboy's
   FoodStall bunzelCS4 = new FoodStall(
     indexedFoodList: {
       1 : new FoodItem(
@@ -477,304 +487,166 @@ class BunzelStalls {
     }
   );
 
+//Santino's
   FoodStall bunzelCS5 = new FoodStall(
       indexedFoodList: {
         1: new FoodItem(
-        foodName: "Banana Cake",
-        foodPrice: 25.00,
-        hasManyOptions: false,
+        foodName: "Bacon Sausage Bonanza",
+        hasManyOptions: true,
+        manyPrices: [
+          28.0,
+          120.0,
+          224.0
+        ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
         rating: "green",
         foodIngredients: [
-          "Banana Mixture"
-        ],
-        foodAllergens: null
-      ),
-      2: new FoodItem(
-        foodName: "Champorado",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious9.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Cooked Rice",
-          "Tableya (Pure)",
-          "Brown Sugar"
-        ],
-        foodAllergens: null
-      ),
-      3: new FoodItem(
-        foodName: "Egg Pandesal",
-        foodPrice: 10.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious3.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Mango Flour",
-          "Scrambled Egg"
+          "Bacon",
+          "Bread",
+          "Cheese",
+          "Pork",
+          "Sausage",
+          "Tomato Sauce"
         ],
         foodAllergens: [
-          "Eggs"
+          "Cheese",
+          "Pork"
+        ]
+      ),
+      2: new FoodItem(
+        foodName: "Barbeque Beef Mushroom",
+        hasManyOptions: true,
+        manyPrices: [
+          28.0,
+          120.0,
+          224.0
+        ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Bread",
+          "Beef",
+          "Cheese",
+          "Mushroom",
+          "Pepper",
+          "Tomato Sauce"
+        ],
+        foodAllergens: [
+          "Beef",
+          "Cheese"
+        ]
+      ),
+      3: new FoodItem(
+        foodName: "Chicken Hawaiian",
+        hasManyOptions: true,
+        manyPrices: [
+          28.0,
+          120.0,
+          224.0
+        ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Bread",
+          "Cheese",
+          "Chicken",
+          "Mushroom",
+          "Pineapple",
+          "Tomato Sauce"
+        ],
+        foodAllergens: [
+          "Cheese",
+          "Chicken"
         ]
       ),
       4: new FoodItem(
-        foodName: "Ensaymada",
-        foodPrice: 31.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious8.jpg",
+        foodName: "Hawaiian Madness Supreme",
+        hasManyOptions: true,
+        manyPrices: [
+          28.0,
+          120.0,
+          224.0
+        ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
         rating: "green",
         foodIngredients: [
-          "Wheat",
-          "Flour",
-          "Yema",
-          "Ube Flavoring"
+          "Bread",
+          "Cheese",
+          "Ham",
+          "Pineapple",
+          "Tomato Sauce"
         ],
         foodAllergens: [
-          "Ube"
+          "Cheese"
         ]
       ),
       5: new FoodItem(
-        foodName: "Meatroll",
-        foodPrice: 25.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+        foodName: "Pepperoni Sorpresa",
+        hasManyOptions: true,
+        manyPrices: [
+          28.0,
+          120.0,
+          224.0
+        ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
         rating: "green",
         foodIngredients: [
-          "Mango Flour",
-          "Asado (Pork)",
-          "Hard-boiled Egg"
-        ],
-        foodAllergens: [
-          "Eggs"
-        ]
-      ),
-      6 : new FoodItem(
-        foodName: "Menudo",
-        foodPrice: 45.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Carrots",
-          "Potatoes",
-          "Onions",
-          "Garlic",
-          "Tomato sauce"
-        ],
-        foodAllergens: [
-          "Carrots",
+          "Bread",
+          "Cheese",
+          "Mushroom",
+          "Sausage",
           "Tomato Sauce"
-        ]
-      ),
-      7 : new FoodItem(
-        foodName: "Siopao",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Asado (Pork)",
-          "Bola-bola (Ground pork)",
-          "Chicken"
         ],
         foodAllergens: [
-          "Chicken"
-        ]
-      ),
-      8: new FoodItem(
-        foodName: "Special Biscocho",
-        foodPrice: 47.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious7.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Wheat",
-          "Flour",
-          "White Sugar"
-        ],
-        foodAllergens: null
-      ),
-      9: new FoodItem(
-        foodName: "Steamed Rice",
-        foodPrice: 40.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Rice"
-        ],
-        foodAllergens: null
-      ),
-      10: new FoodItem(
-        foodName: "Tuna Mini Pizza",
-        foodPrice: 25.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Cooked Tuna",
-          "Flour",
-          "Cheese"
-        ],
-        foodAllergens: [
-          "Tuna",
           "Cheese"
         ]
       ),
-      }
-    );
+    }
+  );
     
+//Franco's Tasty Treats Corner
   FoodStall bunzelCS6 = new FoodStall(
       indexedFoodList: {
         1: new FoodItem(
-        foodName: "Banana Cake",
-        foodPrice: 25.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Banana Mixture"
+        foodName: "Arrozacalodo",  
+        hasManyOptions: true,
+        manyPrices: [
+          20.0,
+          25.0
         ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        rating: "green",
+        foodIngredients: null
         foodAllergens: null
       ),
       2: new FoodItem(
-        foodName: "Champorado",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious9.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Cooked Rice",
-          "Tableya (Pure)",
-          "Brown Sugar"
+        foodName: "Burger with drink",  
+        hasManyOptions: true,
+        manyPrices: [
+          27.0,
+          28.0
         ],
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        rating: "green",
+        foodIngredients: null
         foodAllergens: null
       ),
       3: new FoodItem(
-        foodName: "Egg Pandesal",
-        foodPrice: 10.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious3.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Mango Flour",
-          "Scrambled Egg"
+        foodName: "Champurado",  
+        hasManyOptions: true,
+        manyPrices: [
+          20.0,
+          25.0
         ],
-        foodAllergens: [
-          "Eggs"
-        ]
-      ),
-      4: new FoodItem(
-        foodName: "Ensaymada",
-        foodPrice: 31.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious8.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Wheat",
-          "Flour",
-          "Yema",
-          "Ube Flavoring"
-        ],
-        foodAllergens: [
-          "Ube"
-        ]
-      ),
-      5: new FoodItem(
-        foodName: "Meatroll",
-        foodPrice: 25.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Mango Flour",
-          "Asado (Pork)",
-          "Hard-boiled Egg"
-        ],
-        foodAllergens: [
-          "Eggs"
-        ]
-      ),
-      6 : new FoodItem(
-        foodName: "Menudo",
-        foodPrice: 45.00,
-        hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Carrots",
-          "Potatoes",
-          "Onions",
-          "Garlic",
-          "Tomato sauce"
-        ],
-        foodAllergens: [
-          "Carrots",
-          "Tomato Sauce"
-        ]
-      ),
-      7 : new FoodItem(
-        foodName: "Siopao",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Asado (Pork)",
-          "Bola-bola (Ground pork)",
-          "Chicken"
-        ],
-        foodAllergens: [
-          "Chicken"
-        ]
-      ),
-      8: new FoodItem(
-        foodName: "Special Biscocho",
-        foodPrice: 47.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious7.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Wheat",
-          "Flour",
-          "White Sugar"
-        ],
+        foodIngredients: null
         foodAllergens: null
       ),
-      9: new FoodItem(
-        foodName: "Steamed Rice",
-        foodPrice: 40.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Rice"
-        ],
-        foodAllergens: null
-      ),
-      10: new FoodItem(
-        foodName: "Tuna Mini Pizza",
-        foodPrice: 25.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Cooked Tuna",
-          "Flour",
-          "Cheese"
-        ],
-        foodAllergens: [
-          "Tuna",
-          "Cheese"
-        ]
-      ),
-      }
-    );
+    }
+  );
     
+//Pabugnawan Refreshment and Snack Haus
   FoodStall bunzelCS7 = new FoodStall(
     indexedFoodList: {
       1: new FoodItem(
@@ -921,8 +793,8 @@ class BunzelStalls {
         "Cheese"
       ]
     ),
-    }
-  );
+  }
+);
 
   int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
