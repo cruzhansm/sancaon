@@ -1,7 +1,7 @@
 import 'package:sancaon/canteen_data/data.dart';
 
 class SMEDStalls {
-  FoodStall smedCS1 = new FoodStall(
+  FoodStall smedCS1 = new FoodStall( // TODO: lacking images (all except hotdog sandwich) 
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Brownies",
@@ -86,7 +86,7 @@ class SMEDStalls {
     }
   );
 
-  FoodStall smedCS2 = new FoodStall(
+  FoodStall smedCS2 = new FoodStall( // TODO: lacking images (all)
     indexedFoodList: {
       1 : new FoodItem(
         foodName: "Burp Burger",
@@ -157,7 +157,7 @@ class SMEDStalls {
     }
   );
 
-  FoodStall smedCS3 = new FoodStall(
+  FoodStall smedCS3 = new FoodStall( // half chicken, rice to the top, tiktilaok sarap (NO IMAGES)
     indexedFoodList: {
       1 : new FoodItem(
         foodName: "Fast Chix",
@@ -216,7 +216,7 @@ class SMEDStalls {
         foodName: "Half Chicken",
         foodPrice: 140.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Tiktilaok/tiktilaok2.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
