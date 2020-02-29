@@ -616,7 +616,7 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: null
+        foodIngredients: null,
         foodAllergens: null
       ),
       2: new FoodItem(
@@ -628,7 +628,7 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: null
+        foodIngredients: null,
         foodAllergens: null
       ),
       3: new FoodItem(
@@ -640,7 +640,7 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: null
+        foodIngredients: null,
         foodAllergens: null
       ),
     }
