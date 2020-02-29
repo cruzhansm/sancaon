@@ -3,7 +3,7 @@ import 'package:sancaon/canteen_data/data.dart';
 
 class RHStalls {  
   //Cebu 3-6-2 Canteen
-  FoodStall rhCS1 = new FoodStall(
+  FoodStall rhCS1 = new FoodStall( // TODO: Lacking pictures
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Bicol Express",
@@ -68,7 +68,7 @@ class RHStalls {
         foodName: "Fried Pork (chopped)",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh4.jpg",
         rating: "green",
         foodIngredients: [
           "Cornstarch",
@@ -98,7 +98,7 @@ class RHStalls {
         foodName: "Sinugba Baboy",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh2.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -128,7 +128,7 @@ class RHStalls {
         foodName: "Pork Sisig",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh3.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",

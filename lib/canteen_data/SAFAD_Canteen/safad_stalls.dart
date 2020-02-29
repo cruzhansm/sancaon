@@ -11,7 +11,7 @@ class SAFADStalls {
           53.00,
           65.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang4.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken breast",
@@ -28,7 +28,7 @@ class SAFADStalls {
           53.00,
           65.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang6.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -45,7 +45,7 @@ class SAFADStalls {
           56.00,
           68.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang1.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken",
@@ -65,7 +65,7 @@ class SAFADStalls {
           53.00,
           65.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang5.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken skin",
@@ -84,7 +84,7 @@ class SAFADStalls {
           53.00,
           65.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang9.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken"
@@ -97,7 +97,7 @@ class SAFADStalls {
         foodName: "Crispy Kangkong",
         foodPrice: 30.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang3.jpg",
         rating: "green",
         foodIngredients: [
           "Kangkong",
@@ -112,7 +112,7 @@ class SAFADStalls {
         foodName: "Dynamite",
         foodPrice: 28.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang8.jpg",
         rating: "green",
         foodIngredients: [
           "Ground pork",
@@ -132,7 +132,7 @@ class SAFADStalls {
           53.00,
           65.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/panlasang2.jpg",
         rating: "green",
         foodIngredients: [
           "Fish",
@@ -142,7 +142,7 @@ class SAFADStalls {
           "Fish"
         ]
       ),
-      }
+    }
   ); // ------> stall close
 
   //Leylam Shawarma
@@ -155,7 +155,7 @@ class SAFADStalls {
           65.00,
           85.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Leylam_Shawarma/leylam1.jpg",
         rating: "green",
         foodIngredients: [
           "Noodle",
@@ -181,7 +181,7 @@ class SAFADStalls {
           70.00,
           85.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Leylam_Shawarma/leylam2.jpg",
         rating: "green",
         foodIngredients: [
           "Oil",
@@ -206,7 +206,7 @@ class SAFADStalls {
           65.00,
           85.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Leylam_Shawarma/leylam3.jpg",
         rating: "green",
         foodIngredients: [
           "Pita bread",
@@ -227,13 +227,13 @@ class SAFADStalls {
   ); // ------> stall close
 
   //Patrick's Kitchen/MK Burgeran
-  FoodStall safadCS3 = new FoodStall(
+  FoodStall safadCS3 = new FoodStall( // TODO: lacking 3 images
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Bola-Bola (Meatballs)",
         foodPrice: 10.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Patrick's_Kitchen_MK_Burgeran/patricks2.jpg",
         rating: "green",
         foodIngredients: [
           "Ground pork",
@@ -269,7 +269,7 @@ class SAFADStalls {
           7.00,
           20.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Patrick's_Kitchen_MK_Burgeran/patricks1.jpg",
         rating: "green",
         foodIngredients: [
           "Potatoes",
@@ -316,13 +316,30 @@ class SAFADStalls {
         ]
       ),
       6: new FoodItem(
+        foodName: "Porkchop",
+        foodPrice: 50.00,
+        hasManyOptions: false,
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Patrick's_Kitchen_MK_Burgeran/patricks3.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Pork",
+          "Flour",
+          "Cornstarch",
+          "Eggs"
+        ],
+        foodAllergens: [
+          "Eggs",
+          "Pork"
+        ]
+      ),
+      7: new FoodItem(
         foodName: "Tortang Talong",
         hasManyOptions: true,
         manyPrices: [
           25.00,
           35.00
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Patrick's_Kitchen_MK_Burgeran/patricks8.jpg",
         rating: "green",
         foodIngredients: [
           "Talong (Eggplant)",
@@ -342,7 +359,7 @@ class SAFADStalls {
   ); // ------> stall close
 
   //My Own Recipe (MORE)
-  FoodStall safadCS4 = new FoodStall(
+  FoodStall safadCS4 = new FoodStall( // TODO: all imaegs
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Chorizo Chow Fun",
@@ -447,13 +464,13 @@ class SAFADStalls {
   ); // ------> stall close
 
   //Tiktilaok
-  FoodStall safadCS5 = new FoodStall(
+  FoodStall safadCS5 = new FoodStall( // TODO: lacking 2 images
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Fast Chix",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok1.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -470,7 +487,7 @@ class SAFADStalls {
         foodName: "Fast Liempo",
         foodPrice: 75.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok3.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -487,7 +504,7 @@ class SAFADStalls {
         foodName: "Fast OMG",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok6.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -506,7 +523,7 @@ class SAFADStalls {
         foodName: "Half Chicken",
         foodPrice: 140.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok2.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -523,7 +540,7 @@ class SAFADStalls {
         foodName: "Quarter Chicken",
         foodPrice: 85.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok4.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -557,7 +574,7 @@ class SAFADStalls {
         foodName: "Sarap my Liempo",
         foodPrice: 100.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Tiktilaok/tiktilaok5.jpg",
         rating: "green",
         foodIngredients: [
           "Spices",
@@ -591,7 +608,7 @@ class SAFADStalls {
   ); // ------> stall close
 
   //Hotdog on Sticks
-  FoodStall safadCS6 = new FoodStall(
+  FoodStall safadCS6 = new FoodStall( // TODO: lacking all, only 1 image
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Baconbits",
@@ -654,7 +671,7 @@ class SAFADStalls {
         foodName: "Sisig",
         foodPrice: 50.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/Hotdog_on_Stick/hotdog2.jpg",
         rating: "green",
         foodIngredients: [
           "Pork"
@@ -665,13 +682,13 @@ class SAFADStalls {
   ); // ------> stall close
 
   //K&K Ice Kreeme
-  FoodStall safadCS7 = new FoodStall(
+  FoodStall safadCS7 = new FoodStall( // TODO: lacking 3 images
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Carbonara",
         foodPrice: 30.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/K&K_Ice_Kreeme/k&k2.jpg",
         rating: "green",
         foodIngredients: [
           "Evaporated milk",
@@ -689,7 +706,7 @@ class SAFADStalls {
         foodName: "Chickenette",
         foodPrice: 45.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/K&K_Ice_Kreeme/k&k1.jpg",
         rating: "green",
         foodIngredients: [
           "Oil",
@@ -704,7 +721,7 @@ class SAFADStalls {
         foodName: "Chopsuey",
         foodPrice: 20.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/K&K_Ice_Kreeme/k&k5.jpg",
         rating: "green",
         foodIngredients: [
           " "
@@ -715,7 +732,7 @@ class SAFADStalls {
         foodName: "Mechado",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/K&K_Ice_Kreeme/k&k3.jpg",
         rating: "green",
         foodIngredients: [
           "Potatoes",
@@ -764,7 +781,7 @@ class SAFADStalls {
         foodName: "Siomai",
         foodPrice: 8.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SAFADCanteen/K&K_Ice_Kreeme/k&k6.jpg",
         rating: "green",
         foodIngredients: [
           " "
@@ -786,7 +803,7 @@ class SAFADStalls {
   ); // ------> stall close
 
   //Kiara Loraine Food Haus
-  FoodStall safadCS8 = new FoodStall(
+  FoodStall safadCS8 = new FoodStall( // TODO: lacking all images
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Cornsilog",
