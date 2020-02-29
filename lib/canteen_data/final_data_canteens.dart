@@ -6,7 +6,6 @@ class CanteenData {
     canteenName: "Bunzel Canteen",
     canteenImage: new Image.asset('assets/images/canteen-pictures/canteen_bunzel.jpg'),
     canteenStalls: [
-      null,
       "Izza's Snack Haus",
       "MK Burgeran Food Stand",
       "Healthylicious",

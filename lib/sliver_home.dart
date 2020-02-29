@@ -156,17 +156,18 @@ class CanteenSliverPeek extends StatelessWidget { //preview items
   CanteenSliverPeek({this.index, this.canteenName});
 
   static List<dynamic> previewList = [
-    'assets/images/canteen-menu/food1.jpg',
-    'assets/images/canteen-menu/food2.jpg',
-    'assets/images/canteen-menu/food3.jpg',
-    'assets/images/canteen-menu/food4.jpg',
-    'assets/images/canteen-menu/food5.jpg',
-    'assets/images/canteen-menu/food6.jpg',
-    'assets/images/canteen-menu/food7.jpg',
-    'assets/images/canteen-menu/food8.jpg',
-    'assets/images/canteen-menu/food9.jpg',
-    'assets/images/canteen-menu/food10.jpg',
-    'assets/images/canteen-menu/food10.jpg',
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
   ];
 
   @override

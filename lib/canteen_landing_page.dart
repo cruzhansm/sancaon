@@ -5,11 +5,24 @@ import 'canteen_data/data.dart';
 
 dynamic foodItemContent(String nameOfCanteen) {
   CanteenData newCanteen = new CanteenData();
-  BunzelStalls newStall = new BunzelStalls();
+  BunzelStalls bunzelStalls = new BunzelStalls();
+
+  List<FoodStall> finalStalls= [
+    bunzelStalls.bunzelCS1,
+    bunzelStalls.bunzelCS2,
+    bunzelStalls.bunzelCS3,
+    bunzelStalls.bunzelCS4,
+    bunzelStalls.bunzelCS5,
+    bunzelStalls.bunzelCS6,
+    bunzelStalls.bunzelCS7
+  ];
 
   int foodItemCount = 0;
+  int foodStallCount = 0;
+  int numberOfFoodItems;
 
-  final int numberOfFoodItems = 10;
+  final int numberOfFoodStalls = finalStalls.length;
+  
     
   List<Widget> listOfFood() {
     List<Widget> foodItem = new List();
@@ -36,15 +49,19 @@ dynamic foodItemContent(String nameOfCanteen) {
         ]
       ),
     ));
-    while(foodItemCount <= numberOfFoodItems - 1) {
-      foodItem.add(new FoodItems(
-        food: newStall.bunzelCS4.indexedFoodList[foodItemCount+1],
-        stall: newCanteen.bunzelCanteen
-        /*foodImage: 'assets/images/canteen-menu/food1.jpg',//newData.imageOfFood[newData.nameOfFood[foodItemCount]],
-        foodPrice: 0.0,//newData.priceOfFood[newData.nameOfFood[foodItemCount]],
-        stallName: newCanteen.bunzelCanteen.canteenStalls[0]*/   
-      ));
-      foodItemCount++;
+    while(foodStallCount <= numberOfFoodStalls - 1) {
+      FoodStall currentStall = finalStalls[foodStallCount];
+      numberOfFoodItems = bunzelStalls.calculateFoodItemsLength(finalStalls[foodStallCount]);
+
+      while(foodItemCount <= numberOfFoodItems-1) {
+        foodItem.add(new FoodItems(
+          food: currentStall.indexedFoodList[foodItemCount+1],
+          stall: newCanteen.bunzelCanteen.canteenStalls[foodStallCount],
+        ));
+        foodItemCount++;
+      }
+      foodItemCount = 0;
+      foodStallCount++;
     }
       return foodItem;
     }
@@ -136,11 +153,8 @@ class CanteenMenu extends StatelessWidget {
 
 class FoodItems extends StatelessWidget {
   final FoodItem food;
-  final Canteen stall;
-  /*final double foodPrice;
-  final String foodImage;
-  final String stallName;*/
-  
+  final String stall;
+
   FoodItems({this.food, this.stall});
 
   createDialog(BuildContext context) {
@@ -199,7 +213,7 @@ class FoodItems extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     new Text(
-                      "Stall: " + stall.canteenStalls[4],
+                      "Stall: " + stall,
                       style: TextStyle(
                         fontSize: 15.0,
                         fontFamily: "Quicksand"
@@ -248,9 +262,6 @@ class FoodItems extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
                     new Text(food.foodIngredients[0]),
-                    new Text(food.foodIngredients[1]),
-                    new Text(food.foodIngredients[2]),
-                    new Text(food.foodIngredients[3])
                   ],
                 )
               ),
@@ -279,7 +290,7 @@ class FoodItems extends StatelessWidget {
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
-                    new Text(food.foodAllergens[0])
+                    food.foodAllergens == null ? new Text("No allergens") : new Text(food.foodAllergens[0])
                   ],
                 )
               ),
@@ -332,10 +343,12 @@ class FoodItems extends StatelessWidget {
                           fontWeight: FontWeight.bold
                         )
                       ),
-                      new Text(
-                        stall.canteenStalls[4]
-                      ),
-                      new Text(
+                      new Text(stall),
+                      food.hasManyOptions == true ? new Row(
+                        children: [
+                          new Text("bilat")
+                        ]
+                      ) : new Text(
                         "Price: " + food.foodPrice.toString(),
                         style: TextStyle(
                           color: Colors.red
@@ -353,153 +366,18 @@ class FoodItems extends StatelessWidget {
   }
 }
 
-// T0DO: LOOPING OF FOODITEM
+dynamic listOfPrices(FoodItem food) {
+  int priceCounter = 0;
 
-
-/*class CanteenMenu extends StatelessWidget {
-  final String nameOfCanteen;
-
-  CanteenMenu({this.nameOfCanteen});
-
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        body: ListView(children: foodItemContent(nameOfCanteen))
-      )
-    );
+  List<Widget> priceList() {
+    List<Widget> foodPrices = new List();
+    
+    while(priceCounter <= food.manyPrices.length-1) {
+      foodPrices.add(new Text(
+        food.manyPrices[priceCounter].toString()
+      ));
+    }
+    return foodPrices;
   }
+  return priceList();
 }
-class FoodItem extends StatefulWidget {
-  final String foodName;
-  final String foodName2;
-  final String foodImage;
-  final String foodImage2;
-  final double foodPrice;
-  final double foodPrice2;
-
-  FoodItem({this.foodName, this.foodPrice, this.foodName2, this.foodImage, this.foodImage2, this.foodPrice2});
-
-  @override
-  _FoodItemState createState() => _FoodItemState();
-}
-
-class _FoodItemState extends State<FoodItem> {
-  String _finalFoodImage;
-  String _finalFoodName;
-  String _finalStallName = "Placeholder sa";
-  String _finalFoodPrice;
-  String _finalTrafficRating = 'Placeholder napud';
-
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-      margin: widget.foodName2 == 'Tempura with Rice' ? EdgeInsets.only(bottom: 20.0): EdgeInsets.all(0.0),
-      constraints: BoxConstraints(
-        minHeight: 200.0,
-        maxHeight: 200.0
-      ),
-      child: new Row(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          new Expanded(
-            child: new Container(
-              margin: EdgeInsets.fromLTRB(10.0, 5.0, 5.0, 5.0),
-              child: new Column(
-                children: <Widget>[
-                  new Expanded(
-                    flex: 13,
-                    child: new InkWell(
-                      onTap: () {
-                        _finalFoodImage = widget.foodImage;
-                        _finalFoodName = widget.foodName;
-                        _finalFoodPrice = widget.foodPrice.toString();
-                        createDialog(context);
-                      },
-                      child: new Image.asset(
-                        widget.foodImage,
-                      ),
-                    ),
-                  ),
-                  new Expanded(
-                    flex: 2,
-                    child: new Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 0.25,
-                        ),
-                        color: Colors.white,
-                      ),
-                      constraints: BoxConstraints(
-                        minWidth: double.infinity
-                      ),
-                      child: new Text(
-                        widget.foodName,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontFamily: "Quicksand",
-                          fontWeight: FontWeight.bold,
-                          height: 1.5
-                        )
-                      )
-                    ),
-                  )
-                ],
-              ),
-            )
-          ),
-          new Expanded(
-            child: new Container(
-              margin: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 5.0),
-              child: new Column(
-                children: <Widget>[
-                  new Expanded(
-                    flex: 13,
-                      child: new InkWell(
-                      onTap: () {
-                        _finalFoodImage = widget.foodImage2;
-                        _finalFoodName = widget.foodName2;
-                        _finalFoodPrice = widget.foodPrice2.toString();
-                        createDialog(context);
-                      },
-                      child: new Image.asset(
-                        widget.foodImage2,
-                      ),
-                    ),
-                  ),
-                  new Expanded(
-                    flex: 2,
-                    child: new Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 0.25,
-                        ),
-                        color: Colors.white,
-                      ),
-                      constraints: BoxConstraints(
-                        minWidth: double.infinity
-                      ),
-                      child: new Text(
-                        widget.foodName2,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontFamily: "Quicksand",
-                          fontWeight: FontWeight.bold,
-                          height: 1.5
-                        )
-                      )
-                    ),
-                  )
-                ],
-              ),
-            )
-          )
-        ],
-      ),
-    );
-  }
-}*/
