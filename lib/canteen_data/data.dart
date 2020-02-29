@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
  class Data {
   List<String> nameOfFood = [
     "Adobo with Rice",
@@ -37,4 +39,41 @@
     "Siomai with Rice" : 'assets/images/canteen-menu/food9.jpg',
     "Tempura with Rice" : 'assets/images/canteen-menu/food10.jpg'
   };
+}
+
+class BunzelBasement {
+  List<String> bunzelStalls = [
+    "Izza's Snack Haus",
+    "MK Burgeran Food Stand",
+    "Healthylicious",
+    "Amboy's Food Corner",
+    "Santino's",
+    "Franco's Tasty Treats Corner",
+    "Pabugnawan Refreshment and Snack Haus",
+  ];
+}
+
+class Canteen {
+  String canteenName;
+  Image canteenImage;
+  List<String> canteenStalls;
+
+  Canteen({this.canteenName, this.canteenImage, this.canteenStalls});
+}
+
+class FoodStall {
+  Map<int, FoodItem> indexedFoodList = new Map();
+
+  FoodStall({this.indexedFoodList});
+}
+
+class FoodItem {
+  String foodName;
+  double foodPrice;
+  String foodImage;
+  String rating;
+  List<String> foodIngredients = new List();
+  List<String> foodAllergens = new List();
+
+  FoodItem({this.foodName, this.foodPrice, this.foodImage, this.rating, this.foodIngredients, this.foodAllergens});
 }

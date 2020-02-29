@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'help.dart';
 import 'feedback.dart';
 import 'credits.dart';
-import 'home.dart';
+import 'sliver_home.dart';
 
 class AppbarOtherPage extends StatefulWidget {
   final Widget generatePage;
@@ -30,7 +30,7 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
   List<Widget> newPage = [
     null,
     HelpPage(),
-    Home(),
+    HomePage(),
     AboutPage(),
     AboutPage()
   ];
@@ -104,7 +104,7 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
             }
             else if(index == 2){
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-               AppbarOtherPage(generatePage: Home())), (Route<dynamic> route) => false);
+               AppbarOtherPage(generatePage: HomePage())), (Route<dynamic> route) => false);
             }
             else {
               generatePage = newPage[index];

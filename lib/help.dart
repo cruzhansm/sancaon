@@ -45,22 +45,27 @@ class HelpPage extends StatelessWidget {
                 fontFamily: "Quicksand"
               )
             ),
-            new Container(
-              margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 20.0),
-              padding: EdgeInsets.symmetric(vertical: 5.0),
-              constraints: BoxConstraints(
-                minWidth: double.infinity,
-              ),
-              color: Colors.grey[600],
-              child: new Text(
-                'Contact Us',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25.0,
-                  fontFamily: "Dosis",
-                  color: Colors.white
+            new InkWell(
+              onTap: () => {
+                debugPrint("_launchURL???")
+              },
+              child: new Container(
+                margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 20.0),
+                padding: EdgeInsets.symmetric(vertical: 5.0),
+                constraints: BoxConstraints(
+                  minWidth: double.infinity,
+                ),
+                color: Colors.grey[600],
+                child: new Text(
+                  'Contact Us',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontFamily: "Dosis",
+                    color: Colors.white
+                  )
                 )
-              )
+              ),
             ),
             new Container(
               padding: EdgeInsets.symmetric(vertical: 5.0),

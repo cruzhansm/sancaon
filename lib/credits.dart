@@ -27,29 +27,31 @@ class AboutApp extends StatefulWidget {
 class _AboutAppState extends State<AboutApp> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        new Container(
-          margin: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              new Text("The Developers "),
-              new Icon(
-                Icons.arrow_forward,
-                size: 18.0
-              )
-            ],
+    return new SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          new Container(
+            margin: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                new Text("The Developers "),
+                new Icon(
+                  Icons.arrow_forward,
+                  size: 18.0
+                )
+              ],
+            ),
           ),
-        ),
-        new Container(
-          margin: EdgeInsets.only(top: 50.0),
-          child: new Image.asset(
-            'assets/images/home/test.png',
-            width: 500.0)
-        )
-      ],
+          new Container(
+            margin: EdgeInsets.only(top: 50.0),
+            child: new Image.asset(
+              'assets/images/home/test.png',
+              width: 500.0)
+          )
+        ],
+      ),
     );
   }
 }
@@ -67,56 +69,62 @@ class _MemberInfoState extends State<MemberInfo> {
 
   @override
   Widget build(BuildContext context) {
-    return new PageView(
-      controller: memberPageController,
-      scrollDirection: Axis.vertical,
-      children: <Widget>[
-        new Column(
-          children: <Widget>[
-            new Image.asset("assets/images/credits/Serious.jpg"),
-            new Image.asset("assets/images/credits/Candid.jpg")
-          ],
-        ),
-        new Member(
-          memberImage: "assets/images/credits/Hans.jpg",
-          memberCell: " +639473609391",
-          memberName: "Hans Maco V. Cruz",
-          memberEmail: " cruzhansm@gmail.com",
-          memberPosition: "Lead Developer, Team Leader"
-        ),
-        new Member(
+    return new SafeArea(
+      child: new PageView(
+        controller: memberPageController,
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          new Column(
+            children: <Widget>[
+              new Image.asset("assets/images/credits/Serious.jpg"),
+              new Image.asset("assets/images/credits/Candid.jpg")
+            ],
+          ),
+          new Member(
+            memberImage: "assets/images/credits/Hans.jpg",
+            memberCell: " +639473609391",
+            memberName: "Hans Maco V. Cruz",
+            memberEmail: " cruzhansm@gmail.com",
+            memberPosition: "Lead Developer, Team Leader"
+          ),
+          new Member(
             memberImage: "assets/images/credits/Danica.jpg",
-          memberCell: " +639473609391",
-          memberName: "Danica Marie A. Dumalagan",
-          memberEmail: " ddumalagan91@gmail.com",
-          memberPosition: "Assistant Team Leader"
-        ),
-        new Member(
-          memberCell: " +639667080139",
-          memberName: "Antoine Federico P. Godinez",
-          memberEmail: " godinezantoine13@gmail.com",
-          memberPosition: "Documentation"
-        ),
-        new Member(
-          memberCell: " +639266377699",
-          memberName: "Jamille Ashley Y. Malnegro",
-          memberEmail: " jashbeautiful@gmail.com",
-          memberPosition: "User Interface Design"
-        ),
-        new Member(
-          memberCell: " +639222111501",
-          memberName: "Rose Mabelle C. Seares",
-          memberEmail: " rosemabelleseares@gmail.com",
-          memberPosition: "User Interface Design"
-        ),
-        new Member(
-          memberCell: " +639185565745",
-          memberName: "Lorenzo Gabriel C. Uayan",
-          memberEmail: " paradoxictime@gmail.com",
-          memberPosition: "Documentation"
-        ),
-      ],
-      
+            memberCell: " +639473609391",
+            memberName: "Danica Marie A. Dumalagan",
+            memberEmail: " ddumalagan91@gmail.com",
+            memberPosition: "Assistant Team Leader"
+          ),
+          new Member(
+            memberCell: " +639667080139",
+            memberImage: "assets/images/credits/Antoine.jpg",
+            memberName: "Antoine Federico P. Godinez",
+            memberEmail: " godinezantoine13@gmail.com",
+            memberPosition: "Documentation"
+          ),
+          new Member(
+            memberCell: " +639266377699",
+            memberImage: "assets/images/credits/Jamille.jpg",
+            memberName: "Jamille Ashley Y. Malnegro",
+            memberEmail: " jashbeautiful@gmail.com",
+            memberPosition: "User Interface Design"
+          ),
+          new Member(
+            memberCell: " +639222111501",
+            memberImage: "assets/images/credits/Mabby.jpg",
+            memberName: "Rose Mabelle C. Seares",
+            memberEmail: " rosemabelleseares@gmail.com",
+            memberPosition: "User Interface Design"
+          ),
+          new Member(
+            memberCell: " +639185565745",
+            memberImage: "assets/images/credits/Uayan.jpg",
+            memberName: "Lorenzo Gabriel C. Uayan",
+            memberEmail: " paradoxictime@gmail.com",
+            memberPosition: "Documentation"
+          ),
+        ],
+        
+      ),
     );
   }
 }
@@ -142,57 +150,7 @@ class _MemberState extends State<Member> {
     return new Column(
       children: <Widget>[
         new Container(
-          margin: EdgeInsets.only(top: 10.0),
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              new Row(
-                children: <Widget>[
-                  new Icon(
-                    Icons.arrow_back,
-                    size: 18.0
-                  ),
-                  new Text(
-                    " About the App",
-                    style: TextStyle(
-                      fontSize: 12.0
-                    )
-                  ),
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Icon(
-                    Icons.arrow_downward,
-                    size: 18.0,
-                  ),
-                  new Text(
-                    " Next Member ",
-                    style: TextStyle(
-                      fontSize: 12.0
-                    )
-                  ),
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Text(
-                    'Legal Notices ',
-                    style: TextStyle(
-                      fontSize: 12.0
-                    )
-                  ),
-                  new Icon(
-                    Icons.arrow_forward,
-                    size: 18.0
-                  )
-                ],
-              ),
-            ],
-          )
-        ),
-        new Container(
-          margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 20.0),
+          margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
           child: new Image.asset(
             widget.memberImage,
             width: 200.0,
@@ -319,8 +277,8 @@ class _MemberState extends State<Member> {
             ),
           ],
         ),
-        Expanded(
-                    child: new Container(
+        new Expanded(
+          child: new Container(
             margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
             color: Colors.red,
             constraints: BoxConstraints(
@@ -328,6 +286,82 @@ class _MemberState extends State<Member> {
             ),
             child: Center(child: new Text("Member details here!"))
           ),
+        ),
+        new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            new FlatButton(
+              onPressed: () {},
+              //color: Colors.grey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 0.5
+                ),
+              ),
+              child: new Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  new Icon(
+                    Icons.keyboard_arrow_left,
+                    size: 20.0
+                  ),
+                  new Column(
+                    children: <Widget>[
+                      new Text(
+                        "Swipe left",
+                        style: TextStyle(
+                          fontSize: 10.0,
+                        )),
+                      new Text(
+                        "About the app",
+                        style: TextStyle(
+                          fontSize: 8.0,
+                        ))
+                    ],
+                  ),
+                ],
+              )
+            ),
+            new FlatButton(
+              onPressed: () {},
+              //color: Colors.grey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 0.5
+                ),
+              ),
+              child: new Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  new Column(
+                    children: <Widget>[
+                      new Text(
+                        "Swipe right",
+                        style: TextStyle(
+                          fontSize: 10.0,
+                        )),
+                      new Text(
+                        "Legal Notices",
+                        style: TextStyle(
+                          fontSize: 8.0
+                        ))
+                    ],
+                  ),
+                  new Icon(
+                    Icons.keyboard_arrow_right,
+                    size: 20.0
+                  ),
+                ],
+              )
+            ),
+          ],
+        ),
+        new SizedBox(
+          height: 10.0,
         )
       ],
     );
@@ -342,12 +376,14 @@ class LegalNotice extends StatefulWidget {
 class _LegalNoticeState extends State<LegalNotice> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      child: Image.asset(
-        'assets/images/home/test.png',
-        width: 50.0
-       )
+    return new SafeArea(
+      child: Container(
+        color: Colors.black,
+        child: Image.asset(
+          'assets/images/home/test.png',
+          width: 50.0
+         )
+      ),
     );
   }
 }

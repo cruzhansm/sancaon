@@ -44,10 +44,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/home/
-    - assets/images/credits/
-    - assets/images/canteen-menu/
     - assets/images/
+    - assets/images/home/
+    - assets/images/canteen-menu/
+    - assets/images/canteen-pictures/
+    - assets/images/canteen-menu/BunzelCanteen/
+    - assets/images/canteen-menu/SAFADCanteen/
+    - assets/images/canteen-menu/SMEDCanteen/
+    - assets/images/credits/
 
   # To add assets to your application, add an assets section, like this:
 #  assets:

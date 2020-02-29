@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'data.dart';
+import 'package:sancaon/canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
+import 'canteen_data/final_data_canteens.dart';
+import 'canteen_data/data.dart';
 
 dynamic foodItemContent(String nameOfCanteen) {
-  Data newData = new Data();
+  CanteenData newCanteen = new CanteenData();
+  BunzelStalls newStall = new BunzelStalls();
+
   int foodItemCount = 0;
 
-  final int numberOfFoodItems = newData.nameOfFood.length;
+  final int numberOfFoodItems = 10;
     
   List<Widget> listOfFood() {
     List<Widget> foodItem = new List();
@@ -33,11 +37,12 @@ dynamic foodItemContent(String nameOfCanteen) {
       ),
     ));
     while(foodItemCount <= numberOfFoodItems - 1) {
-      foodItem.add(new FoodItem(
-        foodName: newData.nameOfFood[foodItemCount],
-        foodImage: newData.imageOfFood[newData.nameOfFood[foodItemCount]],
-        foodPrice: newData.priceOfFood[newData.nameOfFood[foodItemCount]],
-        stallName: "Jamille's Food Choice",        
+      foodItem.add(new FoodItems(
+        food: newStall.bunzelCS4.indexedFoodList[foodItemCount+1],
+        stall: newCanteen.bunzelCanteen
+        /*foodImage: 'assets/images/canteen-menu/food1.jpg',//newData.imageOfFood[newData.nameOfFood[foodItemCount]],
+        foodPrice: 0.0,//newData.priceOfFood[newData.nameOfFood[foodItemCount]],
+        stallName: newCanteen.bunzelCanteen.canteenStalls[0]*/   
       ));
       foodItemCount++;
     }
@@ -52,7 +57,7 @@ class CanteenMenu extends StatelessWidget {
 
   static Map<String, String> canteenImages = {
     'Bunzel Basement': 'assets/images/home/canteen.jpg',
-    'Bunzel Canteen': 'assets/images/home/canteen2.jpg',
+    'Bunzel Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
     'SMED Canteen': 'assets/images/home/canteen3.jpg',
     'RH Canteen': 'assets/images/home/canteen4.jpg',
     'SAFAD Canteen': 'assets/images/home/canteen5.jpg',
@@ -65,13 +70,17 @@ class CanteenMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       child: new SafeArea(
-        child: Stack(
+        child: new Stack(
           children: <Widget>[
             new SizedBox(
               width: double.infinity,
               child: new Image.asset(
                 canteenImages[nameOfCanteen]
               )
+            ),
+            new Container(
+              color: Colors.black.withOpacity(0.5),
+              height: MediaQuery.of(context).size.height - 100.0
             ),
             new IconButton(
               onPressed: () => {
@@ -84,7 +93,6 @@ class CanteenMenu extends StatelessWidget {
               )
             ),
             new Container(
-              color: Colors.white10,
               margin: EdgeInsets.fromLTRB(25.0, 155.0, 0.0, 0.0),
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,13 +134,14 @@ class CanteenMenu extends StatelessWidget {
   }
 }
 
-class FoodItem extends StatelessWidget {
-  final String foodName;
-  final double foodPrice;
+class FoodItems extends StatelessWidget {
+  final FoodItem food;
+  final Canteen stall;
+  /*final double foodPrice;
   final String foodImage;
-  final String stallName;
+  final String stallName;*/
   
-  FoodItem({this.foodName, this.foodPrice, this.foodImage, this.stallName});
+  FoodItems({this.food, this.stall});
 
   createDialog(BuildContext context) {
     return showDialog(context: context, builder: (context) {
@@ -149,7 +158,7 @@ class FoodItem extends StatelessWidget {
                 child: new FittedBox(
                   fit: BoxFit.fill,
                   child: new Image.asset(
-                    foodImage,
+                    food.foodImage,
                   ),
                 ),
               ),
@@ -160,7 +169,7 @@ class FoodItem extends StatelessWidget {
                     new Expanded(
                       flex: 3,
                         child: new Text(
-                        foodName,
+                        food.foodName,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 35.0,
@@ -190,14 +199,14 @@ class FoodItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     new Text(
-                      "Stall: " + stallName,
+                      "Stall: " + stall.canteenStalls[4],
                       style: TextStyle(
                         fontSize: 15.0,
                         fontFamily: "Quicksand"
                       )
                     ),
                     new Text(
-                      "Price: " + foodPrice.toString(),
+                      "Price: " + food.foodPrice.toString(),
                       style: TextStyle(
                         fontSize: 15.0,
                         fontFamily: "Quicksand"
@@ -238,11 +247,10 @@ class FoodItem extends StatelessWidget {
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
-                    new Text("Ingredient 1"),
-                    new Text("Ingredient 2"),
-                    new Text("Ingredient 3"),
-                    new Text("Ingredient 4"),
-                    new Text("Ingredient 5"),
+                    new Text(food.foodIngredients[0]),
+                    new Text(food.foodIngredients[1]),
+                    new Text(food.foodIngredients[2]),
+                    new Text(food.foodIngredients[3])
                   ],
                 )
               ),
@@ -271,11 +279,7 @@ class FoodItem extends StatelessWidget {
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
-                    new Text("Ingredient 1"),
-                    new Text("Ingredient 2"),
-                    new Text("Ingredient 3"),
-                    new Text("Ingredient 4"),
-                    new Text("Ingredient 5"),
+                    new Text(food.foodAllergens[0])
                   ],
                 )
               ),
@@ -309,7 +313,7 @@ class FoodItem extends StatelessWidget {
                   child: FittedBox(
                     fit: BoxFit.fill,
                     child: new Image.asset(
-                      foodImage
+                      food.foodImage
                     )
                   )
                 ),
@@ -322,17 +326,17 @@ class FoodItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       new Text(
-                        foodName,
+                        food.foodName,
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold
                         )
                       ),
                       new Text(
-                        stallName
+                        stall.canteenStalls[4]
                       ),
                       new Text(
-                        "Price: " + foodPrice.toString(),
+                        "Price: " + food.foodPrice.toString(),
                         style: TextStyle(
                           color: Colors.red
                         )
