@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
             ),
             new CanteenHeader(
               canteenName: "Bunzel Basement",
-              canteenImage: 'assets/images/home/canteen.jpg'
+              canteenImage: 'assets/images/canteen-pictures/canteen_bunzel.jpg'
             ),
             new CanteenSliver(canteenName: "Bunzel Basement"),
             new CanteenHeader(

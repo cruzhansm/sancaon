@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sancaon/canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
 import 'package:sancaon/canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
 import 'canteen_data/final_data_canteens.dart';
 import 'canteen_data/data.dart';
 
 dynamic foodItemContent(String nameOfCanteen) {
+
   CanteenData newCanteen = new CanteenData();
   BunzelStalls bunzelStalls = new BunzelStalls();
+  BunzelBStalls bunzelBStalls = new BunzelBStalls();
 
-  List<FoodStall> finalStalls= [
+  List<FoodStall> bunzelCanteenFoodStalls = [
     bunzelStalls.bunzelCS1,
     bunzelStalls.bunzelCS2,
     bunzelStalls.bunzelCS3,
@@ -17,13 +20,34 @@ dynamic foodItemContent(String nameOfCanteen) {
     bunzelStalls.bunzelCS7
   ];
 
+  List<FoodStall> bunzelBasementFoodStalls = [
+    bunzelBStalls.bunzelBS1
+  ];
+
+  Map<String, Canteen> selectedCanteen = {
+    'Bunzel Basement' : newCanteen.bunzelBasement,
+    'Bunzel Canteen': newCanteen.bunzelCanteen,
+    'SMED Canteen': newCanteen.smedCanteen,
+    'RH Canteen': newCanteen.rhCanteen,
+    'SAFAD Canteen': newCanteen.safadCanteen,
+    'Cafe+': newCanteen.cafepCanteen
+  };
+
+  Map<Canteen, List<FoodStall>> selectedStalls = {
+    newCanteen.bunzelBasement : bunzelBasementFoodStalls,
+    newCanteen.bunzelCanteen : bunzelCanteenFoodStalls,
+    newCanteen.smedCanteen : bunzelCanteenFoodStalls,
+    newCanteen.rhCanteen : bunzelCanteenFoodStalls,
+    newCanteen.safadCanteen : bunzelCanteenFoodStalls,
+    newCanteen.cafepCanteen : bunzelCanteenFoodStalls
+  };
+
   int foodItemCount = 0;
   int foodStallCount = 0;
   int numberOfFoodItems;
 
-  final int numberOfFoodStalls = finalStalls.length;
+  final int numberOfFoodStalls = selectedStalls[selectedCanteen[nameOfCanteen]].length;
   
-    
   List<Widget> listOfFood() {
     List<Widget> foodItem = new List();
     foodItem.add(new Container(
@@ -50,13 +74,16 @@ dynamic foodItemContent(String nameOfCanteen) {
       ),
     ));
     while(foodStallCount <= numberOfFoodStalls - 1) {
-      FoodStall currentStall = finalStalls[foodStallCount];
-      numberOfFoodItems = bunzelStalls.calculateFoodItemsLength(finalStalls[foodStallCount]);
+      Canteen currentCanteen = selectedCanteen[nameOfCanteen];
+      List<FoodStall> currentSelectedStalls = selectedStalls[currentCanteen];
+      FoodStall currentStall = currentSelectedStalls[foodStallCount];
+
+      numberOfFoodItems = bunzelStalls.calculateFoodItemsLength(currentStall);
 
       while(foodItemCount <= numberOfFoodItems-1) {
         foodItem.add(new FoodItems(
           food: currentStall.indexedFoodList[foodItemCount+1],
-          stall: newCanteen.bunzelCanteen.canteenStalls[foodStallCount],
+          stall: currentCanteen.canteenStalls[foodStallCount],
         ));
         foodItemCount++;
       }
@@ -73,9 +100,9 @@ class CanteenMenu extends StatelessWidget {
   final String locationOfCanteen;
 
   static Map<String, String> canteenImages = {
-    'Bunzel Basement': 'assets/images/home/canteen.jpg',
+    'Bunzel Basement': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
     'Bunzel Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
-    'SMED Canteen': 'assets/images/home/canteen3.jpg',
+    'SMED Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
     'RH Canteen': 'assets/images/home/canteen4.jpg',
     'SAFAD Canteen': 'assets/images/home/canteen5.jpg',
     'Cafe+': 'assets/images/home/canteen6.jpg'
@@ -340,14 +367,13 @@ class FoodItems extends StatelessWidget {
                         food.foodName,
                         style: TextStyle(
                           fontSize: 20.0,
+                          fontFamily: "Quicksand",
                           fontWeight: FontWeight.bold
                         )
                       ),
                       new Text(stall),
                       food.hasManyOptions == true ? new Row(
-                        children: [
-                          new Text("bilat")
-                        ]
+                        children: listOfPrices(food)
                       ) : new Text(
                         "Price: " + food.foodPrice.toString(),
                         style: TextStyle(
@@ -371,11 +397,21 @@ dynamic listOfPrices(FoodItem food) {
 
   List<Widget> priceList() {
     List<Widget> foodPrices = new List();
-    
+    foodPrices.add(new Text(
+        "Prices: ",
+        style: TextStyle(
+          color: Colors.red
+        )
+      ));
+
     while(priceCounter <= food.manyPrices.length-1) {
       foodPrices.add(new Text(
-        food.manyPrices[priceCounter].toString()
+        priceCounter == food.manyPrices.length-1 ? food.manyPrices[priceCounter].toString() : food.manyPrices[priceCounter].toString() + ", ",
+        style: TextStyle(
+          color: Colors.red,
+        )
       ));
+      priceCounter++;
     }
     return foodPrices;
   }
