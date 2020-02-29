@@ -19,10 +19,10 @@ class FoodItem {
   @required String foodImage;
   @required String rating;
   @required bool hasManyOptions = false;
-  List<double> manyPrices = new List();
-  double foodPrice;
   @required List<String> foodIngredients = new List();
   @required List<String> foodAllergens = new List();
+  List<double> manyPrices = new List();
+  double foodPrice;
 
   FoodItem({
     this.hasManyOptions, 
@@ -32,5 +32,6 @@ class FoodItem {
     this.rating, 
     this.foodIngredients, 
     this.foodAllergens,
-    this.manyPrices});
+    this.manyPrices
+  });
 }

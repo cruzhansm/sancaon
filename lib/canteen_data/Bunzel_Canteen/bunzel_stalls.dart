@@ -111,7 +111,7 @@ class BunzelStalls {
           30.0,
           38.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk1.jpg",
         rating: "green",
         foodIngredients: [
           "Bun (Bread)",
@@ -132,7 +132,7 @@ class BunzelStalls {
           22.0,
           28.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk4.jpg",
         rating: "green",
         foodIngredients: [
           "Cheese",
@@ -152,7 +152,7 @@ class BunzelStalls {
           15.0,
           21.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk4.jpg",
         rating: "green",
         foodIngredients: [
           "Bread/bun",
@@ -169,7 +169,7 @@ class BunzelStalls {
           17.0,
           23.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk4.jpg",
         rating: "green",
         foodIngredients: [
           "Bread/bun",
@@ -608,7 +608,7 @@ class BunzelStalls {
   FoodStall bunzelCS6 = new FoodStall(
       indexedFoodList: {
         1: new FoodItem(
-        foodName: "Arrozacalodo",  
+        foodName: "Arrozcaldo",  
         hasManyOptions: true,
         manyPrices: [
           20.0,
@@ -616,8 +616,12 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: null,
-        foodAllergens: null
+        foodIngredients: [
+          "Chicken"
+        ],
+        foodAllergens: [
+          "Chicken"
+        ]
       ),
       2: new FoodItem(
         foodName: "Burger with drink",  

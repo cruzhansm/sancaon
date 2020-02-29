@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
             ),
             new CanteenHeader(
               canteenName: "Bunzel Basement",
-              canteenImage: 'assets/images/canteen-pictures/canteen_bunzel.jpg'
+              canteenImage: 'assets/images/canteen-pictures/canteen_bunzelbasement.jpg'
             ),
             new CanteenSliver(canteenName: "Bunzel Basement"),
             new CanteenHeader(
@@ -58,22 +58,22 @@ class HomePage extends StatelessWidget {
             new CanteenSliver(canteenName: "Bunzel Canteen"),
             new CanteenHeader(
               canteenName: "SMED Canteen",
-              canteenImage: 'assets/images/home/canteen3.jpg'
+              canteenImage: 'assets/images/canteen-pictures/canteen_smed.jpg'
             ),
             new CanteenSliver(canteenName: "SMED Canteen"),
             new CanteenHeader(
               canteenName: "RH Canteen",
-              canteenImage: 'assets/images/home/canteen4.jpg'  
+              canteenImage: 'assets/images/canteen-pictures/canteen_rh.jpg'  
             ),
             new CanteenSliver(canteenName: "RH Canteen"),
             new CanteenHeader(
               canteenName: "SAFAD Canteen",
-              canteenImage: 'assets/images/canteen-pictures/canteen_safad.jpg'  
+              canteenImage: 'assets/images/canteen-pictures/canteen_safad.jpg'
             ),
             new CanteenSliver(canteenName: "SAFAD Canteen"),
             new CanteenHeader(
               canteenName: "Cafe+",
-              canteenImage: 'assets/images/home/canteen6.jpg'  
+              canteenImage: 'assets/images/canteen-pictures/canteen_cafe+.jpg'  
             ),
             new CanteenSliver(canteenName: "Cafe+"),
             /*new SliverList(

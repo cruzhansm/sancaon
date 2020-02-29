@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelBStalls {

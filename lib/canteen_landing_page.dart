@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sancaon/canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
-import 'package:sancaon/canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
+import 'package:sancaon/canteen_data/SAFAD_Canteen/safad_stalls.dart';
+import 'canteen_data/Cafeplus_Canteen/cafeplus_stalls.dart';
+import 'canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
+import 'canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
+import 'canteen_data/RH_Canteen/rh_stalls.dart';
+import 'canteen_data/SMED_Canteen/smed_stalls.dart';
 import 'canteen_data/final_data_canteens.dart';
 import 'canteen_data/data.dart';
 
@@ -9,6 +13,10 @@ dynamic foodItemContent(String nameOfCanteen) {
   CanteenData newCanteen = new CanteenData();
   BunzelStalls bunzelStalls = new BunzelStalls();
   BunzelBStalls bunzelBStalls = new BunzelBStalls();
+  SMEDStalls smedStalls = new SMEDStalls();
+  RHStalls rhStalls = new RHStalls();
+  SAFADStalls safadStalls = new SAFADStalls();
+  CafeplusStalls cafeplusStalls = new CafeplusStalls();
 
   List<FoodStall> bunzelCanteenFoodStalls = [
     bunzelStalls.bunzelCS1,
@@ -24,22 +32,47 @@ dynamic foodItemContent(String nameOfCanteen) {
     bunzelBStalls.bunzelBS1
   ];
 
+  List<FoodStall> smedCanteenFoodStalls = [
+    smedStalls.smedCS1,
+    smedStalls.smedCS2,
+    smedStalls.smedCS3
+  ];
+
+  List<FoodStall> rhCanteenFoodStalls = [
+    rhStalls.rhCS1
+  ];
+
+  List<FoodStall> safadCanteenFoodStalls = [
+    safadStalls.safadCS1,
+    safadStalls.safadCS2,
+    safadStalls.safadCS3,
+    safadStalls.safadCS4,
+    safadStalls.safadCS5,
+    safadStalls.safadCS6,
+    safadStalls.safadCS7,
+    safadStalls.safadCS8
+  ];
+
+  List<FoodStall> cafePlusFoodStalls = [
+    cafeplusStalls.cafeplusCS1
+  ];
+
   Map<String, Canteen> selectedCanteen = {
     'Bunzel Basement' : newCanteen.bunzelBasement,
     'Bunzel Canteen': newCanteen.bunzelCanteen,
     'SMED Canteen': newCanteen.smedCanteen,
     'RH Canteen': newCanteen.rhCanteen,
     'SAFAD Canteen': newCanteen.safadCanteen,
-    'Cafe+': newCanteen.cafepCanteen
+    'Cafe+': newCanteen.cafeplusCanteen
   };
 
   Map<Canteen, List<FoodStall>> selectedStalls = {
     newCanteen.bunzelBasement : bunzelBasementFoodStalls,
     newCanteen.bunzelCanteen : bunzelCanteenFoodStalls,
-    newCanteen.smedCanteen : bunzelCanteenFoodStalls,
-    newCanteen.rhCanteen : bunzelCanteenFoodStalls,
-    newCanteen.safadCanteen : bunzelCanteenFoodStalls,
-    newCanteen.cafepCanteen : bunzelCanteenFoodStalls
+    newCanteen.smedCanteen : smedCanteenFoodStalls,
+    newCanteen.rhCanteen : rhCanteenFoodStalls,
+    newCanteen.safadCanteen : safadCanteenFoodStalls,
+    newCanteen.cafeplusCanteen : cafePlusFoodStalls
   };
 
   int foodItemCount = 0;
@@ -90,8 +123,8 @@ dynamic foodItemContent(String nameOfCanteen) {
       foodItemCount = 0;
       foodStallCount++;
     }
-      return foodItem;
-    }
+    return foodItem;
+  }
   return listOfFood();
 }
 
@@ -100,12 +133,12 @@ class CanteenMenu extends StatelessWidget {
   final String locationOfCanteen;
 
   static Map<String, String> canteenImages = {
-    'Bunzel Basement': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
+    'Bunzel Basement': 'assets/images/canteen-pictures/canteen_bunzelbasement.jpg',
     'Bunzel Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
-    'SMED Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
-    'RH Canteen': 'assets/images/home/canteen4.jpg',
-    'SAFAD Canteen': 'assets/images/home/canteen5.jpg',
-    'Cafe+': 'assets/images/home/canteen6.jpg'
+    'SMED Canteen': 'assets/images/canteen-pictures/canteen_smed.jpg',
+    'RH Canteen': 'assets/images/canteen-pictures/canteen_rh.jpg',
+    'SAFAD Canteen': 'assets/images/canteen-pictures/canteen_safad.jpg',
+    'Cafe+': 'assets/images/canteen-pictures/canteen_cafe+.jpg'
   };
 
   CanteenMenu({this.nameOfCanteen, this.locationOfCanteen});

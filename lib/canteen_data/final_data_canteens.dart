@@ -29,19 +29,39 @@ class CanteenData {
     canteenImage: new Image.asset('assets/images/canteen-pictures/canteen_bunzel.jpg'),
     canteenStalls: [
       "Jolly Bubbly Food Court",
-      "Kiara Loraine FoodHaus",
+      "Kiara Loraine Food Haus",
       "Tiktilaok"
     ]
   );
 
   Canteen rhCanteen = new Canteen(
+    canteenName: "RH Canteen",
+    canteenImage: new Image.asset('assets/images/canteen-pictures/canteen_bunzel.jpg'),
+    canteenStalls: [
+      "Cebu 3-6-2 Canteen"
+    ]
   );
 
   Canteen safadCanteen = new Canteen(
-
+    canteenName: "SAFAD Canteen",
+    canteenImage: new Image.asset('assets/images/canteen-pictures/canteen_bunzel.jpg'),
+    canteenStalls: [
+      "Panlasang Pinoy",
+      "Leylam Shawarma",
+      "Patrick's Kitchen",
+      "My Own Recipe (MORE)",
+      "Tiktilaok",
+      "Hotdog on Sticks",
+      "K & K Ice Kreeme",
+      "Kiara Loraine Food Haus"
+    ]
   );
 
-  Canteen cafepCanteen = new Canteen(
-
+  Canteen cafeplusCanteen = new Canteen(
+    canteenName: "Cafe Plus Coffee Shop",
+    canteenImage: new Image.asset('assets/images/canteen-pictures/canteen_bunzel.jpg'),
+    canteenStalls: [
+      "Cafe Plus Coffee Shop"
+    ]
   );
 }

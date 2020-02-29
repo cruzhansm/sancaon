@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
-class RhStalls {  
+class RHStalls {  
   //Cebu 3-6-2 Canteen
   FoodStall rhCS1 = new FoodStall(
     indexedFoodList: {
