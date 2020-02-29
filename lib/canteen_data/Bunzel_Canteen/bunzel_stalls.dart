@@ -3,7 +3,7 @@ import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelStalls {  
   //Izza's Snack Haus
-  FoodStall bunzelCS1 = new FoodStall(
+  FoodStall bunzelCS1 = new FoodStall( // TODO: all images
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Supreme",
@@ -100,7 +100,7 @@ class BunzelStalls {
   );
 
 //MK Burgeran Food Stand
-  FoodStall bunzelCS2 = new FoodStall( 
+  FoodStall bunzelCS2 = new FoodStall( // TODO: images for different hatdogs
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Egg & Cheese",  
@@ -183,7 +183,7 @@ class BunzelStalls {
   );
 
 //Healthylicious
-  FoodStall bunzelCS3 = new FoodStall(
+  FoodStall bunzelCS3 = new FoodStall( // TODO: data of new items (replace old)
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Banana Cake",
@@ -333,7 +333,7 @@ class BunzelStalls {
   );
 
 //Amboy's
-  FoodStall bunzelCS4 = new FoodStall(
+  FoodStall bunzelCS4 = new FoodStall( // TODO: lacking images
     indexedFoodList: {
       1 : new FoodItem(
         foodName: "Burger Steak",
@@ -488,7 +488,7 @@ class BunzelStalls {
   );
 
 //Santino's
-  FoodStall bunzelCS5 = new FoodStall(
+  FoodStall bunzelCS5 = new FoodStall( // TODO: 2 food item images
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Bacon Sausage Bonanza",
@@ -498,7 +498,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk4.jpg",
         rating: "green",
         foodIngredients: [
           "Bacon",
@@ -521,7 +521,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Santino's/santinos3.jpg",
         rating: "green",
         foodIngredients: [
           "Bread",
@@ -544,7 +544,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Santino's/santinos2.jpg",
         rating: "green",
         foodIngredients: [
           "Bread",
@@ -588,7 +588,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Santino's/santinos1.jpg",
         rating: "green",
         foodIngredients: [
           "Bread",
@@ -605,7 +605,7 @@ class BunzelStalls {
   );
     
 //Franco's Tasty Treats Corner
-  FoodStall bunzelCS6 = new FoodStall(
+  FoodStall bunzelCS6 = new FoodStall( // TODO: 2 food item images
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Arrozcaldo",  
@@ -630,7 +630,7 @@ class BunzelStalls {
           27.0,
           28.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
         rating: "green",
         foodIngredients: null,
         foodAllergens: null
@@ -651,7 +651,7 @@ class BunzelStalls {
   );
     
 //Pabugnawan Refreshment and Snack Haus
-  FoodStall bunzelCS7 = new FoodStall(
+  FoodStall bunzelCS7 = new FoodStall( // TODO: lacking all images
     indexedFoodList: {
       1: new FoodItem(
       foodName: "Bihon",
@@ -760,7 +760,7 @@ class BunzelStalls {
       foodName: "Ngohiong",
       foodPrice: 28.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious7.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan1.jpg",
       rating: "green",
       foodIngredients: [
         "Lumpia Wrap",
