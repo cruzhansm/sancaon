@@ -66,6 +66,8 @@ flutter:
     - assets/images/canteen-menu/RHCanteen/
     - assets/images/canteen-menu/SMEDCanteen/
     - assets/images/credits/
+    - assets/images/canteen-menu/SMEDCanteen/Tiktilaok/
+    - assets/images/canteen-menu/SMEDCanteen/Jolly_Bubbly_Food_Court/
 
   # To add assets to your application, add an assets section, like this:
 #  assets:
