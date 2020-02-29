@@ -650,147 +650,167 @@ class BunzelStalls {
   FoodStall bunzelCS7 = new FoodStall(
     indexedFoodList: {
       1: new FoodItem(
-      foodName: "Banana Cake",
-      foodPrice: 25.00,
-      hasManyOptions: false,
+      foodName: "Bihon",
+      hasManyOptions: true,
+        manyPrices: [
+          20.0,
+          30.0
+        ],
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
       rating: "green",
       foodIngredients: [
-        "Banana Mixture"
+        "Bell Pepper",
+        "Carrots",
+        "Ground Pork"
       ],
       foodAllergens: null
     ),
     2: new FoodItem(
-      foodName: "Champorado",
-      foodPrice: 20.00,
+      foodName: "Cesado Pork",
+      foodPrice: 35.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious9.jpg",
       rating: "green",
       foodIngredients: [
-        "Cooked Rice",
-        "Tableya (Pure)",
-        "Brown Sugar"
+        "Carrots",
+        "Potatoes",
+        "Tomato Sauce"
       ],
       foodAllergens: null
     ),
     3: new FoodItem(
-      foodName: "Egg Pandesal",
-      foodPrice: 10.00,
+      foodName: "Chickendog",
+      foodPrice: 25.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious3.jpg",
       rating: "green",
-      foodIngredients: [
-        "Mango Flour",
-        "Scrambled Egg"
-      ],
-      foodAllergens: [
-        "Eggs"
-      ]
+      foodIngredients: null,
+      foodAllergens: null
     ),
     4: new FoodItem(
-      foodName: "Ensaymada",
-      foodPrice: 31.00,
+      foodName: "Chicken Asado",
+      foodPrice: 35.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious8.jpg",
       rating: "green",
       foodIngredients: [
-        "Wheat",
-        "Flour",
-        "Yema",
-        "Ube Flavoring"
+        "Carrots",
+        "Chicken",
+        "Eggs",
+        "Potatoes"
       ],
       foodAllergens: [
-        "Ube"
+        "Carrots",
+        "Chicken",
+        "Eggs"
       ]
     ),
     5: new FoodItem(
-      foodName: "Meatroll",
-      foodPrice: 25.00,
+      foodName: "Chicken Liver",
+      foodPrice: 20.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
       rating: "green",
       foodIngredients: [
-        "Mango Flour",
-        "Asado (Pork)",
-        "Hard-boiled Egg"
+        "Chicken Liver"
       ],
       foodAllergens: [
-        "Eggs"
+        "Chicken"
       ]
     ),
     6 : new FoodItem(
-      foodName: "Menudo",
-      foodPrice: 45.00,
+      foodName: "Ginaling",
+      hasManyOptions: true,
+        manyPrices: [
+          35.0,
+          45.0
+        ],
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+      rating: "green",
+      foodIngredients: [
+        "Carrots",
+        "Pork",
+        "Potatoes"
+      ],
+      foodAllergens: [
+        "Pork"
+      ]
+    ),
+    7 : new FoodItem(
+      foodName: "Hotdog",
+      foodPrice: 15.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
       rating: "green",
       foodIngredients: [
+        "Beef",
         "Pork",
-        "Carrots",
-        "Potatoes",
-        "Onions",
-        "Garlic",
-        "Tomato sauce"
+        "Poultry Meat"
       ],
       foodAllergens: [
-        "Carrots",
-        "Tomato Sauce"
+        "Beef",
+        "Pork"
       ]
     ),
-    7 : new FoodItem(
-      foodName: "Siopao",
+    8: new FoodItem(
+      foodName: "Ngohiong",
+      foodPrice: 28.00,
+      hasManyOptions: false,
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious7.jpg",
+      rating: "green",
+      foodIngredients: [
+        "Lumpia Wrap",
+        "Taugee",
+        "Lumpia Wrap"
+      ],
+      foodAllergens: null
+    ),
+    9: new FoodItem(
+      foodName: "Pancit",
       foodPrice: 20.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
       rating: "green",
       foodIngredients: [
-        "Asado (Pork)",
-        "Bola-bola (Ground pork)",
-        "Chicken"
+        "Bellpepper",
+        "Cabbage",
+        "Carrots",
+        "Chicken Liver",
+        "Pork"
       ],
       foodAllergens: [
-        "Chicken"
+        "Carrots",
+        "Pork"
       ]
     ),
-    8: new FoodItem(
-      foodName: "Special Biscocho",
-      foodPrice: 47.00,
-      hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious7.jpg",
-      rating: "green",
-      foodIngredients: [
-        "Wheat",
-        "Flour",
-        "White Sugar"
-      ],
-      foodAllergens: null
-    ),
-    9: new FoodItem(
-      foodName: "Steamed Rice",
-      foodPrice: 40.00,
-      hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-      rating: "green",
-      foodIngredients: [
-        "Pork",
-        "Rice"
-      ],
-      foodAllergens: null
-    ),
     10: new FoodItem(
-      foodName: "Tuna Mini Pizza",
+      foodName: "Sisig",
+      foodPrice: 35.00,
+      hasManyOptions: false,
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
+      rating: "green",
+      foodIngredients: [
+        "Green Chili",
+        "Pork"
+      ],
+      foodAllergens: [
+        "Pork"
+      ]
+    ),
+    11: new FoodItem(
+      foodName: "Spaghetti",
       foodPrice: 25.00,
       hasManyOptions: false,
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
       rating: "green",
       foodIngredients: [
-        "Cooked Tuna",
-        "Flour",
-        "Cheese"
+        "Cheese",
+        "Pork",
+        "Tomato Sauce"
       ],
       foodAllergens: [
-        "Tuna",
-        "Cheese"
+        "Cheese",
+        "Pork"
       ]
     ),
   }
