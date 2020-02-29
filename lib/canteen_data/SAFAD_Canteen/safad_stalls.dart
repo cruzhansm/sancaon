@@ -1,4 +1,5 @@
 import 'package:sancaon/canteen_data/data.dart';
+import 'package:flutter/material.dart';
 
 class SAFADStalls {
   //Panlasang Pinoy
@@ -885,4 +886,10 @@ class SAFADStalls {
       ),
     }
   ); // ------> stall close
+  
+  int calculateFoodItemsLength(FoodStall foodStall) {
+    int foodItems =  foodStall.indexedFoodList.length;
+    debugPrint("This stall's number of items: " + foodItems.toString());
+    return foodItems;
+  }
 } // ------> close SAFAD canteen

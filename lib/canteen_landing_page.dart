@@ -8,7 +8,8 @@ import 'canteen_data/SMED_Canteen/smed_stalls.dart';
 import 'canteen_data/final_data_canteens.dart';
 import 'canteen_data/data.dart';
 
-dynamic foodItemContent(String nameOfCanteen) {
+dynamic foodItemContent(String nameOfCanteen, String sortingMethod) {
+  dynamic foodItems;
 
   CanteenData newCanteen = new CanteenData();
   BunzelStalls bunzelStalls = new BunzelStalls();
@@ -57,15 +58,6 @@ dynamic foodItemContent(String nameOfCanteen) {
     cafeplusStalls.cafeplusCS1
   ];
 
-  Map<String, Canteen> selectedCanteen = {
-    'Bunzel Basement' : newCanteen.bunzelBasement,
-    'Bunzel Canteen': newCanteen.bunzelCanteen,
-    'SMED Canteen': newCanteen.smedCanteen,
-    'RH Canteen': newCanteen.rhCanteen,
-    'SAFAD Canteen': newCanteen.safadCanteen,
-    'Cafe+': newCanteen.cafeplusCanteen
-  };
-
   Map<Canteen, List<FoodStall>> selectedStalls = {
     newCanteen.bunzelBasement : bunzelBasementFoodStalls,
     newCanteen.bunzelCanteen : bunzelCanteenFoodStalls,
@@ -73,6 +65,24 @@ dynamic foodItemContent(String nameOfCanteen) {
     newCanteen.rhCanteen : rhCanteenFoodStalls,
     newCanteen.safadCanteen : safadCanteenFoodStalls,
     newCanteen.cafeplusCanteen : cafePlusFoodStalls
+  };
+
+  Map<Canteen, dynamic> stallGroupList = {
+    newCanteen.bunzelBasement : bunzelBStalls,
+    newCanteen.bunzelCanteen : bunzelStalls,
+    newCanteen.smedCanteen : smedStalls,
+    newCanteen.rhCanteen : rhStalls,
+    newCanteen.safadCanteen : safadStalls,
+    newCanteen.cafeplusCanteen : cafeplusStalls
+  };
+
+  Map<String, Canteen> selectedCanteen = {
+    'Bunzel Basement' : newCanteen.bunzelBasement,
+    'Bunzel Canteen': newCanteen.bunzelCanteen,
+    'SMED Canteen': newCanteen.smedCanteen,
+    'RH Canteen': newCanteen.rhCanteen,
+    'SAFAD Canteen': newCanteen.safadCanteen,
+    'Cafe+': newCanteen.cafeplusCanteen
   };
 
   int foodItemCount = 0;
@@ -83,35 +93,12 @@ dynamic foodItemContent(String nameOfCanteen) {
   
   List<Widget> listOfFood() {
     List<Widget> foodItem = new List();
-    foodItem.add(new Container(
-      margin: EdgeInsets.only(left: 25.0),
-      child: new Row(
-        children: <Widget> [
-          new Expanded(
-            flex: 3,
-            child: new Text(
-              "Alphabetic"
-            ),
-          ),
-          new Expanded(
-            flex: 1,
-            child: new InkWell(
-              onTap: () => debugPrint("sorting"),
-              enableFeedback: true,
-              child: new Icon(
-                Icons.sort
-              ),
-            )
-          )
-        ]
-      ),
-    ));
     while(foodStallCount <= numberOfFoodStalls - 1) {
       Canteen currentCanteen = selectedCanteen[nameOfCanteen];
       List<FoodStall> currentSelectedStalls = selectedStalls[currentCanteen];
       FoodStall currentStall = currentSelectedStalls[foodStallCount];
 
-      numberOfFoodItems = bunzelStalls.calculateFoodItemsLength(currentStall);
+      numberOfFoodItems = stallGroupList[currentCanteen].calculateFoodItemsLength(currentStall);
 
       while(foodItemCount <= numberOfFoodItems-1) {
         foodItem.add(new FoodItems(
@@ -125,10 +112,105 @@ dynamic foodItemContent(String nameOfCanteen) {
     }
     return foodItem;
   }
-  return listOfFood();
+  if(sortingMethod == "by Alphabetical"){
+    foodItems = sortFoodItemsByAlphabetical(listOfFood());
+  }
+  else if(sortingMethod == 'by Price'){
+    foodItems = sortFoodItemsByPrice(listOfFood());
+  }
+  else if(sortingMethod == 'by Stall'){
+    foodItems = sortFoodItemsByStall(listOfFood());
+  }
+  return foodItems;
 }
 
-class CanteenMenu extends StatelessWidget {
+dynamic sortFoodItemsByAlphabetical(List<Widget> foodItem) {
+  List<Widget> alphabeticalSort = foodItem;
+  for(int i = 0; i < alphabeticalSort.length; i++){
+    for(int j = i+1; j < alphabeticalSort.length; j++){
+      dynamic food1 = alphabeticalSort[i];
+      dynamic food2 = alphabeticalSort[j];
+      dynamic temp;
+      String food1Name = food1.food.foodName;
+      String food2Name = food2.food.foodName;
+      debugPrint(food1Name.compareTo(food2Name).toString());
+      if(food1Name.compareTo(food2Name) == 1){
+        debugPrint("Switched!");
+        temp = alphabeticalSort[j];
+        alphabeticalSort[j] = alphabeticalSort[i];
+        alphabeticalSort[i] = temp;
+      }
+      debugPrint(food1Name + " " + food2Name);
+    }
+  }
+  return alphabeticalSort;
+}
+
+dynamic sortFoodItemsByPrice(List<Widget> foodItem) {
+  List<Widget> priceSort = foodItem;
+  for(int i = 0; i < priceSort.length; i++){
+    for(int j = i+1; j < priceSort.length; j++){
+      dynamic food1 = priceSort[i];
+      dynamic food2 = priceSort[j];
+      dynamic temp;
+      double food1Price = food1.food.foodPrice == null? food1.food.manyPrices[0] : food1.food.foodPrice;
+      double food2Price = food2.food.foodPrice == null? food2.food.manyPrices[0] : food2.food.foodPrice;
+      if(food1Price > food2Price){
+        debugPrint("Switched!");
+        temp = priceSort[j];
+        priceSort[j] = priceSort[i];
+        priceSort[i] = temp;
+      }
+      //debugPrint(food1Name + " " + food2Name);
+    }
+  }
+  return priceSort;
+}
+
+dynamic sortFoodItemsByStall(List<Widget> foodItem) {
+  List<Widget> stallSort = foodItem;
+  for(int i = 0; i < stallSort.length; i++){
+    for(int j = i+1; j < stallSort.length; j++){
+      dynamic food1 = stallSort[i];
+      dynamic food2 = stallSort[j];
+      dynamic temp;
+      String food1Stall = food1.stall;
+      String food2Stall = food2.stall;
+      debugPrint(food1Stall.compareTo(food2Stall).toString());
+      if(food1Stall.compareTo(food2Stall) == 1){
+        debugPrint("Switched!");
+        temp = stallSort[j];
+        stallSort[j] = stallSort[i];
+        stallSort[i] = temp;
+      }
+    }
+  }
+  return stallSort;
+}
+
+dynamic sortFoodItemsByTLF(List<Widget> foodItem) { // TODO: Special sorting for tlf
+  List<Widget> alphabeticalSort = foodItem;
+  for(int i = 0; i < alphabeticalSort.length; i++){
+    for(int j = i+1; j < alphabeticalSort.length; j++){
+      dynamic food1 = alphabeticalSort[i];
+      dynamic food2 = alphabeticalSort[j];
+      dynamic temp;
+      String food1Name = food1.food.foodName;
+      String food2Name = food2.food.foodName;
+      debugPrint(food1Name.compareTo(food2Name).toString());
+      if(food1Name.compareTo(food2Name) == 1){
+        debugPrint("Switched!");
+        temp = alphabeticalSort[j];
+        alphabeticalSort[j] = alphabeticalSort[i];
+        alphabeticalSort[i] = temp;
+      }
+      debugPrint(food1Name + " " + food2Name);
+    }
+  }
+  return alphabeticalSort;
+}
+
+class CanteenMenu extends StatefulWidget {
   final String nameOfCanteen;
   final String locationOfCanteen;
 
@@ -144,6 +226,14 @@ class CanteenMenu extends StatelessWidget {
   CanteenMenu({this.nameOfCanteen, this.locationOfCanteen});
 
   @override
+  _CanteenMenuState createState() => _CanteenMenuState();
+}
+
+class _CanteenMenuState extends State<CanteenMenu> {
+  String sortingMethod = "by Alphabetical";
+  dynamic dropdownValue;
+
+  @override
   Widget build(BuildContext context) {
     return new Container(
       child: new SafeArea(
@@ -152,12 +242,12 @@ class CanteenMenu extends StatelessWidget {
             new SizedBox(
               width: double.infinity,
               child: new Image.asset(
-                canteenImages[nameOfCanteen]
+                CanteenMenu.canteenImages[widget.nameOfCanteen]
               )
             ),
             new Container(
               color: Colors.black.withOpacity(0.5),
-              height: MediaQuery.of(context).size.height - 100.0
+              height: 240.0
             ),
             new IconButton(
               onPressed: () => {
@@ -175,7 +265,7 @@ class CanteenMenu extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new Text(
-                    nameOfCanteen,
+                    widget.nameOfCanteen,
                     style: TextStyle(
                       fontSize: 30.0,
                       fontFamily: "Dosis",
@@ -184,7 +274,7 @@ class CanteenMenu extends StatelessWidget {
                     )
                   ),
                   new Text(
-                    locationOfCanteen,
+                    widget.locationOfCanteen,
                     style: TextStyle(
                       fontSize: 12.0,
                       color: Colors.white
@@ -194,14 +284,71 @@ class CanteenMenu extends StatelessWidget {
               )
             ),
             new Container(
-              margin: EdgeInsets.only(top:220),
+              margin: EdgeInsets.only(top: 220.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              height: 50.0,
+              width: double.infinity,
               decoration: BoxDecoration(
+                color: Colors.yellow,
                 borderRadius: BorderRadius.circular(15.0),
-                color: Colors.white,
               ),
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  new Text(
+                    sortingMethod,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: "Quicksand"
+                    )
+                  ),
+                  new DropdownButton(
+                    value: dropdownValue,
+                    underline: new Container(
+                      color: Colors.deepPurpleAccent,
+                      height: 2
+                    ),
+                    icon: new Icon(Icons.sort),
+                    hint: new Text(
+                      "Sort",
+                      style: TextStyle(
+                        color: Colors.black
+                      )),
+                    items: [
+                      new DropdownMenuItem(
+                        child: new Text("Alphabetical"),
+                        value: "by Alphabetical"
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text("Price"),
+                        value: "by Price"
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text("Stall"),
+                        value: "by Stall"
+                      ),
+                      new DropdownMenuItem(
+                        child: new Text("TLF Rating"),
+                        value: "by TLF Rating"
+                      )
+                    ], 
+                    onChanged: (dropdownValue) => {
+                      setState(() {
+                        sortingMethod = dropdownValue; 
+                      }),
+                      debugPrint(sortingMethod)
+                    }
+                  )
+                ],
+              )
+            ),
+            new Container(
+              margin: EdgeInsets.only(top: 267.5),
+              color: Colors.white,
               child: new ListView(
-                padding: EdgeInsets.only(top: 15.0),
-                children: foodItemContent(nameOfCanteen)
+                padding: EdgeInsets.only(top: 5.0),
+                children: foodItemContent(widget.nameOfCanteen, sortingMethod)
               )
             )
           ]

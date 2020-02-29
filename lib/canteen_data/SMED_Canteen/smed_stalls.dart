@@ -1,4 +1,5 @@
 import 'package:sancaon/canteen_data/data.dart';
+import 'package:flutter/material.dart';
 
 class SMEDStalls {
   FoodStall smedCS1 = new FoodStall( // TODO: lacking images (all except hotdog sandwich) 
@@ -299,4 +300,10 @@ class SMEDStalls {
       ),
     }
   );
+
+  int calculateFoodItemsLength(FoodStall foodStall) {
+    int foodItems =  foodStall.indexedFoodList.length;
+    debugPrint("This stall's number of items: " + foodItems.toString());
+    return foodItems;
+  } 
 }

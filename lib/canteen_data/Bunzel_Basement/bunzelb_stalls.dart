@@ -1,9 +1,10 @@
 import 'package:sancaon/canteen_data/data.dart';
+import 'package:flutter/material.dart';
 
 class BunzelBStalls {
   FoodStall bunzelBS1 = new FoodStall(
     indexedFoodList: {
-      1 : new FoodItem(
+      2 : new FoodItem(
         foodName: "Chicken Fillet",
         foodPrice: 45.00,
         hasManyOptions: false,
@@ -14,7 +15,7 @@ class BunzelBStalls {
         ],
         foodAllergens: null
       ),
-      2 : new FoodItem(
+      1 : new FoodItem(
         foodName: "Cornsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
@@ -119,4 +120,10 @@ class BunzelBStalls {
       ),
     }
   );
+
+  int calculateFoodItemsLength(FoodStall foodStall) {
+    int foodItems =  foodStall.indexedFoodList.length;
+    debugPrint("This stall's number of items: " + foodItems.toString());
+    return foodItems;
+  }
 }
