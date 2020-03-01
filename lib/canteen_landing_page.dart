@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sancaon/canteen_data/SAFAD_Canteen/safad_stalls.dart';
+import 'canteen_data/SAFAD_Canteen/safad_stalls.dart';
 import 'canteen_data/Cafeplus_Canteen/cafeplus_stalls.dart';
 import 'canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
 import 'canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
@@ -121,6 +121,9 @@ dynamic foodItemContent(String nameOfCanteen, String sortingMethod) {
   else if(sortingMethod == 'by Stall'){
     foodItems = sortFoodItemsByStall(listOfFood());
   }
+  else if(sortingMethod == 'by TLF Rating'){
+    foodItems = sortFoodItemsByAlphabetical(listOfFood());
+  }
   return foodItems;
 }
 
@@ -154,14 +157,15 @@ dynamic sortFoodItemsByPrice(List<Widget> foodItem) {
       dynamic food2 = priceSort[j];
       dynamic temp;
       double food1Price = food1.food.foodPrice == null? food1.food.manyPrices[0] : food1.food.foodPrice;
+      String food1Name = food1.food.foodName;
       double food2Price = food2.food.foodPrice == null? food2.food.manyPrices[0] : food2.food.foodPrice;
+      String food2Name = food2.food.foodName;
+      debugPrint(food1Name + ": " + food1Price.toString() + " " + food2Name + ": " + food2Price.toString());
       if(food1Price > food2Price){
-        debugPrint("Switched!");
         temp = priceSort[j];
         priceSort[j] = priceSort[i];
         priceSort[i] = temp;
       }
-      //debugPrint(food1Name + " " + food2Name);
     }
   }
   return priceSort;
@@ -344,7 +348,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
               )
             ),
             new Container(
-              margin: EdgeInsets.only(top: 267.5),
+              margin: EdgeInsets.only(top: 270.0),
               color: Colors.white,
               child: new ListView(
                 padding: EdgeInsets.only(top: 5.0),
