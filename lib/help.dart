@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'faq.dart';
+import 'predef_appbar_other.dart';
 
 class HelpPage extends StatelessWidget {
   @override
@@ -67,19 +69,31 @@ class HelpPage extends StatelessWidget {
                 )
               ),
             ),
-            new Container(
-              padding: EdgeInsets.symmetric(vertical: 5.0),
-              constraints: BoxConstraints(
-                minWidth: double.infinity,
-              ),
-              color: Colors.grey[300],
-              child: new Text(
-                'Frequently Asked Questions',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25.0,
-                  fontFamily: "Dosis",
-                  color: Colors.black
+            new InkWell( 
+              onTap: () => {
+                print("Go to FAQs"),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => new AppbarOtherPage(
+                    generatePage: new FaqPage()
+                  )
+                  )
+                )
+              },
+              child: new Container(
+                padding: EdgeInsets.symmetric(vertical: 5.0),
+                constraints: BoxConstraints(
+                  minWidth: double.infinity,
+                ),
+                color: Colors.grey[300],
+                child: new Text(
+                  'Frequently Asked Questions',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontFamily: "Dosis",
+                    color: Colors.black
+                  )
                 )
               )
             )
