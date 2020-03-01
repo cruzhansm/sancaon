@@ -136,14 +136,14 @@ dynamic sortFoodItemsByAlphabetical(List<Widget> foodItem) {
       dynamic temp;
       String food1Name = food1.food.foodName;
       String food2Name = food2.food.foodName;
-      debugPrint(food1Name.compareTo(food2Name).toString());
+      //debugPrint(food1Name.compareTo(food2Name).toString());
       if(food1Name.compareTo(food2Name) == 1){
-        debugPrint("Switched!");
+        //debugPrint("Switched!");
         temp = alphabeticalSort[j];
         alphabeticalSort[j] = alphabeticalSort[i];
         alphabeticalSort[i] = temp;
       }
-      debugPrint(food1Name + " " + food2Name);
+      //debugPrint(food1Name + " " + food2Name);
     }
   }
   return alphabeticalSort;
