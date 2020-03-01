@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'canteen_landing_page.dart';
 import 'predef_appbar_other.dart';
 import 'dart:math' as math;
+import 'dart:math';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,7 +15,6 @@ class HomePage extends StatelessWidget {
           slivers: <Widget>[
             new SliverPersistentHeader(
               pinned: false,
-              floating: true,
               delegate: _SliverAppBarDelegate(
                 minHeight: 115.0,
                 maxHeight: 115.0,
@@ -50,41 +50,54 @@ class HomePage extends StatelessWidget {
               canteenName: "Bunzel Basement",
               canteenImage: 'assets/images/canteen-pictures/canteen_bunzelbasement.jpg'
             ),
-            new CanteenSliver(canteenName: "Bunzel Basement"),
+            new CanteenSliver(
+              canteenName: "Bunzel Basement",
+              numberOfItems: 9),
             new CanteenHeader(
               canteenName: "Bunzel Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_bunzel.jpg'
             ),
-            new CanteenSliver(canteenName: "Bunzel Canteen"),
+            new CanteenSliver(
+              canteenName: "Bunzel Canteen",
+              numberOfItems: 12),
             new CanteenHeader(
               canteenName: "SMED Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_smed.jpg'
             ),
-            new CanteenSliver(canteenName: "SMED Canteen"),
+            new CanteenSliver(
+              canteenName: "SMED Canteen",
+              numberOfItems: 12),
             new CanteenHeader(
               canteenName: "RH Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_rh.jpg'  
             ),
-            new CanteenSliver(canteenName: "RH Canteen"),
+            new CanteenSliver(
+              canteenName: "RH Canteen",
+              numberOfItems: 9,  
+            ),
             new CanteenHeader(
               canteenName: "SAFAD Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_safad.jpg'
             ),
-            new CanteenSliver(canteenName: "SAFAD Canteen"),
+            new CanteenSliver(
+              canteenName: "SAFAD Canteen",
+              numberOfItems: 12
+            ),
             new CanteenHeader(
               canteenName: "Cafe+",
               canteenImage: 'assets/images/canteen-pictures/canteen_cafe+.jpg'  
             ),
-            new CanteenSliver(canteenName: "Cafe+"),
-            /*new SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext build, int index) {
-                  return new SizedBox(
-                    height: 50.0
-                  );
-                }
-              ),
-            )*/
+            new CanteenSliver(
+              canteenName: "Cafe+",
+              numberOfItems: 9,
+            ),
+            // new SliverList(
+            //   delegate: SliverChildBuilderDelegate(
+            //     (BuildContext build, int index) {
+            //       return new Container();
+            //     }
+            //   ),
+            // )
           ],
         ),
       ),
@@ -108,7 +121,7 @@ class CanteenHeader extends StatelessWidget {
       flexibleSpace: new Stack(
         children: <Widget>[
           new Positioned.fill(
-            child: Image.asset(canteenImage, fit: BoxFit.fitWidth)
+            child: Image.asset(canteenImage, fit: BoxFit.cover)
           ),
           new Container(
             color: Colors.black.withOpacity(0.5),
@@ -132,8 +145,9 @@ class CanteenHeader extends StatelessWidget {
 
 class CanteenSliver extends StatelessWidget { //main widget for canteen
   final String canteenName;
+  final int numberOfItems;
 
-  CanteenSliver({this.canteenName});
+  CanteenSliver({this.canteenName, this.numberOfItems});
 
   @override
   Widget build(BuildContext context) {
@@ -141,40 +155,49 @@ class CanteenSliver extends StatelessWidget { //main widget for canteen
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
-          return new CanteenSliverPeek(index: index, canteenName: canteenName);
+          return new CanteenSliverPeek(index: index, canteenName: canteenName, foodItems : numberOfItems);
         },
-        childCount: 12
+        childCount: numberOfItems
       ),
     );
   }
 }
 
+dynamic previewItemsGet(String canteenName, int index, int items) {
+  int i = 0;
+  int j = 0;
+  Random random = new Random();
+  List<String> newPreviewImage = new List();
+  List<int> usedNumbers = new List();
+  dynamic foodList = foodItemContent(canteenName, "by Alphabetical");
+
+  
+  while(i <= foodList.length-1){
+    newPreviewImage.add(foodList[i].food.foodImage);
+    //debugPrint(newPreviewImage[i]);
+    i++;
+  }
+  while(j <= items-1){
+    usedNumbers.add(random.nextInt(foodList.length));
+    j++;
+  }
+
+  return newPreviewImage[usedNumbers[index]];
+}
+
 class CanteenSliverPeek extends StatelessWidget { //preview items
   final int index;
-  final canteenName;
+  final int foodItems;
+  final String canteenName;
   
-  CanteenSliverPeek({this.index, this.canteenName});
-
-  static List<dynamic> previewList = [
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-    "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
-  ];
+  CanteenSliverPeek({this.index, this.canteenName, this.foodItems});
 
   @override
   Widget build(BuildContext context) {
-    return index == 11 ? new InkWell(
+    return index == foodItems-1 ? new InkWell(
       onTap: () => {
         debugPrint(canteenName),
+        debugPrint("Notice me senpai! " + previewItemsGet(canteenName, index, foodItems)),
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => new AppbarOtherPage(
@@ -199,8 +222,11 @@ class CanteenSliverPeek extends StatelessWidget { //preview items
           ],
         )
       ),
-    ): Image.asset(
-      previewList[index]
+    ): new FittedBox(
+      fit: BoxFit.fill,
+      child: Image.asset(
+        previewItemsGet(canteenName, index, foodItems)
+      ),
     );
   }
 }

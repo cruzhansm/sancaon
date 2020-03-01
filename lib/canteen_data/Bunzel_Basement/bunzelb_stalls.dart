@@ -20,7 +20,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "yellow",
         foodIngredients: [
           "Beef",
           "Eggs",
@@ -33,7 +33,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "red",
         foodIngredients: [
           "Pork"
         ],
@@ -44,7 +44,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "yellow",
         foodIngredients: [
           ""
         ],
@@ -55,7 +55,7 @@ class BunzelBStalls {
         foodPrice: 50.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "red",
         foodIngredients: [
           ""
         ],
@@ -79,7 +79,7 @@ class BunzelBStalls {
         foodPrice: 40.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "red",
         foodIngredients: [
           "Pork"
         ],
@@ -90,7 +90,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "red",
         foodIngredients: [
           "Pork"
         ],
@@ -101,7 +101,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "yellow",
         foodIngredients: [
           ""
         ],
@@ -112,7 +112,7 @@ class BunzelBStalls {
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
+        rating: "red",
         foodIngredients: [
           ""
         ],

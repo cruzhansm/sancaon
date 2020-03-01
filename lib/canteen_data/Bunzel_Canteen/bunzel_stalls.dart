@@ -656,10 +656,10 @@ class BunzelStalls {
       1: new FoodItem(
       foodName: "Bihon",
       hasManyOptions: true,
-        manyPrices: [
-          20.0,
-          30.0
-        ],
+      manyPrices: [
+        20.0,
+        30.0
+      ],
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
       rating: "green",
       foodIngredients: [
@@ -725,10 +725,10 @@ class BunzelStalls {
     6 : new FoodItem(
       foodName: "Ginaling",
       hasManyOptions: true,
-        manyPrices: [
-          35.0,
-          45.0
-        ],
+      manyPrices: [
+        35.0,
+        45.0
+      ],
       foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
       rating: "green",
       foodIngredients: [

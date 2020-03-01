@@ -32,7 +32,7 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
     HelpPage(),
     HomePage(),
     AboutPage(),
-    AboutPage()
+    null
   ];
 
   List<Color> newColor = [

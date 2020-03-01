@@ -646,7 +646,7 @@ class SAFADStalls {
       ),
       4: new FoodItem(
         foodName: "Cheesedog with Buns",
-        foodPrice: 50.00,
+        foodPrice: 40.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
@@ -658,7 +658,7 @@ class SAFADStalls {
       ),
       5: new FoodItem(
         foodName: "Hotdog with Buns",
-        foodPrice: null,
+        foodPrice: 34.0,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
