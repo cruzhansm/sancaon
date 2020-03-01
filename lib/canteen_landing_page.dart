@@ -122,7 +122,7 @@ dynamic foodItemContent(String nameOfCanteen, String sortingMethod) {
     foodItems = sortFoodItemsByStall(listOfFood());
   }
   else if(sortingMethod == 'by TLF Rating'){
-    foodItems = sortFoodItemsByAlphabetical(listOfFood());
+    foodItems = sortFoodItemsByTLF(listOfFood());
   }
   return foodItems;
 }
@@ -193,25 +193,31 @@ dynamic sortFoodItemsByStall(List<Widget> foodItem) {
 }
 
 dynamic sortFoodItemsByTLF(List<Widget> foodItem) { // TODO: Special sorting for tlf
-  List<Widget> alphabeticalSort = foodItem;
-  for(int i = 0; i < alphabeticalSort.length; i++){
-    for(int j = i+1; j < alphabeticalSort.length; j++){
-      dynamic food1 = alphabeticalSort[i];
-      dynamic food2 = alphabeticalSort[j];
+  List<Widget> tlfSort = foodItem;
+  for(int i = 0; i < tlfSort.length; i++){
+    for(int j = i+1; j < tlfSort.length; j++){
+      dynamic food1 = tlfSort[i];
+      dynamic food2 = tlfSort[j];
       dynamic temp;
-      String food1Name = food1.food.foodName;
-      String food2Name = food2.food.foodName;
-      debugPrint(food1Name.compareTo(food2Name).toString());
-      if(food1Name.compareTo(food2Name) == 1){
+      String food1Rating = food1.food.rating;
+      String food2Rating = food2.food.rating;
+      Map<String, int> foodRating = {
+        "green" : 1,
+        "yellow" : 2,
+        "red" : 3
+      };
+
+      debugPrint(foodRating[food1Rating].toString() + " " + foodRating[food2Rating].toString());
+      if(foodRating[food1Rating] > foodRating[food2Rating]){
         debugPrint("Switched!");
-        temp = alphabeticalSort[j];
-        alphabeticalSort[j] = alphabeticalSort[i];
-        alphabeticalSort[i] = temp;
+        temp = tlfSort[j];
+        tlfSort[j] = tlfSort[i];
+        tlfSort[i] = temp;
       }
-      debugPrint(food1Name + " " + food2Name);
+      debugPrint(foodRating[food1Rating].toString() + " " + foodRating[food1Rating].toString());
     }
   }
-  return alphabeticalSort;
+  return tlfSort;
 }
 
 class CanteenMenu extends StatefulWidget {
