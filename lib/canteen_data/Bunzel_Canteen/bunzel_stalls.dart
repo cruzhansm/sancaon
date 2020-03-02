@@ -336,8 +336,8 @@ class BunzelStalls {
   FoodStall bunzelCS4 = new FoodStall( // TODO: lacking images
     indexedFoodList: {
       1 : new FoodItem(
-        foodName: "Burger Steak",
-        foodPrice: 35.00,
+        foodName: "Lumpia Shanghai",
+        foodPrice: 10.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
@@ -483,6 +483,20 @@ class BunzelStalls {
           "Spices"
         ],
         foodAllergens: null
+      ),
+      11: new FoodItem(
+        foodName: "Spicy Pork",
+        foodPrice: 35.00,
+        hasManyOptions: false,
+        foodImage:"assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys4.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Pork",
+          "Chili (long)",
+        ],
+        foodAllergens: [
+          "Pork"
+        ]
       ),
     }
   );

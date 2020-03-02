@@ -6,49 +6,55 @@ class RHStalls {
   FoodStall rhCS1 = new FoodStall( // TODO: Lacking pictures
     indexedFoodList: {
       1: new FoodItem(
-        foodName: "Bicol Express",
+        foodName: "Menudo",
         foodPrice: 35.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Coconut Milk",
-          "Garlic",
-          "Pork"
-        ],
-        foodAllergens: null
-      ),
-      2: new FoodItem(
-        foodName: "Chicken Adobo",
-        foodPrice: 35.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Chicken",
-          "Soysauce",
-          "Vinegar"
+          "Pork",
+          "Potato",
+          "Tomato sauce",
+          "Carrots",
+          "Garlic"
         ],
         foodAllergens: [
-          "Chicken",
-          "Soy"
+          "Pork"
+        ]
+      ),
+      2: new FoodItem(
+        foodName: "Ginaling",
+        foodPrice: 35.00,
+        hasManyOptions: false,
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Pork",
+          "Potato",
+          "Carrots"
+        ],
+        foodAllergens: [
+          "Pork"
         ]
       ),
       3: new FoodItem(
-        foodName: "Chicken Strips",
+        foodName: "Chicken Curry",
         foodPrice: 35.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken",
-          "Cornstarch",
-          "Egg",
-          "Flour"
+          "Chicken curry powder",
+          "Pepper",
+          "Potato",
+          "Spring onion",
+          "Carrots",
+          "Egg"
         ],
         foodAllergens: [
           "Chicken",
-          "Gluten"
+          "Egg"
         ]
       ),
       4: new FoodItem(
@@ -60,7 +66,10 @@ class RHStalls {
         foodIngredients: [
           "Cornstarch",
           "Magic Sarap",
-          "Mixed Vegetables"
+          "Sayote (mirliton squash)",
+          "Pechay",
+          "Carrots",
+          "Young corn"
         ],
         foodAllergens: null
       ),
@@ -78,21 +87,24 @@ class RHStalls {
         ],
         foodAllergens: [
           "Gluten",
-          "Soy"
+          "Pork",
+          "Egg"
         ]
       ),
       6: new FoodItem(
-        foodName: "Lomi",
-        foodPrice: 20.00,
+        foodName: "Chicken Liver",
+        foodPrice: 35.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Ginisa Powder",
-          "Magic Sarap",
-          "Noodles"
+          "Chicken liver",
+          "Bellpepper",
+          "Tomato paste"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Chicken"
+        ]
       ),
       7: new FoodItem(
         foodName: "Sinugba Baboy",
@@ -106,22 +118,22 @@ class RHStalls {
           "Vinegar"
         ],
         foodAllergens: [
-          "Soy"
+          "Pork"
         ]
       ),
       8: new FoodItem(
-        foodName: "Pork Humba",
+        foodName: "Pork Steak",
         foodPrice: 35.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
-          "Laurel",
           "Pork",
+          "Laurel leaves",
           "Soysauce"
         ],
         foodAllergens: [
-          "Soy"
+          "Pork"
         ]
       ),
       9: new FoodItem(
@@ -133,10 +145,10 @@ class RHStalls {
         foodIngredients: [
           "Pork",
           "Soysauce",
-          "Swor Pepper"
+          "Long chili"
         ],
         foodAllergens: [
-          "Soy"
+          "Pork"
         ]
       ),
       10: new FoodItem(
@@ -151,8 +163,21 @@ class RHStalls {
           "Sugar"
         ],
         foodAllergens: [
-          "Soy"
+          "Pork"
         ]
+      ),
+      11: new FoodItem(
+        foodName: "Ginisang Kangkong",
+        foodPrice: 15.00,
+        hasManyOptions: false,
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Kangkong (water spinach)",
+          "Oil",
+          "Salt"
+        ],
+        foodAllergens: null
       ),
     }
   );

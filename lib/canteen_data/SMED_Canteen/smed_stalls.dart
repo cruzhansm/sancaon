@@ -5,20 +5,6 @@ class SMEDStalls {
   FoodStall smedCS1 = new FoodStall( // TODO: lacking images (all except hotdog sandwich) 
     indexedFoodList: {
       1: new FoodItem(
-        foodName: "Brownies",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Chocolate",
-          "Nuts"
-        ],
-        foodAllergens: [
-          "Nuts"
-        ]
-      ),
-      2: new FoodItem(
         foodName: "Hotdog Sandwich",
         foodPrice: 20.0,
         hasManyOptions: false,
@@ -34,44 +20,7 @@ class SMEDStalls {
           "Pork"
         ]
       ),
-      3 : new FoodItem(
-        foodName: "Ice Cream",
-        hasManyOptions: true,
-        manyPrices: [
-          15.00,
-          20.00,
-          25.00,
-          30.00
-        ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Coconut Milk",
-          "Garlic",
-          "Pork"
-        ],
-        foodAllergens: null
-      ),
-      4: new FoodItem(
-        foodName: "Ice Scramble",
-        hasManyOptions: true,
-        manyPrices : [
-          10.00,
-          15.00,
-          20.00
-        ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Ice Scramble Premix",
-          "Crushed Ice",
-          "Milk"
-        ],
-        foodAllergens: [
-          "Milk"
-        ]
-      ),
-      5 : new FoodItem(
+      2: new FoodItem(
         foodName: "Siomai",
         foodPrice: 7.00,
         hasManyOptions: false,
