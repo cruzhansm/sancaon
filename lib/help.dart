@@ -5,17 +5,18 @@ import 'predef_appbar_other.dart';
 class HelpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Center(
+    return new SafeArea(
+      child: Center(
       child: new Container(
         constraints: BoxConstraints(
           maxWidth: 280.0,
           minWidth: 280.0
         ),
-        //color: Colors.red,
+        // color: Colors.red,
         child: new Column(
           children: <Widget>[
             new Container(
-              margin: EdgeInsets.only(top: 60.0),
+              margin: EdgeInsets.only(top: 65.0),
             ),
             new Icon(
               Icons.help,
@@ -100,6 +101,7 @@ class HelpPage extends StatelessWidget {
           ],
         ),
       ),
+    )
     );
   }
 }

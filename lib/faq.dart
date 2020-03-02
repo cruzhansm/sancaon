@@ -24,6 +24,8 @@ class FaqPage extends StatelessWidget{
                 child: new Text(
                   'FAQ',
                   style: TextStyle(
+                    fontFamily: "Quicksand",
+                    fontWeight: FontWeight.bold,
                     fontSize: 50.0
                   )
                 )
