@@ -14,30 +14,36 @@ class FaqPage extends StatelessWidget{
       body: new Center(
         child: new ListView(
           children: <Widget> [
-            new Column(
-            children: <Widget>[
-              new Container(
-                margin: EdgeInsets.only(
-                  top:20.0, 
-                  bottom: 20.0
+            new Container(
+              margin: EdgeInsets.only(bottom: 20.0),
+              child: new Center(
+                child: new Column(
+                  children: <Widget>[
+                    new Text(
+                      'FAQ',
+                      style: TextStyle(
+                        fontFamily: "Quicksand",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0
+                      )
+                    ),
+                    new Text(
+                    "Frequently Asked Questions",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: "Quicksand"
+                    )
+                  ),
+                  ],
                 ),
-                child: new Text(
-                  'FAQ',
-                  style: TextStyle(
-                    fontFamily: "Quicksand",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50.0
-                  )
-                )
               ),
-              new ListView.builder(
-                shrinkWrap: true,
-                physics: ClampingScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) => QuestionItem(data[index]),
-                itemCount: data.length,
-              )
-            ]
-          )
+            ),
+            new ListView.builder(
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) => QuestionItem(data[index]),
+              itemCount: data.length,
+            )
           ]
         )
       )

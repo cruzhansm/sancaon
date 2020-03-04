@@ -1,7 +1,7 @@
 import 'package:sancaon/canteen_data/data.dart';
-import 'package:flutter/material.dart';
 
 class SMEDStalls {
+  // Jolly Bubbly
   FoodStall smedCS1 = new FoodStall( // TODO: lacking images (all except hotdog sandwich) 
     indexedFoodList: {
       1: new FoodItem(
@@ -24,7 +24,7 @@ class SMEDStalls {
         foodName: "Siomai",
         foodPrice: 7.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/SMEDCanteen/Jolly_Bubbly_Food_Court/jolly4.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -36,6 +36,7 @@ class SMEDStalls {
     }
   );
 
+  // Kiara Loraine
   FoodStall smedCS2 = new FoodStall( // TODO: lacking images (all)
     indexedFoodList: {
       1 : new FoodItem(
@@ -107,6 +108,7 @@ class SMEDStalls {
     }
   );
 
+  // Tiktilaok
   FoodStall smedCS3 = new FoodStall( // half chicken, rice to the top, tiktilaok sarap (NO IMAGES)
     indexedFoodList: {
       1 : new FoodItem(
@@ -252,7 +254,7 @@ class SMEDStalls {
 
   int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    debugPrint("This stall's number of items: " + foodItems.toString());
+    //debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   } 
 }

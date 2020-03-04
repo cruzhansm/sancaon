@@ -52,28 +52,35 @@ class HomePage extends StatelessWidget {
             ),
             new CanteenSliver(
               canteenName: "Bunzel Basement",
-              numberOfItems: 9),
+              numberOfItems: 9,
+              sliverPeekPreview: previewItemsGet("Bunzel Basement", 9),
+            ),
             new CanteenHeader(
               canteenName: "Bunzel Canteen",
-              canteenImage: 'assets/images/canteen-pictures/canteen_bunzel.jpg'
+              canteenImage: 'assets/images/canteen-pictures/canteen_bunzel.jpg',
             ),
             new CanteenSliver(
               canteenName: "Bunzel Canteen",
-              numberOfItems: 12),
+              numberOfItems: 12,
+              sliverPeekPreview: previewItemsGet("Bunzel Canteen", 12),
+            ),
             new CanteenHeader(
               canteenName: "SMED Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_smed.jpg'
             ),
             new CanteenSliver(
               canteenName: "SMED Canteen",
-              numberOfItems: 12),
+              numberOfItems: 12,
+              sliverPeekPreview: previewItemsGet("SMED Canteen", 12),
+            ),
             new CanteenHeader(
               canteenName: "RH Canteen",
               canteenImage: 'assets/images/canteen-pictures/canteen_rh.jpg'  
             ),
             new CanteenSliver(
               canteenName: "RH Canteen",
-              numberOfItems: 9,  
+              numberOfItems: 9,
+              sliverPeekPreview: previewItemsGet("RH Canteen", 9), 
             ),
             new CanteenHeader(
               canteenName: "SAFAD Canteen",
@@ -81,7 +88,8 @@ class HomePage extends StatelessWidget {
             ),
             new CanteenSliver(
               canteenName: "SAFAD Canteen",
-              numberOfItems: 12
+              numberOfItems: 12,
+              sliverPeekPreview: previewItemsGet("SAFAD Canteen", 12),
             ),
             new CanteenHeader(
               canteenName: "Cafe+",
@@ -90,6 +98,7 @@ class HomePage extends StatelessWidget {
             new CanteenSliver(
               canteenName: "Cafe+",
               numberOfItems: 9,
+              sliverPeekPreview: previewItemsGet("Cafe+", 9),
             ),
             // new SliverList(
             //   delegate: SliverChildBuilderDelegate(
@@ -146,16 +155,26 @@ class CanteenHeader extends StatelessWidget {
 class CanteenSliver extends StatelessWidget { //main widget for canteen
   final String canteenName;
   final int numberOfItems;
+  final List<String> sliverPeekPreview;
 
-  CanteenSliver({this.canteenName, this.numberOfItems});
+  CanteenSliver({this.canteenName, this.numberOfItems, this.sliverPeekPreview});
 
   @override
   Widget build(BuildContext context) {
     return new SliverGrid(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 1.0,
+        mainAxisSpacing: 1.0
+      ),
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
-          return new CanteenSliverPeek(index: index, canteenName: canteenName, foodItems : numberOfItems);
+          return new CanteenSliverPeek(
+            index: index, 
+            canteenName: canteenName, 
+            foodItems : numberOfItems,
+            sliverImage: sliverPeekPreview[index]
+          );
         },
         childCount: numberOfItems
       ),
@@ -163,41 +182,64 @@ class CanteenSliver extends StatelessWidget { //main widget for canteen
   }
 }
 
-dynamic previewItemsGet(String canteenName, int index, int items) {
+dynamic previewItemsGet(String canteenName, int items) {
   int i = 0;
-  int j = 0;
+  int randNum;
   Random random = new Random();
   List<String> newPreviewImage = new List();
+  List<String> sliverPeekImages = new List();
   List<int> usedNumbers = new List();
   dynamic foodList = foodItemContent(canteenName, "by Alphabetical");
 
-  
   while(i <= foodList.length-1){
     newPreviewImage.add(foodList[i].food.foodImage);
     //debugPrint(newPreviewImage[i]);
     i++;
   }
-  while(j <= items-1){
-    usedNumbers.add(random.nextInt(foodList.length));
-    j++;
+
+  i = 0; 
+  while(i <= items-1){
+    randNum = random.nextInt(foodList.length);
+    if(i == 0){
+      usedNumbers.add(randNum);
+    }
+    else{
+      if(usedNumbers.contains(randNum)){
+        i--;
+      }
+      else{
+        usedNumbers.add(randNum);
+      }
+    }
+    i++;
   }
 
-  return newPreviewImage[usedNumbers[index]];
+  i = 0;
+
+  while(i <= usedNumbers.length-1){
+    sliverPeekImages.add(newPreviewImage[usedNumbers[i]]);
+    i++;
+  }
+
+  debugPrint("$canteenName " + usedNumbers.toString());
+  debugPrint(sliverPeekImages.toString());
+  return sliverPeekImages;
 }
 
 class CanteenSliverPeek extends StatelessWidget { //preview items
   final int index;
   final int foodItems;
   final String canteenName;
+  final String sliverImage;
   
-  CanteenSliverPeek({this.index, this.canteenName, this.foodItems});
+  CanteenSliverPeek({this.index, this.canteenName, this.foodItems, this.sliverImage});
 
   @override
   Widget build(BuildContext context) {
     return index == foodItems-1 ? new InkWell(
       onTap: () => {
         debugPrint(canteenName),
-        debugPrint("Notice me senpai! " + previewItemsGet(canteenName, index, foodItems)),
+        debugPrint("Notice me senpai! " + previewItemsGet(canteenName, foodItems)),
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => new AppbarOtherPage(
@@ -225,7 +267,7 @@ class CanteenSliverPeek extends StatelessWidget { //preview items
     ): new FittedBox(
       fit: BoxFit.fill,
       child: Image.asset(
-        previewItemsGet(canteenName, index, foodItems)
+        sliverImage
       ),
     );
   }

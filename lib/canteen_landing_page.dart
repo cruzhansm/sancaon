@@ -192,7 +192,7 @@ dynamic sortFoodItemsByStall(List<Widget> foodItem) {
   return stallSort;
 }
 
-dynamic sortFoodItemsByTLF(List<Widget> foodItem) { // TODO: Special sorting for tlf
+dynamic sortFoodItemsByTLF(List<Widget> foodItem) {
   List<Widget> tlfSort = foodItem;
   for(int i = 0; i < tlfSort.length; i++){
     for(int j = i+1; j < tlfSort.length; j++){
@@ -225,7 +225,7 @@ class CanteenMenu extends StatefulWidget {
   final String locationOfCanteen;
 
   static Map<String, String> canteenImages = {
-    'Bunzel Basement': 'assets/images/canteen-pictures/canteen_bunzelbasement.jpg',
+    'Bunzel Basement': 'assets/images/canteen-pictures/canteen_bunzelbasement2.jpg',
     'Bunzel Canteen': 'assets/images/canteen-pictures/canteen_bunzel.jpg',
     'SMED Canteen': 'assets/images/canteen-pictures/canteen_smed.jpg',
     'RH Canteen': 'assets/images/canteen-pictures/canteen_rh.jpg',
@@ -250,9 +250,13 @@ class _CanteenMenuState extends State<CanteenMenu> {
         child: new Stack(
           children: <Widget>[
             new SizedBox(
+              height: 260.0,
               width: double.infinity,
-              child: new Image.asset(
-                CanteenMenu.canteenImages[widget.nameOfCanteen]
+              child: new FittedBox(
+                fit: BoxFit.fill,
+                child: new Image.asset(
+                  CanteenMenu.canteenImages[widget.nameOfCanteen]
+                ),
               )
             ),
             new Container(
@@ -267,6 +271,77 @@ class _CanteenMenuState extends State<CanteenMenu> {
                 Icons.keyboard_arrow_left,
                 color: Colors.white,
                 size: 30.0
+              )
+            ),
+            new Container(
+              margin: EdgeInsets.only(top: 220.0),
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              height: 70.0,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.yellow[200],
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: new Container(
+                margin: EdgeInsets.only(bottom: 25.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new Container(
+                      child: new DropdownButton(
+                        value: dropdownValue,
+                        underline: new Container(
+                          color: Colors.black,
+                          height: 2
+                        ),
+                        icon: new Icon(
+                          Icons.sort,
+                          color: Colors.black),
+                        hint: new Text(
+                          "Sort",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontFamily: "Quicksand",
+                            color: Colors.black
+                          )
+                        ),
+                        items: [
+                          new DropdownMenuItem(
+                            child: new Text("Alphabetical"),
+                            value: "by Alphabetical"
+                          ),
+                          new DropdownMenuItem(
+                            child: new Text("Price"),
+                            value: "by Price"
+                          ),
+                          new DropdownMenuItem(
+                            child: new Text("Stall"),
+                            value: "by Stall"
+                          ),
+                          new DropdownMenuItem(
+                            child: new Text("TLF Rating"),
+                            value: "by TLF Rating"
+                          )
+                        ], 
+                        onChanged: (dropdownValue) => {
+                          setState(() {
+                            sortingMethod = dropdownValue; 
+                          }),
+                          debugPrint(sortingMethod)
+                        }
+                      ),
+                    ),
+                    new Text(
+                      sortingMethod,
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: "Quicksand",
+                        //fontWeight: FontWeight.bold
+                      )
+                    ),
+                  ],
+                ),
               )
             ),
             new Container(
@@ -294,67 +369,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
               )
             ),
             new Container(
-              margin: EdgeInsets.only(top: 220.0),
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              height: 50.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  new Text(
-                    sortingMethod,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: "Quicksand"
-                    )
-                  ),
-                  new DropdownButton(
-                    value: dropdownValue,
-                    underline: new Container(
-                      color: Colors.deepPurpleAccent,
-                      height: 2
-                    ),
-                    icon: new Icon(Icons.sort),
-                    hint: new Text(
-                      "Sort",
-                      style: TextStyle(
-                        color: Colors.black
-                      )),
-                    items: [
-                      new DropdownMenuItem(
-                        child: new Text("Alphabetical"),
-                        value: "by Alphabetical"
-                      ),
-                      new DropdownMenuItem(
-                        child: new Text("Price"),
-                        value: "by Price"
-                      ),
-                      new DropdownMenuItem(
-                        child: new Text("Stall"),
-                        value: "by Stall"
-                      ),
-                      new DropdownMenuItem(
-                        child: new Text("TLF Rating"),
-                        value: "by TLF Rating"
-                      )
-                    ], 
-                    onChanged: (dropdownValue) => {
-                      setState(() {
-                        sortingMethod = dropdownValue; 
-                      }),
-                      debugPrint(sortingMethod)
-                    }
-                  )
-                ],
-              )
-            ),
-            new Container(
-              margin: EdgeInsets.only(top: 270.0),
+              margin: EdgeInsets.only(top: 265.0),
               color: Colors.white,
               child: new ListView(
                 padding: EdgeInsets.only(top: 5.0),
@@ -385,7 +400,7 @@ class FoodItems extends StatelessWidget {
           child: new ListView(
             children: <Widget>[
               new SizedBox(
-                height: 250.0,
+                height: 200.0,
                 child: new FittedBox(
                   fit: BoxFit.fill,
                   child: new Image.asset(
@@ -394,84 +409,67 @@ class FoodItems extends StatelessWidget {
                 ),
               ),
               new Container(
-                margin: EdgeInsets.all(10.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Expanded(
-                      flex: 3,
-                        child: new Text(
-                        food.foodName,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 35.0,
-                          fontFamily: "Dosis",
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    ),
-                    new Icon(
-                      Icons.brightness_1,
-                      color: Colors.green[400]
-                    ),
-                    new Icon(
-                      Icons.brightness_1,
-                      color: Colors.green[400]
-                    ),
-                    new Icon(
-                      Icons.brightness_1,
-                      color: Colors.green[400]
-                    ),
-                  ],
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(10.0),
+                //   border: Border.all(
+                //     width: 0.5
+                //   ),
+                // ),
+                margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
+                child: new Text(
+                  food.foodName,
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontSize: 30.0,
+                    fontFamily: "Acme",
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               new Container(
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
-                child: new Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    new Text(
-                      "Stall: " + stall,
+                margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 10.0),
+                child: new Text(
+                  stall,
+                  style: TextStyle(
+                    fontFamily: "Quicksand"
+                  )
+                )
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  new Container(
+                    margin: EdgeInsets.only(left: 10.0),
+                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    color: Colors.green[400],
+                    child: new Text(
+                      "₱" + food.foodPrice.toString(),
                       style: TextStyle(
-                        fontSize: 15.0,
-                        fontFamily: "Quicksand"
+                        fontSize: 24.0,
+                        fontFamily: "Quicksand",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
                       )
-                    ),
-                    new Text(
-                      "Price: " + food.foodPrice.toString(),
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontFamily: "Quicksand"
-                      )
-                    ),
-                    new Text(
-                      "Rating: ",//+ _finalTrafficRating,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontFamily: "Quicksand"
-                      )
-                    ),
-                  ],
-                ),
+                    )
+                  ),
+                ],
               ),
               new Container(
                 margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Icon(
-                      Icons.fastfood
-                    ),
-                    new Container(
-                      margin: EdgeInsets.only(left: 10.0),
-                      child: new Text(
-                        'Ingredients'
-                      )
-                    )
-                  ],
+                child: new Container(
+                  margin: EdgeInsets.only(left: 10.0),
+                  child: new Text(
+                    'Ingredients'
+                  )
                 ),
               ),
-              new Divider(
-                color: Colors.black,
-                thickness: 2.0 
+              new Container(
+                margin: EdgeInsets.symmetric(horizontal : 10.0),
+                child: new Divider(
+                  color: Colors.black,
+                  thickness: 0.2
+                ),
               ),
               new Container(
                 margin: EdgeInsets.all(10.0),
@@ -528,22 +526,28 @@ class FoodItems extends StatelessWidget {
           createDialog(context)
         },
         child: new Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
           elevation: 8.0,
-          color: Colors.grey[100],
+          color: Colors.pink[50],
           child: new Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               new Container(
                 margin: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
-                child: new SizedBox(
-                  height: 75.0,
-                  width: 75.0,
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: new Image.asset(
-                      food.foodImage
+                child: new ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: new SizedBox(
+                    height: 75.0,
+                    width: 75.0,
+                    child: FittedBox(
+                      fit: BoxFit.fill,
+                      child: new Image.asset(
+                        food.foodImage
+                      )
                     )
-                  )
+                  ),
                 ),
               ),
               new Expanded(
@@ -557,18 +561,35 @@ class FoodItems extends StatelessWidget {
                         food.foodName,
                         style: TextStyle(
                           fontSize: 20.0,
-                          fontFamily: "Quicksand",
-                          fontWeight: FontWeight.bold
+                          fontFamily: "Acme",
                         )
                       ),
-                      new Text(stall),
+                      new Text(
+                        stall,
+                        style: TextStyle(
+                          fontFamily: "Quicksand",
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black45
+                        )),
                       food.hasManyOptions == true ? new Row(
                         children: listOfPrices(food)
-                      ) : new Text(
-                        "Price: " + food.foodPrice.toString(),
-                        style: TextStyle(
-                          color: Colors.red
-                        )
+                      ) : new Row(
+                        children: <Widget>[
+                          new Text(
+                            "Price: ",
+                            style: TextStyle(
+                              fontFamily: "Quicksand",
+                              color: Colors.black45
+                            )
+                          ),
+                          new Text(
+                            "₱" + food.foodPrice.toString(),
+                            style: TextStyle(
+                              fontFamily: "Quicksand",
+                              color: Colors.blue
+                            ),
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -590,15 +611,17 @@ dynamic listOfPrices(FoodItem food) {
     foodPrices.add(new Text(
         "Prices: ",
         style: TextStyle(
-          color: Colors.red
+          fontFamily: "Quicksand",
+          color: Colors.black45
         )
       ));
 
     while(priceCounter <= food.manyPrices.length-1) {
       foodPrices.add(new Text(
-        priceCounter == food.manyPrices.length-1 ? food.manyPrices[priceCounter].toString() : food.manyPrices[priceCounter].toString() + ", ",
+        priceCounter == food.manyPrices.length-1 ? "₱" +  food.manyPrices[priceCounter].toString() : "₱" + food.manyPrices[priceCounter].toString() + ", ",
         style: TextStyle(
-          color: Colors.red,
+          fontFamily: "Quicksand",
+          color: Colors.blue,
         )
       ));
       priceCounter++;

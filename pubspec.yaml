@@ -48,6 +48,7 @@ flutter:
     - assets/images/home/
     - assets/images/canteen-menu/
     - assets/images/canteen-pictures/
+    - assets/images/canteen-menu/BUNZELBasement/
     - assets/images/canteen-menu/BunzelCanteen/
     - assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/
     - assets/images/canteen-menu/BunzelCanteen/Healthylicious/
@@ -55,6 +56,7 @@ flutter:
     - assets/images/canteen-menu/BunzelCanteen/Santino's/
     - assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/
     - assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/
+    - assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/
     - assets/images/canteen-menu/SAFADCanteen/
     - assets/images/canteen-menu/SAFADCanteen/Panlasang_Pinoy/
     - assets/images/canteen-menu/SAFADCanteen/Leylam_Shawarma/
@@ -65,9 +67,11 @@ flutter:
     - assets/images/canteen-menu/SAFADCanteen/Kiara_Loraine_Food_Haus/
     - assets/images/canteen-menu/RHCanteen/
     - assets/images/canteen-menu/SMEDCanteen/
-    - assets/images/credits/
     - assets/images/canteen-menu/SMEDCanteen/Tiktilaok/
     - assets/images/canteen-menu/SMEDCanteen/Jolly_Bubbly_Food_Court/
+    - assets/images/canteen-menu/CAFE+/
+    - assets/images/credits/
+    
 
   # To add assets to your application, add an assets section, like this:
 #  assets:
@@ -92,34 +96,18 @@ flutter:
     fonts:
       - asset: fonts/ABeeZee-Regular.ttf
       - asset: fonts/ABeeZee-Italic.ttf
-  - family: ZCOOL
-    fonts:
-      - asset: fonts/ZCOOLQingKeHuangYou-Regular.ttf
-  - family: ZhiMangXing
-    fonts:
-      - asset: fonts/ZhiMangXing-Regular.ttf
-  - family: NotoSans
-    fonts:
-      - asset: fonts/NotoSans-Bold.ttf
-      - asset: fonts/NotoSans-Regular.ttf
-  - family: Comfortaa
-    fonts:
-      - asset: fonts/Comfortaa-Regular.ttf
   - family: Dosis
     fonts:
       - asset: fonts/Dosis-Regular.ttf
-  - family: Pacifico
-    fonts:
-      - asset: fonts/Pacifico-Regular.ttf
   - family: Quicksand
     fonts:
       - asset: fonts/Quicksand-Regular.ttf
-  - family: Satisfy
-    fonts:
-      - asset: fonts/Satisfy-Regular.ttf
   - family: Bebas-Neue
     fonts:
       - asset: fonts/BebasNeue-Regular.ttf
+  - family: Acme
+    fonts:
+      - asset: fonts/Acme-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

@@ -59,12 +59,6 @@ class _AboutAppState extends State<AboutApp> {
     "to the great One who made everything, has blessed them, and provided them the strength to make this into existence – God;"
     "from their very hearts, a huge thank you.")
           ),
-          new Container(
-            margin: EdgeInsets.only(top: 50.0),
-            child: new Image.asset(
-              'assets/images/home/test.png',
-              width: 500.0)
-          )
         ],
       ),
     );
@@ -393,11 +387,13 @@ class _LegalNoticeState extends State<LegalNotice> {
   Widget build(BuildContext context) {
     return new SafeArea(
       child: Container(
-        color: Colors.black,
-        child: Image.asset(
-          'assets/images/home/test.png',
-          width: 50.0
-         )
+        child: new ListView(
+          children: <Widget>[
+            Center(child: new Text("JAMILLE IS A TYRANT!")),
+            new Text("Uayan is a derp"),
+            new Text("MAAYO KAAYO")
+          ],
+        )
       ),
     );
   }

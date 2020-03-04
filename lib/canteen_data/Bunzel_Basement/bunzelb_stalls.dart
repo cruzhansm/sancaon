@@ -1,25 +1,24 @@
 import 'package:sancaon/canteen_data/data.dart';
-import 'package:flutter/material.dart';
 
 class BunzelBStalls {
   FoodStall bunzelBS1 = new FoodStall(
     indexedFoodList: {
-      2 : new FoodItem(
+      1 : new FoodItem(
         foodName: "Chicken Fillet",
         foodPrice: 45.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos3.jpg",
         rating: "green",
         foodIngredients: [
           " "
         ],
         foodAllergens: null
       ),
-      1 : new FoodItem(
+      2 : new FoodItem(
         foodName: "Cornsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos1.jpg",
         rating: "yellow",
         foodIngredients: [
           "Beef",
@@ -43,7 +42,7 @@ class BunzelBStalls {
         foodName: "Longsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos7.jpg",
         rating: "yellow",
         foodIngredients: [
           ""
@@ -54,7 +53,7 @@ class BunzelBStalls {
         foodName: "Pork Chop",
         foodPrice: 50.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos2.jpg",
         rating: "red",
         foodIngredients: [
           ""
@@ -65,7 +64,7 @@ class BunzelBStalls {
         foodName: "Sigsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos5.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -78,7 +77,7 @@ class BunzelBStalls {
         foodName: "Steam Rice with Siomai",
         foodPrice: 40.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos4.jpg",
         rating: "red",
         foodIngredients: [
           "Pork"
@@ -89,7 +88,7 @@ class BunzelBStalls {
         foodName: "Tapasilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos9.jpg",
         rating: "red",
         foodIngredients: [
           "Pork"
@@ -100,7 +99,7 @@ class BunzelBStalls {
         foodName: "Tocisilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos8.jpg",
         rating: "yellow",
         foodIngredients: [
           ""
@@ -123,7 +122,7 @@ class BunzelBStalls {
 
   int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    debugPrint("This stall's number of items: " + foodItems.toString());
+    //debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   }
 }

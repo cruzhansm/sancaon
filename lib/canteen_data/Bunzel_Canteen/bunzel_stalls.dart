@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelStalls {  
@@ -9,7 +8,7 @@ class BunzelStalls {
         foodName: "Burger Supreme",
         foodPrice: 48.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas3.jpg",
         rating: "green",
         foodIngredients: [
           "Patty (Beef)",
@@ -28,7 +27,7 @@ class BunzelStalls {
         foodName: "Burger with Egg",
         foodPrice: 30.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas1.jpg",
         rating: "green",
         foodIngredients: [
           "Patty (Beef)",
@@ -44,7 +43,7 @@ class BunzelStalls {
         foodName: "Burger with Egg & Cheese",
         foodPrice: 38.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas2.jpg",
         rating: "green",
         foodIngredients: [
           "Patty (Beef)",
@@ -336,22 +335,6 @@ class BunzelStalls {
   FoodStall bunzelCS4 = new FoodStall( // TODO: lacking images
     indexedFoodList: {
       1 : new FoodItem(
-        foodName: "Lumpia Shanghai",
-        foodPrice: 10.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Ground Pork",
-          "Flour",
-          "Breadcrumbs",
-          "Eggs"
-        ],
-        foodAllergens: [
-          "Eggs"
-        ]
-      ),
-      2 : new FoodItem(
         foodName: "Chicken Finger",
         foodPrice: 40.00,
         hasManyOptions: false,
@@ -367,7 +350,7 @@ class BunzelStalls {
           "Eggs"
         ]
       ),
-      3: new FoodItem(
+      2: new FoodItem(
         foodName: "Chicken Skin",
         foodPrice: 35.00,
         hasManyOptions: false,
@@ -382,7 +365,7 @@ class BunzelStalls {
           "Chicken"
         ]
       ),
-      4: new FoodItem(
+      3: new FoodItem(
         foodName: "Chicken Style Pork Steak",
         foodPrice: 40.00,
         hasManyOptions: false,
@@ -398,8 +381,8 @@ class BunzelStalls {
           "Ketchup"
         ]
       ),
-      5: new FoodItem(
-        foodName: "Chikcen Teriyaki",
+      4: new FoodItem(
+        foodName: "Chicken Teriyaki",
         foodPrice: 35.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys2.jpg",
@@ -412,6 +395,22 @@ class BunzelStalls {
         ],
         foodAllergens: [
           "Cheese"
+        ]
+      ),
+      5 : new FoodItem(
+        foodName: "Lumpia Shanghai",
+        foodPrice: 10.00,
+        hasManyOptions: false,
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys7.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Ground Pork",
+          "Flour",
+          "Breadcrumbs",
+          "Eggs"
+        ],
+        foodAllergens: [
+          "Eggs"
         ]
       ),
       6: new FoodItem(
@@ -646,7 +645,9 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
         rating: "green",
-        foodIngredients: null,
+        foodIngredients: [
+          ""
+        ],
         foodAllergens: null
       ),
       3: new FoodItem(
@@ -658,7 +659,9 @@ class BunzelStalls {
         ],
         foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
-        foodIngredients: null,
+        foodIngredients: [
+          " "
+        ],
         foodAllergens: null
       ),
     }
@@ -674,7 +677,7 @@ class BunzelStalls {
         20.0,
         30.0
       ],
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan4.jpg",
       rating: "green",
       foodIngredients: [
         "Bell Pepper",
@@ -700,9 +703,11 @@ class BunzelStalls {
       foodName: "Chickendog",
       foodPrice: 25.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious3.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan2.jpg",
       rating: "green",
-      foodIngredients: null,
+      foodIngredients: [
+        ""
+      ],
       foodAllergens: null
     ),
     4: new FoodItem(
@@ -758,7 +763,7 @@ class BunzelStalls {
       foodName: "Hotdog",
       foodPrice: 15.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan6.jpg",
       rating: "green",
       foodIngredients: [
         "Beef",
@@ -787,7 +792,7 @@ class BunzelStalls {
       foodName: "Pancit",
       foodPrice: 20.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan10.jpg",
       rating: "green",
       foodIngredients: [
         "Bellpepper",
@@ -819,7 +824,7 @@ class BunzelStalls {
       foodName: "Spaghetti",
       foodPrice: 25.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan12.jpg",
       rating: "green",
       foodIngredients: [
         "Cheese",
@@ -836,7 +841,7 @@ class BunzelStalls {
 
   int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    debugPrint("This stall's number of items: " + foodItems.toString());
+    //debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   }
 }

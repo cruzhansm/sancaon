@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'faq.dart';
-import 'predef_appbar_other.dart';
 
 class HelpPage extends StatelessWidget {
   @override
@@ -72,12 +71,10 @@ class HelpPage extends StatelessWidget {
             ),
             new InkWell( 
               onTap: () => {
-                print("Go to FAQs"),
+                debugPrint("Go to FAQs"),
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => new AppbarOtherPage(
-                    generatePage: new FaqPage()
-                  )
+                  MaterialPageRoute(builder: (context) => new FaqPage(),
                   )
                 )
               },

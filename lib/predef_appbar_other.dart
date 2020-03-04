@@ -8,8 +8,9 @@ import 'sliver_home.dart';
 
 class AppbarOtherPage extends StatefulWidget {
   final Widget generatePage;
+  final bool isOnFaq;
 
-  AppbarOtherPage({this.generatePage});
+  AppbarOtherPage({this.generatePage, this.isOnFaq});
 
   @override
   _AppbarOtherPageState createState() => _AppbarOtherPageState();
@@ -49,19 +50,6 @@ class _AppbarOtherPageState extends State<AppbarOtherPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      /*floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: new FloatingActionButton(
-        backgroundColor: Colors.white,
-        onPressed: () => {
-          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-            AppbarOtherPage(generatePage: Home())), (Route<dynamic> route) => false)
-        },
-        tooltip: "Home page",
-        elevation: 2.0,
-        child: new Icon(
-          OMIcons.home,
-          color: Colors.yellow[800]),
-      ),*/
       bottomNavigationBar: new BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: _selectedItemColor,

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class RHStalls {  
@@ -184,7 +183,7 @@ class RHStalls {
 
     int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    debugPrint("This stall's number of items: " + foodItems.toString());
+    //debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   }
 }

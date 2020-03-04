@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class CafeplusStalls {  
@@ -9,7 +8,7 @@ class CafeplusStalls {
         foodName: "Caldereta",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe4.jpg",
         rating: "green",
         foodIngredients: [
           "Carrots",
@@ -25,7 +24,7 @@ class CafeplusStalls {
         foodName: "Cheese Sandwich",
         foodPrice: 49.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe2.jpg",
         rating: "green",
         foodIngredients: [
           "Milk Bread (Premium)",
@@ -80,7 +79,7 @@ class CafeplusStalls {
         foodName: "Garlic Spam",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe3.jpg",
         rating: "green",
         foodIngredients: [
           "Garlic",
@@ -150,7 +149,7 @@ class CafeplusStalls {
 
     int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    debugPrint("This stall's number of items: " + foodItems.toString());
+    //debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   }
 }
