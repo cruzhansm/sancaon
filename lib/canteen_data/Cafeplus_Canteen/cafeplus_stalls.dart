@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sancaon/canteen_data/data.dart';
 
 class CafeplusStalls {  
@@ -8,7 +9,7 @@ class CafeplusStalls {
         foodName: "Caldereta",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/CAFE+/cafe4.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
           "Carrots",
@@ -24,7 +25,7 @@ class CafeplusStalls {
         foodName: "Cheese Sandwich",
         foodPrice: 49.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/CAFE+/cafe2.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
           "Milk Bread (Premium)",
@@ -79,7 +80,7 @@ class CafeplusStalls {
         foodName: "Garlic Spam",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/CAFE+/cafe3.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
           "Garlic",
@@ -90,19 +91,6 @@ class CafeplusStalls {
         ]
       ),
       7: new FoodItem(
-        foodName: "Humba Rice",
-        foodPrice: 69.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork (Humba)"
-        ],
-        foodAllergens: [
-          "Pork"
-        ]
-      ),
-      8: new FoodItem(
         foodName: "Lasagna with Garlic Bread",
         foodPrice: 99.00,
         hasManyOptions: false,
@@ -114,7 +102,7 @@ class CafeplusStalls {
         ],
         foodAllergens: null
       ),
-      9: new FoodItem(
+      8: new FoodItem(
         foodName: "Spaghetti with Garlic Bread",
         foodPrice: 69.00,
         hasManyOptions: false,
@@ -129,7 +117,7 @@ class CafeplusStalls {
           "Pork"
         ]
       ),
-      10: new FoodItem(
+      9: new FoodItem(
         foodName: "Tuna Melt Sandwich",
         foodPrice: 99.00,
         hasManyOptions: false,
@@ -149,7 +137,7 @@ class CafeplusStalls {
 
     int calculateFoodItemsLength(FoodStall foodStall) {
     int foodItems =  foodStall.indexedFoodList.length;
-    //debugPrint("This stall's number of items: " + foodItems.toString());
+    debugPrint("This stall's number of items: " + foodItems.toString());
     return foodItems;
   }
 }

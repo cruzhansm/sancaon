@@ -133,7 +133,7 @@ class CanteenHeader extends StatelessWidget {
             child: Image.asset(canteenImage, fit: BoxFit.cover)
           ),
           new Container(
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withOpacity(0.4),
             child: new Center(
               child: new Text(
                 canteenName,
@@ -265,7 +265,7 @@ class CanteenSliverPeek extends StatelessWidget { //preview items
         )
       ),
     ): new FittedBox(
-      fit: BoxFit.fill,
+      fit: BoxFit.fitHeight,
       child: Image.asset(
         sliverImage
       ),

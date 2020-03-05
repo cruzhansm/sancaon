@@ -2,7 +2,7 @@ import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelStalls {  
   //Izza's Snack Haus
-  FoodStall bunzelCS1 = new FoodStall( // TODO: all images
+  FoodStall bunzelCS1 = new FoodStall( // TODO: all hotdogs
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Supreme",
@@ -27,7 +27,7 @@ class BunzelStalls {
         foodName: "Burger with Egg",
         foodPrice: 30.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas2.jpg",
         rating: "green",
         foodIngredients: [
           "Patty (Beef)",
@@ -99,7 +99,7 @@ class BunzelStalls {
   );
 
 //MK Burgeran Food Stand
-  FoodStall bunzelCS2 = new FoodStall( // TODO: images for different hatdogs
+  FoodStall bunzelCS2 = new FoodStall( // TODO: images for different hatdogs (same ra siya ug nawng jud)
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Egg & Cheese",  
@@ -182,7 +182,7 @@ class BunzelStalls {
   );
 
 //Healthylicious
-  FoodStall bunzelCS3 = new FoodStall( // TODO: data of new items (replace old)
+  FoodStall bunzelCS3 = new FoodStall( 
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Banana Cake",
@@ -253,41 +253,7 @@ class BunzelStalls {
           "Eggs"
         ]
       ),
-      6 : new FoodItem(
-        foodName: "Menudo",
-        foodPrice: 45.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Carrots",
-          "Potatoes",
-          "Onions",
-          "Garlic",
-          "Tomato sauce"
-        ],
-        foodAllergens: [
-          "Carrots",
-          "Tomato Sauce"
-        ]
-      ),
-      7 : new FoodItem(
-        foodName: "Siopao",
-        foodPrice: 20.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Asado (Pork)",
-          "Bola-bola (Ground pork)",
-          "Chicken"
-        ],
-        foodAllergens: [
-          "Chicken"
-        ]
-      ),
-      8: new FoodItem(
+      6: new FoodItem(
         foodName: "Special Biscocho",
         foodPrice: 47.00,
         hasManyOptions: false,
@@ -300,19 +266,7 @@ class BunzelStalls {
         ],
         foodAllergens: null
       ),
-      9: new FoodItem(
-        foodName: "Steamed Rice",
-        foodPrice: 40.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Rice"
-        ],
-        foodAllergens: null
-      ),
-      10: new FoodItem(
+      7: new FoodItem(
         foodName: "Tuna Mini Pizza",
         foodPrice: 25.00,
         hasManyOptions: false,

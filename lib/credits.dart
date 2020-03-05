@@ -46,18 +46,7 @@ class _AboutAppState extends State<AboutApp> {
           ),
           new Container(
             margin: EdgeInsets.only(top: 50.0),
-              child: new Text("The SanCaon food menu application was made for three purposes."
-    "First, to develop an Android Operating System that would aid students in selecting healthier food options."
-    "Second, to deliver comprehensive dish information for each food menu item available in eachcanteen, per stall."
-    "Lastly, to assess the effectiveness of the application through statistical methods in the areas of functionality, design, content, and accuracy."
-    "The implementation of this application is made possible due to the strength, efforts and knowledge"
-    "of six 12th grade students in the STEM strand, with pride and honor, from the University of San Carlos."
-    "The developers would like to thank everyone who lent their hands to them."
-    "To their Research teacher, Ms. Ana Liza Tabanao, who gave them the inspiration to do so;"
-    "to their Adviser, Mrs. Fe Villamon, who encouraged them;"
-    "to their Block T1, who believed in them and knew even before it all began that they could do it;"
-    "to the great One who made everything, has blessed them, and provided them the strength to make this into existence – God;"
-    "from their very hearts, a huge thank you.")
+              child: new Text("")
           ),
         ],
       ),
