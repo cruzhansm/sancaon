@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
             ),
             new CanteenSliver(
               canteenName: "Bunzel Basement",
-              numberOfItems: 9,
+              numberOfItems: 6,
               sliverPeekPreview: previewItemsGet("Bunzel Basement", 9),
             ),
             new CanteenHeader(

@@ -2,7 +2,7 @@ import 'package:sancaon/canteen_data/data.dart';
 
 class BunzelStalls {  
   //Izza's Snack Haus
-  FoodStall bunzelCS1 = new FoodStall( // TODO: all hotdogs
+  FoodStall bunzelCS1 = new FoodStall(
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Supreme",
@@ -65,7 +65,7 @@ class BunzelStalls {
         foodName: "Jumbo Size Sandwich",
         foodPrice: 22.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas4.jpg",
         rating: "green",
         foodIngredients: [
           "Hotdog",
@@ -82,7 +82,7 @@ class BunzelStalls {
         foodName: "King Size Sandwich",
         foodPrice: 27.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas4.jpg",
         rating: "green",
         foodIngredients: [
           "Hotdog",
@@ -99,7 +99,7 @@ class BunzelStalls {
   );
 
 //MK Burgeran Food Stand
-  FoodStall bunzelCS2 = new FoodStall( // TODO: images for different hatdogs (same ra siya ug nawng jud)
+  FoodStall bunzelCS2 = new FoodStall(
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Burger Egg & Cheese",  
@@ -286,7 +286,7 @@ class BunzelStalls {
   );
 
 //Amboy's
-  FoodStall bunzelCS4 = new FoodStall( // TODO: lacking images
+  FoodStall bunzelCS4 = new FoodStall( 
     indexedFoodList: {
       1 : new FoodItem(
         foodName: "Chicken Finger",
@@ -320,16 +320,15 @@ class BunzelStalls {
         ]
       ),
       3: new FoodItem(
-        foodName: "Chicken Style Pork Steak",
+        foodName: "Chinese Style Pork Steak",
         foodPrice: 40.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys2.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys8.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
-          "Ketchup",
           "Soysauce",
-          "Curry Powder"
+          "Long chili"
         ],
         foodAllergens: [
           "Ketchup"
@@ -339,7 +338,7 @@ class BunzelStalls {
         foodName: "Chicken Teriyaki",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys2.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys8.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken Wings",
@@ -384,7 +383,7 @@ class BunzelStalls {
         foodName: "Pork Steak",
         foodPrice: 40.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys2.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys10.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -437,25 +436,11 @@ class BunzelStalls {
         ],
         foodAllergens: null
       ),
-      11: new FoodItem(
-        foodName: "Spicy Pork",
-        foodPrice: 35.00,
-        hasManyOptions: false,
-        foodImage:"assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys4.jpg",
-        rating: "green",
-        foodIngredients: [
-          "Pork",
-          "Chili (long)",
-        ],
-        foodAllergens: [
-          "Pork"
-        ]
-      ),
     }
   );
 
 //Santino's
-  FoodStall bunzelCS5 = new FoodStall( // TODO: 2 food item images
+  FoodStall bunzelCS5 = new FoodStall( 
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Bacon Sausage Bonanza",
@@ -465,7 +450,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/MK_Burgeran_Food_Stand/mk4.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Santino's/santinos4.jpg",
         rating: "green",
         foodIngredients: [
           "Bacon",
@@ -534,7 +519,7 @@ class BunzelStalls {
           120.0,
           224.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious5.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Santino's/santinos2.jpg",
         rating: "green",
         foodIngredients: [
           "Bread",
@@ -572,7 +557,7 @@ class BunzelStalls {
   );
     
 //Franco's Tasty Treats Corner
-  FoodStall bunzelCS6 = new FoodStall( // TODO: 2 food item images
+  FoodStall bunzelCS6 = new FoodStall( // TODO: ARROZCALDO AND CHAMPORADO
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Arrozcaldo",  
@@ -581,7 +566,7 @@ class BunzelStalls {
           20.0,
           25.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken"
@@ -611,7 +596,7 @@ class BunzelStalls {
           20.0,
           25.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
         rating: "green",
         foodIngredients: [
           " "
@@ -622,7 +607,7 @@ class BunzelStalls {
   );
     
 //Pabugnawan Refreshment and Snack Haus
-  FoodStall bunzelCS7 = new FoodStall( // TODO: lacking all images
+  FoodStall bunzelCS7 = new FoodStall( // TODO: GINALING
     indexedFoodList: {
       1: new FoodItem(
       foodName: "Bihon",
@@ -631,22 +616,25 @@ class BunzelStalls {
         20.0,
         30.0
       ],
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan4.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan10.jpg",
       rating: "green",
       foodIngredients: [
         "Bell Pepper",
         "Carrots",
-        "Ground Pork"
+        "Cabbage",
+        "Ground Pork",
+        "Bihon (Noodles)"
       ],
       foodAllergens: null
     ),
     2: new FoodItem(
-      foodName: "Cesado Pork",
+      foodName: "Asado Pork",
       foodPrice: 35.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious9.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan10.jpg",
       rating: "green",
       foodIngredients: [
+        "Pork",
         "Carrots",
         "Potatoes",
         "Tomato Sauce"
@@ -668,7 +656,7 @@ class BunzelStalls {
       foodName: "Chicken Asado",
       foodPrice: 35.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious8.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan9.jpg",
       rating: "green",
       foodIngredients: [
         "Carrots",
@@ -686,7 +674,7 @@ class BunzelStalls {
       foodName: "Chicken Liver",
       foodPrice: 20.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious1.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan5.jpg",
       rating: "green",
       foodIngredients: [
         "Chicken Liver"
@@ -746,7 +734,7 @@ class BunzelStalls {
       foodName: "Pancit",
       foodPrice: 20.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan10.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan4.jpg",
       rating: "green",
       foodIngredients: [
         "Bellpepper",
@@ -764,7 +752,7 @@ class BunzelStalls {
       foodName: "Sisig",
       foodPrice: 35.00,
       hasManyOptions: false,
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Healthylicious/healthylicious4.jpg",
+      foodImage: "assets/images/canteen-menu/BunzelCanteen/Pabugnawan_Refreshment_and_Snack_Haus/pabugnawan8.jpg",
       rating: "green",
       foodIngredients: [
         "Green Chili",

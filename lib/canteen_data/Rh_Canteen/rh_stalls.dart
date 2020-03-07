@@ -8,7 +8,7 @@ class RHStalls {
         foodName: "Menudo",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh11.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -25,7 +25,7 @@ class RHStalls {
         foodName: "Ginaling",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh10.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -40,7 +40,7 @@ class RHStalls {
         foodName: "Chicken Curry",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh8.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken",
@@ -60,7 +60,7 @@ class RHStalls {
         foodName: "Chopsuey",
         foodPrice: 15.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh6.jpg",
         rating: "green",
         foodIngredients: [
           "Cornstarch",
@@ -94,7 +94,7 @@ class RHStalls {
         foodName: "Chicken Liver",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh9.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken liver",
@@ -124,7 +124,7 @@ class RHStalls {
         foodName: "Pork Steak",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh7.jpg",
         rating: "green",
         foodIngredients: [
           "Pork",
@@ -154,7 +154,7 @@ class RHStalls {
         foodName: "Pork Tocino",
         foodPrice: 35.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh5.jpg",
         rating: "green",
         foodIngredients: [
           "Ketchup",
@@ -169,7 +169,7 @@ class RHStalls {
         foodName: "Ginisang Kangkong",
         foodPrice: 15.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/RHCanteen/rh12.jpg",
         rating: "green",
         foodIngredients: [
           "Kangkong (water spinach)",

@@ -7,12 +7,16 @@ class BunzelBStalls {
         foodName: "Chicken Fillet",
         foodPrice: 45.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos3.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos2.jpg",
         rating: "green",
         foodIngredients: [
-          " "
+          "Chicken",
+          "Bread crumbs",
+          "Egg"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       2 : new FoodItem(
         foodName: "Cornsilog",
@@ -25,18 +29,24 @@ class BunzelBStalls {
           "Eggs",
           "Salt"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       3 : new FoodItem(
-        foodName: "Hamsilog",
+        foodName: "Tapsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos9.jpg",
         rating: "red",
         foodIngredients: [
-          "Pork"
+          "Pork",
+          "Egg",
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       4 : new FoodItem(
         foodName: "Longsilog",
@@ -45,20 +55,29 @@ class BunzelBStalls {
         foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos7.jpg",
         rating: "yellow",
         foodIngredients: [
-          ""
+          "Longganisa",
+          "Egg",
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       5 : new FoodItem(
         foodName: "Pork Chop",
         foodPrice: 50.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos2.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos3.jpg",
         rating: "red",
         foodIngredients: [
-          ""
+          "Pork",
+          "Bread crumbs",
+          "Egg",
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       6 : new FoodItem(
         foodName: "Sigsilog",
@@ -69,53 +88,54 @@ class BunzelBStalls {
         foodIngredients: [
           "Pork",
           "Eggs",
-          "Sushi"
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
       7 : new FoodItem(
-        foodName: "Steam Rice with Siomai",
+        foodName: "Steamed Rice with Siomai",
         foodPrice: 40.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos4.jpg",
         rating: "red",
         foodIngredients: [
-          "Pork"
+          "Pork",
+          "Green peas",
+          "Rice"
         ],
         foodAllergens: null
       ),
       8: new FoodItem(
-        foodName: "Tapasilog",
-        foodPrice: 60.00,
-        hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos9.jpg",
-        rating: "red",
-        foodIngredients: [
-          "Pork"
-        ],
-        foodAllergens: null
-      ),
-      9: new FoodItem(
         foodName: "Tocisilog",
         foodPrice: 60.00,
         hasManyOptions: false,
         foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos8.jpg",
         rating: "yellow",
         foodIngredients: [
-          ""
+          "Tocino",
+          "Egg",
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
-      10 : new FoodItem(
-        foodName: "Tunasilog",
+      9: new FoodItem(
+        foodName: "Baconsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos6.jpg",
         rating: "red",
         foodIngredients: [
-          ""
+          "Bacon",
+          "Egg",
+          "Rice"
         ],
-        foodAllergens: null
+        foodAllergens: [
+          "Egg"
+        ]
       ),
     }
   );
