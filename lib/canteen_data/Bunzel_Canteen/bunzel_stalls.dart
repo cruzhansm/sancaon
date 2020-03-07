@@ -65,7 +65,7 @@ class BunzelStalls {
         foodName: "Jumbo Size Sandwich",
         foodPrice: 22.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Izza's_Snack_Haus/izzas4.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
         rating: "green",
         foodIngredients: [
           "Hotdog",
