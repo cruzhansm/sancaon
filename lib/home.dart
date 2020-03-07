@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'canteen_landing_page.dart';
+import 'canteen_landing_page/canteen_landing_page.dart';
 import 'predef_appbar_other.dart';
 
 class Home extends StatelessWidget {

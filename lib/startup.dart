@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'home.dart';
 import 'predef_appbar_other.dart';
+import 'sliver_home.dart';
 
 class StartUp extends StatefulWidget {
 
@@ -56,7 +56,7 @@ class _StartUpState extends State<StartUp> {
         ),
       ),
       navigateAfterSeconds: new AppbarOtherPage(
-        generatePage: Home()
+        generatePage: HomePage()
       ),
       loadingText: new Text(
         loadText,

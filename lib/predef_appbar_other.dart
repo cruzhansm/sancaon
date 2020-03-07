@@ -1,9 +1,8 @@
-//import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:flutter/material.dart';
-import 'help.dart';
-import 'feedback.dart';
-import 'credits.dart';
+import 'miscellaneous_pages/credits.dart';
+import 'miscellaneous_pages/feedback.dart';
+import 'miscellaneous_pages/help.dart';
 import 'sliver_home.dart';
 
 class AppbarOtherPage extends StatefulWidget {

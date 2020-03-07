@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'canteen_data/SAFAD_Canteen/safad_stalls.dart';
-import 'canteen_data/Cafeplus_Canteen/cafeplus_stalls.dart';
-import 'canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
-import 'canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
-import 'canteen_data/RH_Canteen/rh_stalls.dart';
-import 'canteen_data/SMED_Canteen/smed_stalls.dart';
-import 'canteen_data/final_data_canteens.dart';
-import 'canteen_data/data.dart';
+import 'package:sancaon/canteen_data/Bunzel_Basement/bunzelb_stalls.dart';
+import 'package:sancaon/canteen_data/Bunzel_Canteen/bunzel_stalls.dart';
+import 'package:sancaon/canteen_data/Cafeplus_Canteen/cafeplus_stalls.dart';
+import 'package:sancaon/canteen_data/RH_Canteen/rh_stalls.dart';
+import 'package:sancaon/canteen_data/SAFAD_Canteen/safad_stalls.dart';
+import 'package:sancaon/canteen_data/SMED_Canteen/smed_stalls.dart';
+import 'package:sancaon/canteen_data/data.dart';
+import 'package:sancaon/canteen_data/final_data_canteens.dart';
+import 'package:sancaon/canteen_landing_page/sorting_algo.dart';
 
 dynamic foodItemContent(String nameOfCanteen, String sortingMethod) {
   dynamic foodItems;
@@ -127,99 +128,6 @@ dynamic foodItemContent(String nameOfCanteen, String sortingMethod) {
   return foodItems;
 }
 
-dynamic sortFoodItemsByAlphabetical(List<Widget> foodItem) {
-  List<Widget> alphabeticalSort = foodItem;
-  for(int i = 0; i < alphabeticalSort.length; i++){
-    for(int j = i+1; j < alphabeticalSort.length; j++){
-      dynamic food1 = alphabeticalSort[i];
-      dynamic food2 = alphabeticalSort[j];
-      dynamic temp;
-      String food1Name = food1.food.foodName;
-      String food2Name = food2.food.foodName;
-      //debugPrint(food1Name.compareTo(food2Name).toString());
-      if(food1Name.compareTo(food2Name) == 1){
-        //debugPrint("Switched!");
-        temp = alphabeticalSort[j];
-        alphabeticalSort[j] = alphabeticalSort[i];
-        alphabeticalSort[i] = temp;
-      }
-      //debugPrint(food1Name + " " + food2Name);
-    }
-  }
-  return alphabeticalSort;
-}
-
-dynamic sortFoodItemsByPrice(List<Widget> foodItem) {
-  List<Widget> priceSort = foodItem;
-  for(int i = 0; i < priceSort.length; i++){
-    for(int j = i+1; j < priceSort.length; j++){
-      dynamic food1 = priceSort[i];
-      dynamic food2 = priceSort[j];
-      dynamic temp;
-      double food1Price = food1.food.foodPrice == null? food1.food.manyPrices[0] : food1.food.foodPrice;
-      String food1Name = food1.food.foodName;
-      double food2Price = food2.food.foodPrice == null? food2.food.manyPrices[0] : food2.food.foodPrice;
-      String food2Name = food2.food.foodName;
-      debugPrint(food1Name + ": " + food1Price.toString() + " " + food2Name + ": " + food2Price.toString());
-      if(food1Price > food2Price){
-        temp = priceSort[j];
-        priceSort[j] = priceSort[i];
-        priceSort[i] = temp;
-      }
-    }
-  }
-  return priceSort;
-}
-
-dynamic sortFoodItemsByStall(List<Widget> foodItem) {
-  List<Widget> stallSort = foodItem;
-  for(int i = 0; i < stallSort.length; i++){
-    for(int j = i+1; j < stallSort.length; j++){
-      dynamic food1 = stallSort[i];
-      dynamic food2 = stallSort[j];
-      dynamic temp;
-      String food1Stall = food1.stall;
-      String food2Stall = food2.stall;
-      debugPrint(food1Stall.compareTo(food2Stall).toString());
-      if(food1Stall.compareTo(food2Stall) == 1){
-        debugPrint("Switched!");
-        temp = stallSort[j];
-        stallSort[j] = stallSort[i];
-        stallSort[i] = temp;
-      }
-    }
-  }
-  return stallSort;
-}
-
-dynamic sortFoodItemsByTLF(List<Widget> foodItem) {
-  List<Widget> tlfSort = foodItem;
-  for(int i = 0; i < tlfSort.length; i++){
-    for(int j = i+1; j < tlfSort.length; j++){
-      dynamic food1 = tlfSort[i];
-      dynamic food2 = tlfSort[j];
-      dynamic temp;
-      String food1Rating = food1.food.rating;
-      String food2Rating = food2.food.rating;
-      Map<String, int> foodRating = {
-        "green" : 1,
-        "yellow" : 2,
-        "red" : 3
-      };
-
-      debugPrint(foodRating[food1Rating].toString() + " " + foodRating[food2Rating].toString());
-      if(foodRating[food1Rating] > foodRating[food2Rating]){
-        debugPrint("Switched!");
-        temp = tlfSort[j];
-        tlfSort[j] = tlfSort[i];
-        tlfSort[i] = temp;
-      }
-      debugPrint(foodRating[food1Rating].toString() + " " + foodRating[food1Rating].toString());
-    }
-  }
-  return tlfSort;
-}
-
 class CanteenMenu extends StatefulWidget {
   final String nameOfCanteen;
   final String locationOfCanteen;
@@ -263,15 +171,18 @@ class _CanteenMenuState extends State<CanteenMenu> {
               color: Colors.black.withOpacity(0.5),
               height: 240.0
             ),
-            new IconButton(
-              onPressed: () => {
-                Navigator.of(context).pop(context)
-              },
-              icon: new Icon(
-                Icons.keyboard_arrow_left,
-                color: Colors.white,
-                size: 30.0
-              )
+            new Container(
+              margin: EdgeInsets.only(top: 10.0),
+              child: new FlatButton(
+                onPressed: () => Navigator.pop(context),
+                shape: CircleBorder(),
+                color: Colors.yellow[200],
+                child: new Icon(
+                  Icons.arrow_back, 
+                  color: Colors.black,
+                  size: 24.0  
+                )
+              ),
             ),
             new Container(
               margin: EdgeInsets.only(top: 220.0),
@@ -345,7 +256,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
               )
             ),
             new Container(
-              margin: EdgeInsets.fromLTRB(25.0, 155.0, 0.0, 0.0),
+              margin: EdgeInsets.fromLTRB(25.0, 150.0, 0.0, 0.0),
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -358,12 +269,20 @@ class _CanteenMenuState extends State<CanteenMenu> {
                       color: Colors.white
                     )
                   ),
-                  new Text(
-                    widget.locationOfCanteen,
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.white
-                    )
+                  new Container(
+                    decoration: BoxDecoration(
+                      color: Colors.pink[50],
+                      borderRadius: BorderRadius.circular(10.0)
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 2.5),
+                    child: new Text(
+                      widget.locationOfCanteen,
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        fontFamily: "Quicksand",
+                        color: Colors.black
+                      )
+                    ),
                   )
                 ],
               )
@@ -383,6 +302,7 @@ class _CanteenMenuState extends State<CanteenMenu> {
   }
 }
 
+
 class FoodItems extends StatelessWidget {
   final FoodItem food;
   final String stall;
@@ -399,29 +319,41 @@ class FoodItems extends StatelessWidget {
           ),
           child: new ListView(
             children: <Widget>[
-              new SizedBox(
-                height: 200.0,
-                child: new FittedBox(
-                  fit: BoxFit.fill,
-                  child: new Image.asset(
-                    food.foodImage,
+              new Stack(
+                children: <Widget>[
+                  // new SizedBox(
+                  //   height: 200.0,
+                  //   child: new FittedBox(
+                  //     fit: BoxFit.fill,
+                  //     child: new Image.asset(
+                  //       food.foodImage,
+                  //     ),
+                  //   ),
+                  // ),
+                  new Image.asset(food.foodImage),
+                  new Container(
+                    margin: EdgeInsets.all(10.0),
+                    child: new InkWell(
+                      onTap: () => {
+                        Navigator.pop(context)
+                      },
+                      child: new Icon(
+                        Icons.close, 
+                        color: Colors.white,
+                        size: 24.0  
+                      )
+                    ),
                   ),
-                ),
+                ],
               ),
               new Container(
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(10.0),
-                //   border: Border.all(
-                //     width: 0.5
-                //   ),
-                // ),
-                margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
+                margin: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
                 child: new Text(
                   food.foodName,
                   //textAlign: TextAlign.center,
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontSize: 30.0,
+                    //decoration: TextDecoration.underline,
+                    fontSize: 36.0,
                     fontFamily: "Acme",
                     fontWeight: FontWeight.bold,
                   ),
@@ -432,28 +364,63 @@ class FoodItems extends StatelessWidget {
                 child: new Text(
                   stall,
                   style: TextStyle(
-                    fontFamily: "Quicksand"
+                    fontFamily: "Quicksand",
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black45
                   )
                 )
               ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Container(
-                    margin: EdgeInsets.only(left: 10.0),
-                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                    color: Colors.green[400],
-                    child: new Text(
-                      "₱" + food.foodPrice.toString(),
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontFamily: "Quicksand",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
+              new Container(
+                margin: EdgeInsets.fromLTRB(10.0, 0.0, 20.0, 5.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                      color: Colors.green[400],
+                      child: new Text(
+                        "₱" + food.foodPrice.toString(),
+                        style: TextStyle(
+                          fontSize: 24.0,
+                          fontFamily: "Quicksand",
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
+                        )
+                      )
+                    ),
+                    new Container(
+                      child: new Column(
+                        children: <Widget>[
+                          new Text(
+                            "Traffic Light Food Rating",
+                            style: TextStyle(
+                              fontFamily: "Quicksand"
+                            ),
+                          ),
+                          food.rating == 'green' ? new Row(
+                            children: <Widget>[
+                              new Icon(Icons.brightness_1, color: Colors.green),
+                              new Icon(Icons.brightness_1, color: Colors.green),
+                              new Icon(Icons.brightness_1, color: Colors.green)
+                            ],
+                          ) :food.rating == 'yellow' ? new Row(
+                            children: <Widget>[
+                              new Icon(Icons.brightness_1, color: Colors.yellow),
+                              new Icon(Icons.brightness_1, color: Colors.yellow),
+                              new Icon(Icons.brightness_1, color: Colors.yellow)
+                            ],
+                          ) : new Row(
+                            children: <Widget>[
+                              new Icon(Icons.brightness_1, color: Colors.red),
+                              new Icon(Icons.brightness_1, color: Colors.red),
+                              new Icon(Icons.brightness_1, color: Colors.red)
+                            ],
+                          )
+                        ],
                       )
                     )
-                  ),
-                ],
+                  ],
+                ),
               ),
               new Container(
                 margin: EdgeInsets.fromLTRB(10.0, 25.0, 10.0, 0.0),

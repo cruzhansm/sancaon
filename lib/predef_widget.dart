@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sancaon/predef_appbar_other.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'feedback.dart';
-import 'help.dart';
-import 'credits.dart';
+
+import 'miscellaneous_pages/credits.dart';
+import 'miscellaneous_pages/feedback.dart';
+import 'miscellaneous_pages/help.dart';
+
 
 class MainWidget extends StatefulWidget {
   final Widget generatePage;
