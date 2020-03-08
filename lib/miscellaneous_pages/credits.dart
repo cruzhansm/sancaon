@@ -28,25 +28,118 @@ class _AboutAppState extends State<AboutApp> {
   @override
   Widget build(BuildContext context) {
     return new SafeArea(
-      child: Column(
+      child: new Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Container(
-            margin: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
+            color: Colors.yellow[200],
             child: new Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new Text("The Developers "),
-                new Icon(
-                  Icons.arrow_forward,
-                  size: 18.0
-                )
+                Image.asset(
+                  'assets/images/sancaon_logo_png.png',
+                  height: 50,
+                  width: 50,
+                ),
+                new Container(
+                  margin: EdgeInsets.fromLTRB(0.0, 15.0, 40.0, 10.0),  
+                  child: new Text(
+                    'About the App',
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: "Quicksand",
+                      fontWeight: FontWeight.bold
+                    )
+                  )
+                ),
               ],
             ),
           ),
           new Container(
-            margin: EdgeInsets.only(top: 50.0),
-              child: new Text("")
+            margin: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 10.0),
+              child: new Text(
+                "Sa'nCaon for Android is the product of \nGr. 12 STEM - T1 Students of the \nUniversity of San Carlos - Senior High School. \nThis food menu application for the Talamban Campus Stalls was made in partial fulfillments of Res03.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: "Quicksand")
+              )
+          ),
+          new Container(
+            margin: EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 10.0),
+              child: new Text(
+                "For non-commercial use. This application is meant for research purposes only.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontFamily: "Quicksand")
+              )
+          ),
+          new Container(
+            margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+              child: new Text(
+                "Source Code: https://github.com/cruzhansm/sancaon \n\nThis application uses Flutter and Dart, which we do not own.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontFamily: "Quicksand")
+              )
+          ),
+          new Icon(
+              Icons.fastfood,
+              size: 150.0,
+              color: Colors.green[400]
+            ),
+         new Expanded(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                new Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 0.0, 30.0, 10.0),
+                   child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      new FlatButton(
+                        onPressed: () {},
+                        //color: Colors.grey,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                          side: BorderSide(
+                            color: Colors.black,
+                            width: 0.5
+                          ),
+                        ),
+                        child: new Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            new Column(
+                              children: <Widget>[
+                                new Text(
+                                  "Swipe right",
+                                  style: TextStyle(
+                                    fontSize: 10.0,
+                                  )
+                                ),
+                                new Text(
+                                  "More About the Team",
+                                  style: TextStyle(
+                                    fontSize: 8.0
+                                  ),
+                                )
+                              ],
+                            ),
+                            new Icon(
+                              Icons.keyboard_arrow_right,
+                              size: 20.0
+                            ),
+                          ],
+                        )
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -83,42 +176,48 @@ class _MemberInfoState extends State<MemberInfo> {
             memberCell: " +639473609391",
             memberName: "Hans Maco V. Cruz",
             memberEmail: " cruzhansm@gmail.com",
-            memberPosition: "Lead Developer, Team Leader"
+            memberPosition: "Lead Developer, Team Leader",
+            memberDetail:"    Hans Cruz is the lead developer of the Sa'nCaon app. He is in-charge of the coding and the research it is for. Experienced with many languages of code, this is his first major work involving Flutter and Dart.",
           ),
           new Member(
             memberImage: "assets/images/credits/Danica.jpg",
             memberCell: " +639473609391",
             memberName: "Danica Marie A. Dumalagan",
             memberEmail: " ddumalagan91@gmail.com",
-            memberPosition: "Assistant Team Leader"
+            memberPosition: "Assistant Team Leader",
+            memberDetail: "   Danica Dumalagan is the assistant leader of the Sa'nCaon app. She manages the team on a shared responsibility of the leader, whenever he is not available. Her home has been the base of operations many times throughout the research.",
           ),
           new Member(
             memberCell: " +639667080139",
             memberImage: "assets/images/credits/Antoine.jpg",
             memberName: "Antoine Federico P. Godinez",
             memberEmail: " godinezantoine13@gmail.com",
-            memberPosition: "Documentation"
+            memberPosition: "Documentation",
+            memberDetail: "   Antoine Godinez is the lead documenter of the team. He keeps track of the budgetary expenses used for research purposes and takes part in gathering the data for the Sa'nCaon app.",
           ),
           new Member(
             memberCell: " +639266377699",
             memberImage: "assets/images/credits/Jamille.jpg",
             memberName: "Jamille Ashley Y. Malnegro",
             memberEmail: " jashbeautiful@gmail.com",
-            memberPosition: "User Interface Design"
+            memberPosition: "User Interface Design",
+            memberDetail: "   Jamille Malnegro is in-charge of the UI design, with her best handiwork clearly seen as the logo of the Sa'nCaon app. Her aesthetic choices and stylistic talent ascribes her the architect of Sa'nCaon.",
           ),
           new Member(
             memberCell: " +639222111501",
             memberImage: "assets/images/credits/Mabby.jpg",
             memberName: "Rose Mabelle C. Seares",
             memberEmail: " rosemabelleseares@gmail.com",
-            memberPosition: "User Interface Design"
+            memberPosition: "User Interface Design",
+            memberDetail: "   Rose Mabelle Seares is also part of the UI design, and has influenced the choices and colors of the Sa'nCaon app. She is also a student-athlete and is planning to take up accountancy for college.",
           ),
           new Member(
             memberCell: " +639185565745",
             memberImage: "assets/images/credits/Uayan.jpg",
             memberName: "Lorenzo Gabriel C. Uayan",
             memberEmail: " paradoxictime@gmail.com",
-            memberPosition: "Documentation"
+            memberPosition: "Documentation",
+            memberDetail: "   Lorenzo Uayan is also a documentator under the Sa'nCaon team. He participates in data gathering and encoding tasks.",
           ),
         ],
         
@@ -278,11 +377,23 @@ class _MemberState extends State<Member> {
         new Expanded(
           child: new Container(
             margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-            color: Colors.red,
+            color: Colors.grey[300],
             constraints: BoxConstraints(
               minWidth: double.infinity,
             ),
-            child: Center(child: new Text("Member details here!"))
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Center(
+                child: new Text(
+                  widget.memberDetail,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: "Quicksand",
+                    fontWeight: FontWeight.bold
+                  )
+                )
+              ),
+            )
           ),
         ),
         new Row(
@@ -376,11 +487,91 @@ class _LegalNoticeState extends State<LegalNotice> {
   Widget build(BuildContext context) {
     return new SafeArea(
       child: Container(
-        child: new ListView(
+        child: Column(
           children: <Widget>[
-            Center(child: new Text("JAMILLE IS A TYRANT!")),
-            new Text("Uayan is a derp"),
-            new Text("MAAYO KAAYO")
+            Container(
+              color: Colors.yellow[200],
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 00.0, 10.0),  
+                    child: new Text(
+                      'Legal Notices',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontFamily: "Quicksand",
+                        fontWeight: FontWeight.bold
+                      )
+                     )
+                  ),
+                ],
+              ),
+            ),
+            new ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                new Container(
+                  margin: EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
+                  child: new Text(
+                  "Licenses: \nThe Sa'nCaon app is not licensed for commercial use and is meant for research purposes only.\n\nSources:\nThe sources to this application can be retrieved at the respository of https://github.com/cruzhansm/sancaon \n\nLibraries: \nThe Sa'nCaon application uses Android, Flutter, Dart and more external libraries that make extensive use of the following persons' or companies' code: \n\nAndroid Open Source Project \n\nFlutter...",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: "Quicksand")
+                  ),
+                )
+              ],
+            ),
+            new Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        new FlatButton(
+                          onPressed: () {},
+                          //color: Colors.grey,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: BorderSide(
+                              color: Colors.black,
+                              width: 0.5
+                            ),
+                          ),
+                          child: new Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              new Icon(
+                                Icons.keyboard_arrow_left,
+                                size: 20.0
+                              ),
+                              new Column(
+                                children: <Widget>[
+                                  new Text(
+                                    "Swipe left",
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                    )),
+                                  new Text(
+                                    "More About the Team",
+                                    style: TextStyle(
+                                      fontSize: 8.0,
+                                    ))
+                                ],
+                              ),
+                            ],
+                          )
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         )
       ),
