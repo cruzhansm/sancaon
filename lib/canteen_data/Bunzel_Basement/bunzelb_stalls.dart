@@ -3,7 +3,7 @@ import 'package:sancaon/canteen_data/data.dart';
 class BunzelBStalls {
   FoodStall bunzelBS1 = new FoodStall(
     indexedFoodList: {
-      1 : new FoodItem(
+      1: new FoodItem(
         foodName: "Chicken Fillet",
         foodPrice: 45.00,
         hasManyOptions: false,
@@ -18,7 +18,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      2 : new FoodItem(
+      2: new FoodItem(
         foodName: "Cornsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
@@ -33,7 +33,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      3 : new FoodItem(
+      3: new FoodItem(
         foodName: "Tapsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
@@ -48,7 +48,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      4 : new FoodItem(
+      4: new FoodItem(
         foodName: "Longsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
@@ -63,7 +63,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      5 : new FoodItem(
+      5: new FoodItem(
         foodName: "Pork Chop",
         foodPrice: 50.00,
         hasManyOptions: false,
@@ -79,7 +79,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      6 : new FoodItem(
+      6: new FoodItem(
         foodName: "Sigsilog",
         foodPrice: 60.00,
         hasManyOptions: false,
@@ -94,7 +94,7 @@ class BunzelBStalls {
           "Egg"
         ]
       ),
-      7 : new FoodItem(
+      7: new FoodItem(
         foodName: "Steamed Rice with Siomai",
         foodPrice: 40.00,
         hasManyOptions: false,
@@ -135,6 +135,36 @@ class BunzelBStalls {
         ],
         foodAllergens: [
           "Egg"
+        ]
+      ),
+      10: new FoodItem(
+        foodName: "Burp Burger",
+        foodPrice: 20.00,
+        hasManyOptions: false,
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos10.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Patty (Beef)"
+        ],
+        foodAllergens: null
+      ),
+      11: new FoodItem(
+        foodName: "Sweet Corn",
+        hasManyOptions: true,
+        manyPrices: [
+          20.00,
+          30.00
+        ],
+        foodImage: "assets/images/canteen-menu/BUNZELBasement/chicos11.jpg",
+        rating: "green",
+        foodIngredients: [
+          "Corn",
+          "Condensed Milk",
+          "Cheese"
+        ],
+        foodAllergens: [
+          "Cheese",
+          "Milk"
         ]
       ),
     }

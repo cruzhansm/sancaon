@@ -2,7 +2,7 @@ import 'package:sancaon/canteen_data/data.dart';
 
 class RHStalls {  
   //Cebu 3-6-2 Canteen
-  FoodStall rhCS1 = new FoodStall( // TODO: Lacking pictures
+  FoodStall rhCS1 = new FoodStall( 
     indexedFoodList: {
       1: new FoodItem(
         foodName: "Menudo",

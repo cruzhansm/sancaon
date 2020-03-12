@@ -557,7 +557,7 @@ class BunzelStalls {
   );
     
 //Franco's Tasty Treats Corner
-  FoodStall bunzelCS6 = new FoodStall( // TODO: ARROZCALDO AND CHAMPORADO
+  FoodStall bunzelCS6 = new FoodStall(
       indexedFoodList: {
         1: new FoodItem(
         foodName: "Arrozcaldo",  
@@ -566,7 +566,7 @@ class BunzelStalls {
           20.0,
           25.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos2.jpg",
         rating: "green",
         foodIngredients: [
           "Chicken"
@@ -596,7 +596,7 @@ class BunzelStalls {
           20.0,
           25.0
         ],
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos1.jpg",
+        foodImage: "assets/images/canteen-menu/BunzelCanteen/Franco's_Tasty_Treats_Corner/francos3.jpg",
         rating: "green",
         foodIngredients: [
           " "
@@ -607,7 +607,7 @@ class BunzelStalls {
   );
     
 //Pabugnawan Refreshment and Snack Haus
-  FoodStall bunzelCS7 = new FoodStall( // TODO: GINALING
+  FoodStall bunzelCS7 = new FoodStall( 
     indexedFoodList: {
       1: new FoodItem(
       foodName: "Bihon",
@@ -684,24 +684,6 @@ class BunzelStalls {
       ]
     ),
     6 : new FoodItem(
-      foodName: "Ginaling",
-      hasManyOptions: true,
-      manyPrices: [
-        35.0,
-        45.0
-      ],
-      foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
-      rating: "green",
-      foodIngredients: [
-        "Carrots",
-        "Pork",
-        "Potatoes"
-      ],
-      foodAllergens: [
-        "Pork"
-      ]
-    ),
-    7 : new FoodItem(
       foodName: "Hotdog",
       foodPrice: 15.00,
       hasManyOptions: false,
@@ -717,7 +699,7 @@ class BunzelStalls {
         "Pork"
       ]
     ),
-    8: new FoodItem(
+    7 : new FoodItem(
       foodName: "Ngohiong",
       foodPrice: 28.00,
       hasManyOptions: false,
@@ -730,7 +712,7 @@ class BunzelStalls {
       ],
       foodAllergens: null
     ),
-    9: new FoodItem(
+    8 : new FoodItem(
       foodName: "Pancit",
       foodPrice: 20.00,
       hasManyOptions: false,
@@ -748,7 +730,7 @@ class BunzelStalls {
         "Pork"
       ]
     ),
-    10: new FoodItem(
+    9 : new FoodItem(
       foodName: "Sisig",
       foodPrice: 35.00,
       hasManyOptions: false,
@@ -762,7 +744,7 @@ class BunzelStalls {
         "Pork"
       ]
     ),
-    11: new FoodItem(
+    10 : new FoodItem(
       foodName: "Spaghetti",
       foodPrice: 25.00,
       hasManyOptions: false,

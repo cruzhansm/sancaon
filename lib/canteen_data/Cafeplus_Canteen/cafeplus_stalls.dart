@@ -9,7 +9,7 @@ class CafeplusStalls {
         foodName: "Caldereta",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe5.jpg",
         rating: "green",
         foodIngredients: [
           "Carrots",
@@ -22,10 +22,10 @@ class CafeplusStalls {
         ]
       ),
       2: new FoodItem(
-        foodName: "Cheese Sandwich",
+        foodName: "Triangle Cheese Sandwich",
         foodPrice: 49.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe1.jpg",
         rating: "green",
         foodIngredients: [
           "Milk Bread (Premium)",
@@ -39,7 +39,7 @@ class CafeplusStalls {
         foodName: "Cheezy Tuna",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe6.jpg",
         rating: "green",
         foodIngredients: [
           "Cheese",
@@ -53,7 +53,7 @@ class CafeplusStalls {
         foodName: "Chili Ground Pork",
         foodPrice: 49.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe4.jpg",
         rating: "green",
         foodIngredients: [
           "Chili",
@@ -67,7 +67,7 @@ class CafeplusStalls {
         foodName: "Chorizo",
         foodPrice: 49.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe8.jpg",
         rating: "green",
         foodIngredients: [
           "Ground Pork"
@@ -80,7 +80,7 @@ class CafeplusStalls {
         foodName: "Garlic Spam",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe3.jpg",
         rating: "green",
         foodIngredients: [
           "Garlic",
@@ -94,7 +94,7 @@ class CafeplusStalls {
         foodName: "Lasagna with Garlic Bread",
         foodPrice: 99.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe7.jpg",
         rating: "green",
         foodIngredients: [
           "Pasta",
@@ -106,7 +106,7 @@ class CafeplusStalls {
         foodName: "Spaghetti with Garlic Bread",
         foodPrice: 69.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe9.jpg",
         rating: "green",
         foodIngredients: [
           "Hotdog",
@@ -121,7 +121,7 @@ class CafeplusStalls {
         foodName: "Tuna Melt Sandwich",
         foodPrice: 99.00,
         hasManyOptions: false,
-        foodImage: "assets/images/canteen-menu/BunzelCanteen/Amboy's_Food_Corner/amboys1.jpg",
+        foodImage: "assets/images/canteen-menu/CAFE+/cafe2.jpg",
         rating: "green",
         foodIngredients: [
           "Bread",
