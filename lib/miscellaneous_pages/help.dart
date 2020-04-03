@@ -52,7 +52,7 @@ class HelpPage extends StatelessWidget {
                 debugPrint("_launchURL???")
               },
               child: new Container(
-                margin: EdgeInsets.fromLTRB(0.0, 75.0, 0.0, 20.0),
+                margin: EdgeInsets.fromLTRB(0.0, 55.0, 0.0, 20.0),
                 padding: EdgeInsets.symmetric(vertical: 5.0),
                 constraints: BoxConstraints(
                   minWidth: double.infinity,
